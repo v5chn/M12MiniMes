@@ -58,6 +58,7 @@ namespace M12MiniMes.DALSQL
 			info.日期104 = reader.GetDateTime("日期104");
 			info.日期102 = reader.GetDateTime("日期102");
 			info.角度 = reader.GetString("角度");
+			info.系列号 = reader.GetString("系列号");
 			info.镜框投料数 = reader.GetInt32("镜框投料数");
 			info.隔圈模穴号113b = reader.GetString("隔圈模穴号113B");
 			info.成型日113b = reader.GetDateTime("成型日113B");
@@ -69,9 +70,9 @@ namespace M12MiniMes.DALSQL
 			info.G1来料供应商 = reader.GetString("G1来料供应商");
 			info.G1来料日期 = reader.GetDateTime("G1来料日期");
 			info.镜片投料数 = reader.GetInt32("镜片投料数");
-			info.指定加胶间隔数量 = reader.GetInt32("指定加胶间隔数量");
 			info.配对监控批次 = reader.GetString("配对监控批次");
 			info.计划投入数 = reader.GetInt32("计划投入数");
+			info.上线数 = reader.GetInt32("上线数");
 			info.下线数 = reader.GetInt32("下线数");
 			info.生产批次号 = reader.GetString("生产批次号");
 			
@@ -102,6 +103,7 @@ namespace M12MiniMes.DALSQL
  			hash.Add("日期104", info.日期104);
  			hash.Add("日期102", info.日期102);
  			hash.Add("角度", info.角度);
+ 			hash.Add("系列号", info.系列号);
  			hash.Add("镜框投料数", info.镜框投料数);
  			hash.Add("隔圈模穴号113B", info.隔圈模穴号113b);
  			hash.Add("成型日113B", info.成型日113b);
@@ -113,9 +115,9 @@ namespace M12MiniMes.DALSQL
  			hash.Add("G1来料供应商", info.G1来料供应商);
  			hash.Add("G1来料日期", info.G1来料日期);
  			hash.Add("镜片投料数", info.镜片投料数);
- 			hash.Add("指定加胶间隔数量", info.指定加胶间隔数量);
  			hash.Add("配对监控批次", info.配对监控批次);
  			hash.Add("计划投入数", info.计划投入数);
+ 			hash.Add("上线数", info.上线数);
  			hash.Add("下线数", info.下线数);
  			hash.Add("生产批次号", info.生产批次号);
  				
@@ -145,6 +147,7 @@ namespace M12MiniMes.DALSQL
              dict.Add("日期104", "日期104");
              dict.Add("日期102", "日期102");
              dict.Add("角度", "角度");
+             dict.Add("系列号", "系列号");
              dict.Add("镜框投料数", "镜框投料数");
              dict.Add("隔圈模穴号113b", "隔圈模穴号113B");
              dict.Add("成型日113b", "成型日113B");
@@ -156,9 +159,9 @@ namespace M12MiniMes.DALSQL
              dict.Add("G1来料供应商", "G1来料供应商");
              dict.Add("G1来料日期", "G1来料日期");
              dict.Add("镜片投料数", "镜片投料数");
-             dict.Add("指定加胶间隔数量", "指定加胶间隔数量");
              dict.Add("配对监控批次", "配对监控批次");
              dict.Add("计划投入数", "计划投入数");
+             dict.Add("上线数", "上线数");
              dict.Add("下线数", "下线数");
              dict.Add("生产批次号", "生成出的生产批次号");
              #endregion
@@ -172,7 +175,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "生产批次ID,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,指定加胶间隔数量,配对监控批次,计划投入数,下线数,生产批次号";
+            return "生产批次ID,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,生产批次号";
         }
     }
 }

@@ -12,11 +12,11 @@ using WHC.Framework.ControlUtil;
 namespace M12MiniMes.BLL
 {
     /// <summary>
-    /// Ng记录表
+    /// 物料ng替换记录表
     /// </summary>
-	public class Ng记录表 : BaseBLL<Ng记录表Info>
+	public class 物料ng替换记录表 : BaseBLL<物料ng替换记录表Info>
     {
-        public Ng记录表() : base()
+        public 物料ng替换记录表() : base()
         {
             base.Init(this.GetType().FullName, System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
         }

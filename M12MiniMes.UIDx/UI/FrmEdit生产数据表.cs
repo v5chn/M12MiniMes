@@ -71,9 +71,10 @@ namespace M12MiniMes.UI
                 {
                 	tempInfo = info;//重新给临时对象赋值，使之指向存在的记录对象
                 	
-                    txt生产批次号.Text = info.生产批次号;
-                   	txt生产时间.SetDateTime(info.生产时间);	
-                      txt物料guid.Text = info.物料guid;
+                	txt生产时间.SetDateTime(info.生产时间);	
+                      txt物料生产批次号.Text = info.物料生产批次号;
+                       txt治具生产批次号.Text = info.治具生产批次号;
+                       txt物料guid.Text = info.物料guid;
                        txt治具guid.Text = info.治具guid;
                        txt治具rfid.Text = info.治具rfid;
                    	txt治具孔号.Value = info.治具孔号;
@@ -83,6 +84,7 @@ namespace M12MiniMes.UI
                    	txt工序id.Value = info.工序id;
                        txt工序名称.Text = info.工序名称;
                        txt工序数据.Text = info.工序数据;
+                   	txt结果ok.Text = info.结果ok.ToString();
     
                 } 
                 #endregion
@@ -90,7 +92,7 @@ namespace M12MiniMes.UI
             }
             else
             {
-            
+              
                 //this.btnOK.Enabled = HasFunction("生产数据表/Add");  
             }
             
@@ -106,8 +108,9 @@ namespace M12MiniMes.UI
         private void SetPermit()
         {
             #region 设置控件和字段的对应关系
-            //this.txt生产批次号.Tag = "生产批次号";
             //this.txt生产时间.Tag = "生产时间";
+            //this.txt物料生产批次号.Tag = "物料生产批次号";
+            //this.txt治具生产批次号.Tag = "治具生产批次号";
             //this.txt物料guid.Tag = "物料guid";
             //this.txt治具guid.Tag = "治具guid";
             //this.txt治具rfid.Tag = "治具rfid";
@@ -118,6 +121,7 @@ namespace M12MiniMes.UI
             //this.txt工序id.Tag = "工序id";
             //this.txt工序名称.Tag = "工序名称";
             //this.txt工序数据.Tag = "工序数据";
+            //this.txt结果ok.Tag = "结果ok";
             #endregion
 			
             //获取列表权限的列表
@@ -153,9 +157,10 @@ namespace M12MiniMes.UI
         /// <param name="info"></param>
         private void SetInfo(生产数据表Info info)
         {
-            info.生产批次号 = txt生产批次号.Text;
-                info.生产时间 = txt生产时间.DateTime;
-               info.物料guid = txt物料guid.Text;
+            info.生产时间 = txt生产时间.DateTime;
+               info.物料生产批次号 = txt物料生产批次号.Text;
+                info.治具生产批次号 = txt治具生产批次号.Text;
+                info.物料guid = txt物料guid.Text;
                 info.治具guid = txt治具guid.Text;
                 info.治具rfid = txt治具rfid.Text;
                 info.治具孔号 = Convert.ToInt32(txt治具孔号.Value);
@@ -165,6 +170,7 @@ namespace M12MiniMes.UI
                 info.工序id = Convert.ToInt32(txt工序id.Value);
                 info.工序名称 = txt工序名称.Text;
                 info.工序数据 = txt工序数据.Text;
+                info.结果ok = txt结果ok.Text.ToBoolean();
             }
          
         /// <summary>

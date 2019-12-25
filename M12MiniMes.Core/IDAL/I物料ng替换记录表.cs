@@ -11,9 +11,9 @@ using M12MiniMes.Entity;
 namespace M12MiniMes.IDAL
 {
     /// <summary>
-    /// 替换记录表
+    /// 物料ng替换记录表
     /// </summary>
-	public interface I替换记录表 : IBaseDAL<替换记录表Info>
+	public interface I物料ng替换记录表 : IBaseDAL<物料ng替换记录表Info>
 	{
     }
 }

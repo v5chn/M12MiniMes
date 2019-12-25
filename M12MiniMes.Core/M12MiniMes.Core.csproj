@@ -107,35 +107,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\物料ng替换记录表.cs" />
+    <Compile Include="DAL\DALSQL\物料ng替换记录表.cs" />
+    <Compile Include="Entity\物料ng替换记录表Info.cs" />
+    <Compile Include="IDAL\I物料ng替换记录表.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BLL\Ng记录表.cs" />
     <Compile Include="BLL\设备表.cs" />
-    <Compile Include="BLL\设备参数表.cs" />
     <Compile Include="BLL\设备工序表.cs" />
     <Compile Include="BLL\生产批次生成表.cs" />
     <Compile Include="BLL\生产数据表.cs" />
-    <Compile Include="BLL\替换记录表.cs" />
-    <Compile Include="DAL\DALSQL\Ng记录表.cs" />
     <Compile Include="DAL\DALSQL\设备表.cs" />
-    <Compile Include="DAL\DALSQL\设备参数表.cs" />
     <Compile Include="DAL\DALSQL\设备工序表.cs" />
     <Compile Include="DAL\DALSQL\生产批次生成表.cs" />
     <Compile Include="DAL\DALSQL\生产数据表.cs" />
-    <Compile Include="DAL\DALSQL\替换记录表.cs" />
-    <Compile Include="Entity\Ng记录表Info.cs" />
     <Compile Include="Entity\设备表Info.cs" />
-    <Compile Include="Entity\设备参数表Info.cs" />
     <Compile Include="Entity\设备工序表Info.cs" />
     <Compile Include="Entity\生产批次生成表Info.cs" />
     <Compile Include="Entity\生产数据表Info.cs" />
-    <Compile Include="Entity\替换记录表Info.cs" />
-    <Compile Include="IDAL\INg记录表.cs" />
     <Compile Include="IDAL\I设备表.cs" />
-    <Compile Include="IDAL\I设备参数表.cs" />
     <Compile Include="IDAL\I设备工序表.cs" />
     <Compile Include="IDAL\I生产批次生成表.cs" />
     <Compile Include="IDAL\I生产数据表.cs" />
-    <Compile Include="IDAL\I替换记录表.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

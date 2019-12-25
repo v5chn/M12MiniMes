@@ -18,11 +18,11 @@ namespace M12MiniMes.Entity
 	    public 生产批次生成表Info()
 		{
             this.生产批次id= 0;
-                           this.镜框投料数= 0;
+                            this.镜框投料数= 0;
                  this.隔圈投料数= 0;
                  this.镜片投料数= 0;
-             this.指定加胶间隔数量= 0;
               this.计划投入数= 0;
+             this.上线数= 0;
              this.下线数= 0;
    
 		}
@@ -120,6 +120,12 @@ namespace M12MiniMes.Entity
         public virtual string 角度 { get; set; }
 
         /// <summary>
+        /// 系列号
+        /// </summary>
+		[DataMember]
+        public virtual string 系列号 { get; set; }
+
+        /// <summary>
         /// 镜框投料数
         /// </summary>
 		[DataMember]
@@ -186,12 +192,6 @@ namespace M12MiniMes.Entity
         public virtual int 镜片投料数 { get; set; }
 
         /// <summary>
-        /// 指定加胶间隔数量
-        /// </summary>
-		[DataMember]
-        public virtual int 指定加胶间隔数量 { get; set; }
-
-        /// <summary>
         /// 配对监控批次
         /// </summary>
 		[DataMember]
@@ -202,6 +202,12 @@ namespace M12MiniMes.Entity
         /// </summary>
 		[DataMember]
         public virtual int 计划投入数 { get; set; }
+
+        /// <summary>
+        /// 上线数
+        /// </summary>
+		[DataMember]
+        public virtual int 上线数 { get; set; }
 
         /// <summary>
         /// 下线数

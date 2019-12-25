@@ -1,4 +1,4 @@
- 		 		 		 		 		 		 		 		 		 		 		 		 
+ 		 		 		 		 		 		 		 		 		 		 		 		 		 		 
 using System;
 using System.Text;
 using System.Data;
@@ -120,7 +120,7 @@ namespace M12MiniMes.UI
                 GridView gridView = this.winGridViewPager1.gridView1;
                 if (gridView != null)
                 {
-					//生产数据id,生产批次号,生产时间,物料guid,治具guid,治具rfid,治具孔号,设备id,设备名称,工位号,工序id,工序名称,工序数据
+					//生产数据id,生产时间,物料生产批次号,治具生产批次号,物料guid,治具guid,治具rfid,治具孔号,设备id,设备名称,工位号,工序id,工序名称,工序数据,结果ok
 					//gridView.SetGridColumWidth("Note", 200);
                 }
             }
@@ -227,14 +227,15 @@ namespace M12MiniMes.UI
             //displayColumns = string.IsNullOrEmpty(displayColumns) ? string.Join(",", permitDict.Keys) : displayColumns;
             //this.winGridViewPager1.DisplayColumns = displayColumns; 
 			
-			this.winGridViewPager1.DisplayColumns = "生产数据id,生产批次号,生产时间,物料guid,治具guid,治具rfid,治具孔号,设备id,设备名称,工位号,工序id,工序名称,工序数据";
+			this.winGridViewPager1.DisplayColumns = "生产数据id,生产时间,物料生产批次号,治具生产批次号,物料guid,治具guid,治具rfid,治具孔号,设备id,设备名称,工位号,工序id,工序名称,工序数据,结果ok";
             this.winGridViewPager1.ColumnNameAlias = BLLFactory<生产数据表>.Instance.GetColumnNameAlias();//字段列显示名称转义
 
             #region 添加别名解析
 
            //this.winGridViewPager1.AddColumnAlias("生产数据id", "生产数据ID");
-           //this.winGridViewPager1.AddColumnAlias("生产批次号", "生产批次号");
            //this.winGridViewPager1.AddColumnAlias("生产时间", "生产时间");
+           //this.winGridViewPager1.AddColumnAlias("物料生产批次号", "物料生产批次号");
+           //this.winGridViewPager1.AddColumnAlias("治具生产批次号", "治具生产批次号");
            //this.winGridViewPager1.AddColumnAlias("物料guid", "物料GUID");
            //this.winGridViewPager1.AddColumnAlias("治具guid", "治具GUID");
            //this.winGridViewPager1.AddColumnAlias("治具rfid", "治具RFID");
@@ -245,6 +246,7 @@ namespace M12MiniMes.UI
            //this.winGridViewPager1.AddColumnAlias("工序id", "工序ID");
            //this.winGridViewPager1.AddColumnAlias("工序名称", "工序名称");
            //this.winGridViewPager1.AddColumnAlias("工序数据", "工序数据");
+           //this.winGridViewPager1.AddColumnAlias("结果ok", "结果OK");
 
             #endregion
 
@@ -321,15 +323,16 @@ namespace M12MiniMes.UI
             {
                 string where = GetConditionSql();
                 List<生产数据表Info> list = BLLFactory<生产数据表>.Instance.Find(where);
-                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,生产批次号,生产时间,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据");
+                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据,结果OK");
                 DataRow dr;
                 int j = 1;
                 for (int i = 0; i < list.Count; i++)
                 {
                     dr = dtNew.NewRow();
                     dr["序号"] = j++;
-                     dr["生产批次号"] = list[i].生产批次号;
                      dr["生产时间"] = list[i].生产时间;
+                     dr["物料生产批次号"] = list[i].物料生产批次号;
+                     dr["治具生产批次号"] = list[i].治具生产批次号;
                      dr["物料GUID"] = list[i].物料guid;
                      dr["治具GUID"] = list[i].治具guid;
                      dr["治具RFID"] = list[i].治具rfid;
@@ -340,6 +343,7 @@ namespace M12MiniMes.UI
                      dr["工序ID"] = list[i].工序id;
                      dr["工序名称"] = list[i].工序名称;
                      dr["工序数据"] = list[i].工序数据;
+                     dr["结果OK"] = list[i].结果ok;
                      dtNew.Rows.Add(dr);
                 }
 
@@ -378,7 +382,7 @@ namespace M12MiniMes.UI
                 dlg = new FrmAdvanceSearch();
                 dlg.FieldTypeTable = BLLFactory<生产数据表>.Instance.GetFieldTypeList();
                 dlg.ColumnNameAlias = BLLFactory<生产数据表>.Instance.GetColumnNameAlias();                
-                 dlg.DisplayColumns = "生产批次号,生产时间,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据";
+                 dlg.DisplayColumns = "生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据,结果OK";
 
                 #region 下拉列表数据
 
@@ -516,8 +520,9 @@ namespace M12MiniMes.UI
             if (condition == null)
             {
                 condition = new SearchCondition();
-                condition.AddCondition("生产批次号", this.txt生产批次号.Text.Trim(), SqlOperator.Like);
                 condition.AddDateCondition("生产时间", this.txt生产时间1, this.txt生产时间2); //日期类型
+                condition.AddCondition("物料生产批次号", this.txt物料生产批次号.Text.Trim(), SqlOperator.Like);
+                condition.AddCondition("治具生产批次号", this.txt治具生产批次号.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("物料GUID", this.txt物料guid.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("治具GUID", this.txt治具guid.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("治具RFID", this.txt治具rfid.Text.Trim(), SqlOperator.Like);
@@ -528,6 +533,7 @@ namespace M12MiniMes.UI
                 condition.AddNumericCondition("工序ID", this.txt工序id1, this.txt工序id2); //数值类型
                 condition.AddCondition("工序名称", this.txt工序名称.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("工序数据", this.txt工序数据.Text.Trim(), SqlOperator.Like);
+                condition.AddCondition("结果OK", this.txt结果ok.Text.Trim(), SqlOperator.Like);
             }
             string where = condition.BuildConditionSql().Replace("Where", "");
             return where;
@@ -556,8 +562,7 @@ namespace M12MiniMes.UI
             DateTime dtDefault = Convert.ToDateTime("1900-01-01");
             DateTime dt;
             生产数据表Info info = new 生产数据表Info();
-             info.生产批次号 = GetRowData(dr, "生产批次号");
-  
+ 
             string 生产时间 = GetRowData(dr, "生产时间");
             if (!string.IsNullOrEmpty(生产时间))
             {
@@ -572,6 +577,8 @@ namespace M12MiniMes.UI
                 info.生产时间 = DateTime.Now;
             }
 
+              info.物料生产批次号 = GetRowData(dr, "物料生产批次号");
+              info.治具生产批次号 = GetRowData(dr, "治具生产批次号");
               info.物料guid = GetRowData(dr, "物料GUID");
               info.治具guid = GetRowData(dr, "治具GUID");
               info.治具rfid = GetRowData(dr, "治具RFID");
@@ -582,6 +589,7 @@ namespace M12MiniMes.UI
               info.工序id = GetRowData(dr, "工序ID").ToInt32();
               info.工序名称 = GetRowData(dr, "工序名称");
               info.工序数据 = GetRowData(dr, "工序数据");
+              info.结果ok = GetRowData(dr, "结果OK").ToBoolean();
   
             success = BLLFactory<生产数据表>.Instance.Insert(info);
              return success;

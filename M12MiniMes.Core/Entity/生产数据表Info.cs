@@ -18,10 +18,11 @@ namespace M12MiniMes.Entity
 	    public 生产数据表Info()
 		{
             this.生产数据id= 0;
-                  this.治具孔号= 0;
+                   this.治具孔号= 0;
              this.设备id= 0;
                this.工序id= 0;
-    
+               this.结果ok= false;
+  
 		}
 
         #region Property Members
@@ -33,16 +34,22 @@ namespace M12MiniMes.Entity
         public virtual int 生产数据id { get; set; }
 
         /// <summary>
-        /// 生产批次号
-        /// </summary>
-		[DataMember]
-        public virtual string 生产批次号 { get; set; }
-
-        /// <summary>
         /// 生产时间
         /// </summary>
 		[DataMember]
         public virtual DateTime 生产时间 { get; set; }
+
+        /// <summary>
+        /// 物料生产批次号
+        /// </summary>
+		[DataMember]
+        public virtual string 物料生产批次号 { get; set; }
+
+        /// <summary>
+        /// 治具生产批次号
+        /// </summary>
+		[DataMember]
+        public virtual string 治具生产批次号 { get; set; }
 
         /// <summary>
         /// 物料GUID
@@ -103,6 +110,12 @@ namespace M12MiniMes.Entity
         /// </summary>
 		[DataMember]
         public virtual string 工序数据 { get; set; }
+
+        /// <summary>
+        /// 结果OK
+        /// </summary>
+		[DataMember]
+        public virtual bool 结果ok { get; set; }
 
 
         #endregion

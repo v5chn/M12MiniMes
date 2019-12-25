@@ -44,8 +44,9 @@ namespace M12MiniMes.DALSQL
 			SmartDataReader reader = new SmartDataReader(dataReader);
 			
 			info.生产数据id = reader.GetInt32("生产数据ID");
-			info.生产批次号 = reader.GetString("生产批次号");
 			info.生产时间 = reader.GetDateTime("生产时间");
+			info.物料生产批次号 = reader.GetString("物料生产批次号");
+			info.治具生产批次号 = reader.GetString("治具生产批次号");
 			info.物料guid = reader.GetString("物料GUID");
 			info.治具guid = reader.GetString("治具GUID");
 			info.治具rfid = reader.GetString("治具RFID");
@@ -56,6 +57,7 @@ namespace M12MiniMes.DALSQL
 			info.工序id = reader.GetInt32("工序ID");
 			info.工序名称 = reader.GetString("工序名称");
 			info.工序数据 = reader.GetString("工序数据");
+			info.结果ok = reader.GetBoolean("结果OK");
 			
 			return info;
 		}
@@ -70,8 +72,9 @@ namespace M12MiniMes.DALSQL
 		    生产数据表Info info = obj as 生产数据表Info;
 			Hashtable hash = new Hashtable(); 
 			
- 			hash.Add("生产批次号", info.生产批次号);
  			hash.Add("生产时间", info.生产时间);
+ 			hash.Add("物料生产批次号", info.物料生产批次号);
+ 			hash.Add("治具生产批次号", info.治具生产批次号);
  			hash.Add("物料GUID", info.物料guid);
  			hash.Add("治具GUID", info.治具guid);
  			hash.Add("治具RFID", info.治具rfid);
@@ -82,6 +85,7 @@ namespace M12MiniMes.DALSQL
  			hash.Add("工序ID", info.工序id);
  			hash.Add("工序名称", info.工序名称);
  			hash.Add("工序数据", info.工序数据);
+ 			hash.Add("结果OK", info.结果ok);
  				
 			return hash;
 		}
@@ -95,8 +99,9 @@ namespace M12MiniMes.DALSQL
             Dictionary<string, string> dict = new Dictionary<string, string>();
             #region 添加别名解析
             //dict.Add("ID", "编号");
-             dict.Add("生产批次号", "生产批次号");
              dict.Add("生产时间", "生产时间");
+             dict.Add("物料生产批次号", "物料生产批次号");
+             dict.Add("治具生产批次号", "治具生产批次号");
              dict.Add("物料guid", "物料GUID");
              dict.Add("治具guid", "治具GUID");
              dict.Add("治具rfid", "治具RFID");
@@ -107,6 +112,7 @@ namespace M12MiniMes.DALSQL
              dict.Add("工序id", "工序ID");
              dict.Add("工序名称", "工序名称");
              dict.Add("工序数据", "工序数据");
+             dict.Add("结果ok", "结果OK");
              #endregion
 
             return dict;
@@ -118,7 +124,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "生产数据ID,生产批次号,生产时间,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据";
+            return "生产数据ID,生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据,结果OK";
         }
     }
 }

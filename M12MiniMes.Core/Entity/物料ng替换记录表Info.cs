@@ -6,42 +6,62 @@ using WHC.Framework.ControlUtil;
 namespace M12MiniMes.Entity
 {
     /// <summary>
-    /// 替换记录表Info
+    /// 物料ng替换记录表Info
     /// </summary>
     [DataContract]
     [Serializable]
-    public class 替换记录表Info : BaseEntity
+    public class 物料ng替换记录表Info : BaseEntity
     { 
         /// <summary>
         /// 默认构造函数（需要初始化属性的在此处理）
         /// </summary>
-	    public 替换记录表Info()
+	    public 物料ng替换记录表Info()
 		{
-            this.替换记录id= 0;
-                  this.替换前治具孔号= 0;
-               this.替换后治具孔号= 0;
-  
+            this.Ng替换记录id= 0;
+               this.设备id= 0;
+             this.工序id= 0;
+                 this.替换前治具孔号= 0;
+                this.替换后治具孔号= 0;
+   
 		}
 
         #region Property Members
         
         /// <summary>
-        /// 替换记录ID
+        /// NG替换记录ID
         /// </summary>
 		[DataMember]
-        public virtual int 替换记录id { get; set; }
+        public virtual int Ng替换记录id { get; set; }
 
         /// <summary>
-        /// 替换时间
+        /// NG替换时间
         /// </summary>
 		[DataMember]
-        public virtual DateTime 替换时间 { get; set; }
+        public virtual DateTime Ng替换时间 { get; set; }
 
         /// <summary>
-        /// 生产批次号
+        /// 物料生产批次号
         /// </summary>
 		[DataMember]
-        public virtual string 生产批次号 { get; set; }
+        public virtual string 物料生产批次号 { get; set; }
+
+        /// <summary>
+        /// 设备ID
+        /// </summary>
+		[DataMember]
+        public virtual int 设备id { get; set; }
+
+        /// <summary>
+        /// 工序ID
+        /// </summary>
+		[DataMember]
+        public virtual int 工序id { get; set; }
+
+        /// <summary>
+        /// 工位号
+        /// </summary>
+		[DataMember]
+        public virtual string 工位号 { get; set; }
 
         /// <summary>
         /// 物料GUID
@@ -68,6 +88,12 @@ namespace M12MiniMes.Entity
         public virtual int 替换前治具孔号 { get; set; }
 
         /// <summary>
+        /// 前治具生产批次号
+        /// </summary>
+		[DataMember]
+        public virtual string 前治具生产批次号 { get; set; }
+
+        /// <summary>
         /// 替换后治具GUID
         /// </summary>
 		[DataMember]
@@ -84,6 +110,12 @@ namespace M12MiniMes.Entity
         /// </summary>
 		[DataMember]
         public virtual int 替换后治具孔号 { get; set; }
+
+        /// <summary>
+        /// 后治具生产批次号
+        /// </summary>
+		[DataMember]
+        public virtual string 后治具生产批次号 { get; set; }
 
 
         #endregion

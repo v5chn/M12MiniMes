@@ -1,4 +1,4 @@
- 		 		 		 		 		 		 		 		 		 
+ 		 		 		 		 		 		 		 		 		 		 		 		 		 		 
 using System;
 using System.Text;
 using System.Data;
@@ -26,11 +26,11 @@ using M12MiniMes.Entity;
 namespace M12MiniMes.UI
 {
     /// <summary>
-    /// 替换记录表
+    /// 物料ng替换记录表
     /// </summary>	
-    public partial class Frm替换记录表 : BaseDock
+    public partial class Frm物料ng替换记录表 : BaseDock
     {
-        public Frm替换记录表()
+        public Frm物料ng替换记录表()
         {
             InitializeComponent();
 
@@ -120,7 +120,7 @@ namespace M12MiniMes.UI
                 GridView gridView = this.winGridViewPager1.gridView1;
                 if (gridView != null)
                 {
-					//替换记录id,替换时间,生产批次号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,替换后治具guid,替换后治具rfid,替换后治具孔号
+					//Ng替换记录id,Ng替换时间,物料生产批次号,设备id,工序id,工位号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,前治具生产批次号,替换后治具guid,替换后治具rfid,替换后治具孔号,后治具生产批次号
 					//gridView.SetGridColumWidth("Note", 200);
                 }
             }
@@ -157,7 +157,7 @@ namespace M12MiniMes.UI
         /// </summary>		
         private void AddData()
         {
-            FrmEdit替换记录表 dlg = new FrmEdit替换记录表();
+            FrmEdit物料ng替换记录表 dlg = new FrmEdit物料ng替换记录表();
             dlg.OnDataSaved += new EventHandler(dlg_OnDataSaved);
             dlg.InitFunction(LoginUserInfo, FunctionDict);//给子窗体赋值用户权限信息
             
@@ -171,17 +171,17 @@ namespace M12MiniMes.UI
         /// </summary>
         private void EditData()
         {
-            string ID = this.winGridViewPager1.gridView1.GetFocusedRowCellDisplayText("替换记录id");
+            string ID = this.winGridViewPager1.gridView1.GetFocusedRowCellDisplayText("Ng替换记录id");
             List<string> IDList = new List<string>();
             for (int i = 0; i < this.winGridViewPager1.gridView1.RowCount; i++)
             {
-                string strTemp = this.winGridViewPager1.GridView1.GetRowCellDisplayText(i, "替换记录id");
+                string strTemp = this.winGridViewPager1.GridView1.GetRowCellDisplayText(i, "Ng替换记录id");
                 IDList.Add(strTemp);
             }
 
             if (!string.IsNullOrEmpty(ID))
             {
-                FrmEdit替换记录表 dlg = new FrmEdit替换记录表();
+                FrmEdit物料ng替换记录表 dlg = new FrmEdit物料ng替换记录表();
                 dlg.ID = ID;
                 dlg.IDList = IDList;
                 dlg.OnDataSaved += new EventHandler(dlg_OnDataSaved);
@@ -207,8 +207,8 @@ namespace M12MiniMes.UI
             int[] rowSelected = this.winGridViewPager1.GridView1.GetSelectedRows();
             foreach (int iRow in rowSelected)
             {
-                string ID = this.winGridViewPager1.GridView1.GetRowCellDisplayText(iRow, "替换记录id");
-                BLLFactory<替换记录表>.Instance.Delete(ID);
+                string ID = this.winGridViewPager1.GridView1.GetRowCellDisplayText(iRow, "Ng替换记录id");
+                BLLFactory<物料ng替换记录表>.Instance.Delete(ID);
             }
              
             BindData();			
@@ -222,34 +222,39 @@ namespace M12MiniMes.UI
         	//entity		
 
             //根据业务对象获取对应的显示字段，如果没有设置，那么根据FieldPermit表的配置获取字段权限列表(默认不使用字段权限)
-            //var permitDict = BLLFactory<FieldPermit>.Instance.GetColumnsPermit(typeof(替换记录表Info).FullName, LoginUserInfo.ID.ToInt32());
-            //var displayColumns = BLLFactory<替换记录表>.Instance.GetDisplayColumns();
+            //var permitDict = BLLFactory<FieldPermit>.Instance.GetColumnsPermit(typeof(物料ng替换记录表Info).FullName, LoginUserInfo.ID.ToInt32());
+            //var displayColumns = BLLFactory<物料ng替换记录表>.Instance.GetDisplayColumns();
             //displayColumns = string.IsNullOrEmpty(displayColumns) ? string.Join(",", permitDict.Keys) : displayColumns;
             //this.winGridViewPager1.DisplayColumns = displayColumns; 
 			
-			this.winGridViewPager1.DisplayColumns = "替换记录id,替换时间,生产批次号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,替换后治具guid,替换后治具rfid,替换后治具孔号";
-            this.winGridViewPager1.ColumnNameAlias = BLLFactory<替换记录表>.Instance.GetColumnNameAlias();//字段列显示名称转义
+			this.winGridViewPager1.DisplayColumns = "Ng替换记录id,Ng替换时间,物料生产批次号,设备id,工序id,工位号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,前治具生产批次号,替换后治具guid,替换后治具rfid,替换后治具孔号,后治具生产批次号";
+            this.winGridViewPager1.ColumnNameAlias = BLLFactory<物料ng替换记录表>.Instance.GetColumnNameAlias();//字段列显示名称转义
 
             #region 添加别名解析
 
-           //this.winGridViewPager1.AddColumnAlias("替换记录id", "替换记录ID");
-           //this.winGridViewPager1.AddColumnAlias("替换时间", "替换时间");
-           //this.winGridViewPager1.AddColumnAlias("生产批次号", "生产批次号");
+           //this.winGridViewPager1.AddColumnAlias("Ng替换记录id", "NG替换记录ID");
+           //this.winGridViewPager1.AddColumnAlias("Ng替换时间", "NG替换时间");
+           //this.winGridViewPager1.AddColumnAlias("物料生产批次号", "物料生产批次号");
+           //this.winGridViewPager1.AddColumnAlias("设备id", "设备ID");
+           //this.winGridViewPager1.AddColumnAlias("工序id", "工序ID");
+           //this.winGridViewPager1.AddColumnAlias("工位号", "工位号");
            //this.winGridViewPager1.AddColumnAlias("物料guid", "物料GUID");
            //this.winGridViewPager1.AddColumnAlias("替换前治具guid", "替换前治具GUID");
            //this.winGridViewPager1.AddColumnAlias("替换前治具rfid", "替换前治具RFID");
            //this.winGridViewPager1.AddColumnAlias("替换前治具孔号", "替换前治具孔号");
+           //this.winGridViewPager1.AddColumnAlias("前治具生产批次号", "前治具生产批次号");
            //this.winGridViewPager1.AddColumnAlias("替换后治具guid", "替换后治具GUID");
            //this.winGridViewPager1.AddColumnAlias("替换后治具rfid", "替换后治具RFID");
            //this.winGridViewPager1.AddColumnAlias("替换后治具孔号", "替换后治具孔号");
+           //this.winGridViewPager1.AddColumnAlias("后治具生产批次号", "后治具生产批次号");
 
             #endregion
 
             string where = GetConditionSql();
             PagerInfo pagerInfo = this.winGridViewPager1.PagerInfo;
-	            List<替换记录表Info> list = BLLFactory<替换记录表>.Instance.FindWithPager(where, pagerInfo);
-            this.winGridViewPager1.DataSource = list;//new WHC.Pager.WinControl.SortableBindingList<替换记录表Info>(list);
-                this.winGridViewPager1.PrintTitle = "替换记录表报表";
+	            List<物料ng替换记录表Info> list = BLLFactory<物料ng替换记录表>.Instance.FindWithPager(where, pagerInfo);
+            this.winGridViewPager1.DataSource = list;//new WHC.Pager.WinControl.SortableBindingList<物料ng替换记录表Info>(list);
+                this.winGridViewPager1.PrintTitle = "物料ng替换记录表报表";
  
 			// 设置GridControl对应的下拉类别内容，方便转义
             SetRepositoryItems(this.winGridViewPager1.GridView1);
@@ -293,7 +298,7 @@ namespace M12MiniMes.UI
 			*/
         }      
 
-        private string moduleName = "替换记录表";		
+        private string moduleName = "物料ng替换记录表";		
 		
         /// <summary>
         /// 导入的操作
@@ -317,23 +322,28 @@ namespace M12MiniMes.UI
             if (!string.IsNullOrEmpty(file))
             {
                 string where = GetConditionSql();
-                List<替换记录表Info> list = BLLFactory<替换记录表>.Instance.Find(where);
-                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,替换时间,生产批次号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,替换后治具GUID,替换后治具RFID,替换后治具孔号");
+                List<物料ng替换记录表Info> list = BLLFactory<物料ng替换记录表>.Instance.Find(where);
+                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,NG替换时间,物料生产批次号,设备ID,工序ID,工位号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,前治具生产批次号,替换后治具GUID,替换后治具RFID,替换后治具孔号,后治具生产批次号");
                 DataRow dr;
                 int j = 1;
                 for (int i = 0; i < list.Count; i++)
                 {
                     dr = dtNew.NewRow();
                     dr["序号"] = j++;
-                     dr["替换时间"] = list[i].替换时间;
-                     dr["生产批次号"] = list[i].生产批次号;
+                     dr["NG替换时间"] = list[i].Ng替换时间;
+                     dr["物料生产批次号"] = list[i].物料生产批次号;
+                     dr["设备ID"] = list[i].设备id;
+                     dr["工序ID"] = list[i].工序id;
+                     dr["工位号"] = list[i].工位号;
                      dr["物料GUID"] = list[i].物料guid;
                      dr["替换前治具GUID"] = list[i].替换前治具guid;
                      dr["替换前治具RFID"] = list[i].替换前治具rfid;
                      dr["替换前治具孔号"] = list[i].替换前治具孔号;
+                     dr["前治具生产批次号"] = list[i].前治具生产批次号;
                      dr["替换后治具GUID"] = list[i].替换后治具guid;
                      dr["替换后治具RFID"] = list[i].替换后治具rfid;
                      dr["替换后治具孔号"] = list[i].替换后治具孔号;
+                     dr["后治具生产批次号"] = list[i].后治具生产批次号;
                      dtNew.Rows.Add(dr);
                 }
 
@@ -370,15 +380,15 @@ namespace M12MiniMes.UI
             if (dlg == null)
             {
                 dlg = new FrmAdvanceSearch();
-                dlg.FieldTypeTable = BLLFactory<替换记录表>.Instance.GetFieldTypeList();
-                dlg.ColumnNameAlias = BLLFactory<替换记录表>.Instance.GetColumnNameAlias();                
-                 dlg.DisplayColumns = "替换时间,生产批次号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,替换后治具GUID,替换后治具RFID,替换后治具孔号";
+                dlg.FieldTypeTable = BLLFactory<物料ng替换记录表>.Instance.GetFieldTypeList();
+                dlg.ColumnNameAlias = BLLFactory<物料ng替换记录表>.Instance.GetColumnNameAlias();                
+                 dlg.DisplayColumns = "NG替换时间,物料生产批次号,设备ID,工序ID,工位号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,前治具生产批次号,替换后治具GUID,替换后治具RFID,替换后治具孔号,后治具生产批次号";
 
                 #region 下拉列表数据
 
                 //dlg.AddColumnListItem("UserType", Portal.gc.GetDictData("人员类型"));//字典列表
                 //dlg.AddColumnListItem("Sex", "男,女");//固定列表
-                //dlg.AddColumnListItem("Credit", BLLFactory<替换记录表>.Instance.GetFieldList("Credit"));//动态列表
+                //dlg.AddColumnListItem("Credit", BLLFactory<物料ng替换记录表>.Instance.GetFieldList("Credit"));//动态列表
 
                 #endregion
 
@@ -430,7 +440,7 @@ namespace M12MiniMes.UI
         private void winGridViewPager1_OnStartExport(object sender, EventArgs e)
         {
             string where = GetConditionSql();
-            this.winGridViewPager1.AllToExport = BLLFactory<替换记录表>.Instance.FindToDataTable(where);
+            this.winGridViewPager1.AllToExport = BLLFactory<物料ng替换记录表>.Instance.FindToDataTable(where);
          }
 
         /// <summary>
@@ -510,15 +520,20 @@ namespace M12MiniMes.UI
             if (condition == null)
             {
                 condition = new SearchCondition();
-                condition.AddDateCondition("替换时间", this.txt替换时间1, this.txt替换时间2); //日期类型
-                condition.AddCondition("生产批次号", this.txt生产批次号.Text.Trim(), SqlOperator.Like);
+                condition.AddDateCondition("NG替换时间", this.txtNg替换时间1, this.txtNg替换时间2); //日期类型
+                condition.AddCondition("物料生产批次号", this.txt物料生产批次号.Text.Trim(), SqlOperator.Like);
+                condition.AddNumericCondition("设备ID", this.txt设备id1, this.txt设备id2); //数值类型
+                condition.AddNumericCondition("工序ID", this.txt工序id1, this.txt工序id2); //数值类型
+                condition.AddCondition("工位号", this.txt工位号.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("物料GUID", this.txt物料guid.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("替换前治具GUID", this.txt替换前治具guid.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("替换前治具RFID", this.txt替换前治具rfid.Text.Trim(), SqlOperator.Like);
                 condition.AddNumericCondition("替换前治具孔号", this.txt替换前治具孔号1, this.txt替换前治具孔号2); //数值类型
+                condition.AddCondition("前治具生产批次号", this.txt前治具生产批次号.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("替换后治具GUID", this.txt替换后治具guid.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("替换后治具RFID", this.txt替换后治具rfid.Text.Trim(), SqlOperator.Like);
                 condition.AddNumericCondition("替换后治具孔号", this.txt替换后治具孔号1, this.txt替换后治具孔号2); //数值类型
+                condition.AddCondition("后治具生产批次号", this.txt后治具生产批次号.Text.Trim(), SqlOperator.Like);
             }
             string where = condition.BuildConditionSql().Replace("Where", "");
             return where;
@@ -546,32 +561,37 @@ namespace M12MiniMes.UI
             bool converted = false;
             DateTime dtDefault = Convert.ToDateTime("1900-01-01");
             DateTime dt;
-            替换记录表Info info = new 替换记录表Info();
+            物料ng替换记录表Info info = new 物料ng替换记录表Info();
  
-            string 替换时间 = GetRowData(dr, "替换时间");
-            if (!string.IsNullOrEmpty(替换时间))
+            string Ng替换时间 = GetRowData(dr, "NG替换时间");
+            if (!string.IsNullOrEmpty(Ng替换时间))
             {
-				converted = DateTime.TryParse(替换时间, out dt);
+				converted = DateTime.TryParse(Ng替换时间, out dt);
                 if (converted && dt > dtDefault)
                 {
-                    info.替换时间 = dt;
+                    info.Ng替换时间 = dt;
                 }
 			}
             else
             {
-                info.替换时间 = DateTime.Now;
+                info.Ng替换时间 = DateTime.Now;
             }
 
-              info.生产批次号 = GetRowData(dr, "生产批次号");
+              info.物料生产批次号 = GetRowData(dr, "物料生产批次号");
+              info.设备id = GetRowData(dr, "设备ID").ToInt32();
+              info.工序id = GetRowData(dr, "工序ID").ToInt32();
+              info.工位号 = GetRowData(dr, "工位号");
               info.物料guid = GetRowData(dr, "物料GUID");
               info.替换前治具guid = GetRowData(dr, "替换前治具GUID");
               info.替换前治具rfid = GetRowData(dr, "替换前治具RFID");
               info.替换前治具孔号 = GetRowData(dr, "替换前治具孔号").ToInt32();
+              info.前治具生产批次号 = GetRowData(dr, "前治具生产批次号");
               info.替换后治具guid = GetRowData(dr, "替换后治具GUID");
               info.替换后治具rfid = GetRowData(dr, "替换后治具RFID");
               info.替换后治具孔号 = GetRowData(dr, "替换后治具孔号").ToInt32();
+              info.后治具生产批次号 = GetRowData(dr, "后治具生产批次号");
   
-            success = BLLFactory<替换记录表>.Instance.Insert(info);
+            success = BLLFactory<物料ng替换记录表>.Instance.Insert(info);
              return success;
         }
 		

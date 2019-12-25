@@ -85,21 +85,17 @@ namespace M12MiniMes.UI
                   	txt日期104.SetDateTime(info.日期104);	
                   	txt日期102.SetDateTime(info.日期102);	
                       txt角度.Text = info.角度;
-                   	txt镜框投料数.Value = info.镜框投料数;
+                       txt系列号.Text = info.系列号;
                        txt隔圈模穴号113b.Text = info.隔圈模穴号113b;
                    	txt成型日113b.SetDateTime(info.成型日113b);	
                       txt隔圈模穴号112.Text = info.隔圈模穴号112;
                    	txt成型日112.SetDateTime(info.成型日112);	
-                  	txt隔圈投料数.Value = info.隔圈投料数;
-                       txtG3来料供应商.Text = info.G3来料供应商;
+                      txtG3来料供应商.Text = info.G3来料供应商;
                    	txtG3镜片来料日期.SetDateTime(info.G3镜片来料日期);	
                       txtG1来料供应商.Text = info.G1来料供应商;
                    	txtG1来料日期.SetDateTime(info.G1来料日期);	
-                  	txt镜片投料数.Value = info.镜片投料数;
-                   	txt指定加胶间隔数量.Value = info.指定加胶间隔数量;
-                       txt配对监控批次.Text = info.配对监控批次;
+                      txt配对监控批次.Text = info.配对监控批次;
                    	txt计划投入数.Value = info.计划投入数;
-                   	txt下线数.Value = info.下线数;
                        txt生产批次号.Text = info.生产批次号;
     
                 } 
@@ -108,7 +104,7 @@ namespace M12MiniMes.UI
             }
             else
             {
-                              
+                          
                 //this.btnOK.Enabled = HasFunction("生产批次生成表/Add");  
             }
             
@@ -138,21 +134,17 @@ namespace M12MiniMes.UI
             //this.txt日期104.Tag = "日期104";
             //this.txt日期102.Tag = "日期102";
             //this.txt角度.Tag = "角度";
-            //this.txt镜框投料数.Tag = "镜框投料数";
+            //this.txt系列号.Tag = "系列号";
             //this.txt隔圈模穴号113b.Tag = "隔圈模穴号113b";
             //this.txt成型日113b.Tag = "成型日113b";
             //this.txt隔圈模穴号112.Tag = "隔圈模穴号112";
             //this.txt成型日112.Tag = "成型日112";
-            //this.txt隔圈投料数.Tag = "隔圈投料数";
             //this.txtG3来料供应商.Tag = "G3来料供应商";
             //this.txtG3镜片来料日期.Tag = "G3镜片来料日期";
             //this.txtG1来料供应商.Tag = "G1来料供应商";
             //this.txtG1来料日期.Tag = "G1来料日期";
-            //this.txt镜片投料数.Tag = "镜片投料数";
-            //this.txt指定加胶间隔数量.Tag = "指定加胶间隔数量";
             //this.txt配对监控批次.Tag = "配对监控批次";
             //this.txt计划投入数.Tag = "计划投入数";
-            //this.txt下线数.Tag = "下线数";
             //this.txt生产批次号.Tag = "生产批次号";
             #endregion
 			
@@ -203,21 +195,17 @@ namespace M12MiniMes.UI
                info.日期104 = txt日期104.DateTime;
                info.日期102 = txt日期102.DateTime;
                info.角度 = txt角度.Text;
-                info.镜框投料数 = Convert.ToInt32(txt镜框投料数.Value);
+                info.系列号 = txt系列号.Text;
                 info.隔圈模穴号113b = txt隔圈模穴号113b.Text;
                 info.成型日113b = txt成型日113b.DateTime;
                info.隔圈模穴号112 = txt隔圈模穴号112.Text;
                 info.成型日112 = txt成型日112.DateTime;
-               info.隔圈投料数 = Convert.ToInt32(txt隔圈投料数.Value);
-                info.G3来料供应商 = txtG3来料供应商.Text;
+               info.G3来料供应商 = txtG3来料供应商.Text;
                 info.G3镜片来料日期 = txtG3镜片来料日期.DateTime;
                info.G1来料供应商 = txtG1来料供应商.Text;
                 info.G1来料日期 = txtG1来料日期.DateTime;
-               info.镜片投料数 = Convert.ToInt32(txt镜片投料数.Value);
-                info.指定加胶间隔数量 = Convert.ToInt32(txt指定加胶间隔数量.Value);
-                info.配对监控批次 = txt配对监控批次.Text;
+               info.配对监控批次 = txt配对监控批次.Text;
                 info.计划投入数 = Convert.ToInt32(txt计划投入数.Value);
-                info.下线数 = Convert.ToInt32(txt下线数.Value);
                 info.生产批次号 = txt生产批次号.Text;
             }
          
