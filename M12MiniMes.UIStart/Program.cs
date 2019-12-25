@@ -80,7 +80,7 @@ namespace M12MiniMes.UIStart
             return b;
         };
 
-        public override string InsertPath => $@"生产内存数据一览";
+        public override string InsertPath => $@"生产内存数据";
     }
 
     public class View设备工序表 : LazyAbstractView<FrmMaster设备工序表>

@@ -37,31 +37,31 @@
       <HintPath>D:\FastAutomation\App\HardWares\CommunicateCenter.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.1">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Data.v19.1">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Utils.v19.1">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Sparkline.v19.1.Core">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v19.1">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Printing.v19.1.Core">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Faster.Core">
       <HintPath>D:\FastAutomation\Faster.Core.dll</HintPath>
@@ -132,22 +132,22 @@
     <ProjectReference Include="..\M12MiniMes.Core\M12MiniMes.Core.csproj">
       <Project>{dcdbcad0-065d-41d6-ad37-868396364ff7}</Project>
       <Name>M12MiniMes.Core</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\M12MiniMes.UIDx\M12MiniMes.UIDx.csproj">
       <Project>{09c76e2c-f0ae-4dec-a30c-3fcc6a1ed0ec}</Project>
       <Name>M12MiniMes.UIDx</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Framework.BaseUIDx\WHC.Framework.BaseUIDx.csproj">
       <Project>{a22e5819-92fe-43d2-8da7-6a2b9c2d25db}</Project>
       <Name>WHC.Framework.BaseUIDx</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Framework.ControlUtil\WHC.Framework.ControlUtil.csproj">
       <Project>{D1D3850B-206F-49A9-BA9F-EAC0C39DE3DD}</Project>
       <Name>WHC.Framework.ControlUtil</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
