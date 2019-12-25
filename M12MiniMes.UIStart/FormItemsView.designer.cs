@@ -50,7 +50,7 @@
             // 
             this.gridView2.FixedLineWidth = 3;
             this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.IndicatorWidth = 40;
+            this.gridView2.IndicatorWidth = 60;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -59,7 +59,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
@@ -78,10 +78,10 @@
             gridLevelNode1.RelationName = "CurrentFixtureItems";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(0, 128);
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1258, 676);
+            this.gridControl1.Size = new System.Drawing.Size(1258, 804);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -99,7 +99,7 @@
             this.gridColumn_生产状态});
             this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.IndicatorWidth = 40;
+            this.gridView1.IndicatorWidth = 60;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
@@ -161,7 +161,7 @@
             // gridView3
             // 
             this.gridView3.GridControl = this.gridControl1;
-            this.gridView3.IndicatorWidth = 40;
+            this.gridView3.IndicatorWidth = 60;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView3.OptionsView.ShowGroupPanel = false;

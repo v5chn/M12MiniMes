@@ -28,6 +28,7 @@ namespace M12MiniMes.UIStart
             this.frmTcpServer.Dock = DockStyle.Fill;
             this.frmTcpServer.TopLevel = false;
             this.frmTcpServer.Parent = this.splitContainer1.Panel2;
+            this.frmTcpServer.Show();
         }
 
         private void FormServer_Load(object sender, EventArgs e)

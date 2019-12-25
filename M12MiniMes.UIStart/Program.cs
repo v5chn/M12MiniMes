@@ -65,7 +65,7 @@ namespace M12MiniMes.UIStart
         }
     }
 
-    public class SrartView : StartUserForm<FormItemsView>
+    public class ItemsView : LazyAbstractView<FormItemsView>
     {
         public override Func<IBar, bool> FuncInitialize => p =>
         {
@@ -79,6 +79,8 @@ namespace M12MiniMes.UIStart
             MessageBox.Show("ItemManager保存结果" + b.ToString());
             return b;
         };
+
+        public override string InsertPath => $@"生产内存数据一览";
     }
 
     public class View设备工序表 : LazyAbstractView<FrmMaster设备工序表>
