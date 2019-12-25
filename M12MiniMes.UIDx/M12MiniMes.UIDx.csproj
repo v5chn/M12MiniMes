@@ -105,8 +105,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\Item.cs" />
-    <Compile Include="DAL\ItemManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\FrmEdit物料ng替换记录表.cs">

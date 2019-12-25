@@ -1,18 +1,49 @@
-﻿using M12MiniMes.BLL;
+﻿using Faster.Core;
+using M12MiniMes.BLL;
 using M12MiniMes.Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WHC.Framework.ControlUtil;
 
-namespace M12MiniMes.UI.DAL
+namespace M12MiniMes.UIStart
 {
 
-    public static class ItemManager
+    [Serializable]
+    public class ItemManager
     {
-        public static List<生产批次生成表Info> Get当前在产批次列表()
+        private static ItemManager instance;
+        public static ItemManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ItemManager();
+                }
+                return instance;
+            }
+        }
+        public ItemManager()
+        {
+
+        }
+        public bool Save()
+        {
+            CommonSerializer.SaveObjAsBinaryFile(this, $@".\ItemManager.xml", out bool bSaveOK, out Exception ex);
+            return bSaveOK;
+        }
+
+        public bool Load()
+        {
+            instance = CommonSerializer.LoadObjFormBinaryFile<ItemManager>($@".\ItemManager.xml", out bool bLoadOK, out Exception ex);
+            return bLoadOK;
+        }
+
+        public List<生产批次生成表Info> Get当前在产批次列表()
         {
             string condition = $@" (镜框投料数 > 上线数)";
             List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);
@@ -22,21 +53,40 @@ namespace M12MiniMes.UI.DAL
         /// <summary>
         /// 内存储存当前在产的所有设备数据
         /// </summary>
-        public static List<MachineItem> AllCurrentMachineItems { get; private set; } = new List<MachineItem>();
+        public BindingList<MachineItem> AllCurrentMachineItems { get; set; } = new BindingList<MachineItem>();
 
         /// <summary>
         /// 内存储存当前在产的所有设备的所有治具的数据汇总
         /// </summary>
-        public static List<FixtureItem> AllCurrentFixtureItems
+        public List<FixtureItem> AllCurrentFixtureItems
         {
             get
             {
                 List<FixtureItem> items = new List<FixtureItem>();
-                AllCurrentMachineItems?.ForEach(p =>
+                foreach (var p in this.AllCurrentMachineItems)
                 {
                     if (p.CurrentFixtureItems != null && p.CurrentFixtureItems.Count > 0)
                     {
                         items = items.Union(p.CurrentFixtureItems).ToList();
+                    }
+                }
+                return items;
+            }
+        }
+
+        /// <summary>
+        /// 内存储存当前在产的所有设备的所有治具的所有物料数据汇总
+        /// </summary>
+        public List<MaterialItem> AllCurrentMaterialItems
+        {
+            get
+            {
+                List<MaterialItem> items = new List<MaterialItem>();
+                this.AllCurrentFixtureItems?.ForEach(p =>
+                {
+                    if (p.MaterialItems != null && p.MaterialItems.Count > 0)
+                    {
+                        items = items.Union(p.MaterialItems).ToList();
                     }
                 });
                 return items;
@@ -48,13 +98,13 @@ namespace M12MiniMes.UI.DAL
         /// </summary>
         /// <param name="RFID"></param>
         /// <returns></returns>
-        public static FixtureItem GetCurrentFixtureItemByRFID(string RFID)
+        public FixtureItem GetCurrentFixtureItemByRFID(string RFID)
         {
             if (string.IsNullOrEmpty(RFID))
             {
                 throw new Exception("RFID为空！");
             }
-            return AllCurrentFixtureItems?.FirstOrDefault(p => p.RFID.Equals(RFID));
+            return this.AllCurrentFixtureItems?.FirstOrDefault(p => p.RFID.Equals(RFID));
         }
 
         /// <summary>
@@ -62,9 +112,9 @@ namespace M12MiniMes.UI.DAL
         /// </summary>
         /// <param name="machineID"></param>
         /// <returns></returns>
-        public static MachineItem GetCurrentMachineItem(string machineID)
+        public MachineItem GetCurrentMachineItem(string machineID)
         {
-            MachineItem tempMachineItem = AllCurrentMachineItems?.FirstOrDefault(p => p.设备id.Equals(machineID));
+            MachineItem tempMachineItem = this.AllCurrentMachineItems?.FirstOrDefault(p => p.设备id.Equals(machineID));
             if (tempMachineItem == null)
             {
                 throw new Exception($@"ID为[{machineID}]的设备不存在！");
@@ -77,7 +127,7 @@ namespace M12MiniMes.UI.DAL
         /// </summary>
         /// <param name="RFID"></param>
         /// <returns></returns>
-        public static FixtureItem GetFixtureItem(string RFID, string machineID)
+        public FixtureItem GetFixtureItem(string RFID, string machineID)
         {
             MachineItem tempMachineItem = GetCurrentMachineItem(machineID);
             FixtureItem tempFixtureItem = GetCurrentFixtureItemByRFID(RFID);
@@ -101,7 +151,7 @@ namespace M12MiniMes.UI.DAL
         /// <param name="machineID"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public static bool XR(string RFID, string machineID, string data)
+        public bool XR(string RFID, string machineID, string data)
         {
             try
             {
@@ -145,7 +195,7 @@ namespace M12MiniMes.UI.DAL
         /// <param name="pc">生产批次号</param>
         /// <param name="type">投料类型 "镜框投料数"\"隔圈投料数"\"镜片投料数"</param>
         /// <returns></returns>
-        public static bool TL(string machineID, string pc, string type, string numbers)
+        public bool TL(string machineID, string pc, string type, string numbers)
         {
             try
             {
@@ -180,25 +230,6 @@ namespace M12MiniMes.UI.DAL
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-
-        /// <summary>
-        /// 内存储存当前在产的所有设备的所有治具的所有物料数据汇总
-        /// </summary>
-        public static List<MaterialItem> AllCurrentMaterialItems
-        {
-            get
-            {
-                List<MaterialItem> items = new List<MaterialItem>();
-                AllCurrentFixtureItems?.ForEach(p =>
-                {
-                    if (p.MaterialItems != null && p.MaterialItems.Count > 0)
-                    {
-                        items = items.Union(p.MaterialItems).ToList();
-                    }
-                });
-                return items;
             }
         }
     }
