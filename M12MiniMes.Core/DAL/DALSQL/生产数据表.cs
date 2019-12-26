@@ -54,8 +54,6 @@ namespace M12MiniMes.DALSQL
 			info.设备id = reader.GetInt32("设备ID");
 			info.设备名称 = reader.GetString("设备名称");
 			info.工位号 = reader.GetString("工位号");
-			info.工序id = reader.GetInt32("工序ID");
-			info.工序名称 = reader.GetString("工序名称");
 			info.工序数据 = reader.GetString("工序数据");
 			info.结果ok = reader.GetBoolean("结果OK");
 			
@@ -82,8 +80,6 @@ namespace M12MiniMes.DALSQL
  			hash.Add("设备ID", info.设备id);
  			hash.Add("设备名称", info.设备名称);
  			hash.Add("工位号", info.工位号);
- 			hash.Add("工序ID", info.工序id);
- 			hash.Add("工序名称", info.工序名称);
  			hash.Add("工序数据", info.工序数据);
  			hash.Add("结果OK", info.结果ok);
  				
@@ -109,8 +105,6 @@ namespace M12MiniMes.DALSQL
              dict.Add("设备id", "设备ID");
              dict.Add("设备名称", "设备名称");
              dict.Add("工位号", "工位号");
-             dict.Add("工序id", "工序ID");
-             dict.Add("工序名称", "工序名称");
              dict.Add("工序数据", "工序数据");
              dict.Add("结果ok", "结果OK");
              #endregion
@@ -124,7 +118,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "生产数据ID,生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序ID,工序名称,工序数据,结果OK";
+            return "生产数据ID,生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序数据,结果OK";
         }
     }
 }

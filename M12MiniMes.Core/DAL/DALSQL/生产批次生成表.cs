@@ -74,6 +74,7 @@ namespace M12MiniMes.DALSQL
 			info.计划投入数 = reader.GetInt32("计划投入数");
 			info.上线数 = reader.GetInt32("上线数");
 			info.下线数 = reader.GetInt32("下线数");
+			info.状态 = reader.GetString("状态");
 			info.生产批次号 = reader.GetString("生产批次号");
 			
 			return info;
@@ -119,6 +120,7 @@ namespace M12MiniMes.DALSQL
  			hash.Add("计划投入数", info.计划投入数);
  			hash.Add("上线数", info.上线数);
  			hash.Add("下线数", info.下线数);
+ 			hash.Add("状态", info.状态);
  			hash.Add("生产批次号", info.生产批次号);
  				
 			return hash;
@@ -163,6 +165,7 @@ namespace M12MiniMes.DALSQL
              dict.Add("计划投入数", "计划投入数");
              dict.Add("上线数", "上线数");
              dict.Add("下线数", "下线数");
+             dict.Add("状态", "状态");
              dict.Add("生产批次号", "生成出的生产批次号");
              #endregion
 
@@ -175,7 +178,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "生产批次ID,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,生产批次号";
+            return "生产批次ID,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,状态,生产批次号";
         }
     }
 }

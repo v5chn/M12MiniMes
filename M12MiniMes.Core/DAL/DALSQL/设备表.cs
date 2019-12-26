@@ -45,6 +45,7 @@ namespace M12MiniMes.DALSQL
 			
 			info.设备id = reader.GetInt32("设备ID");
 			info.设备名称 = reader.GetString("设备名称");
+			info.Ip = reader.GetString("IP");
 			info.位置序号 = reader.GetInt32("位置序号");
 			info.启用状态 = reader.GetBoolean("启用状态");
 			info.生产状态 = reader.GetString("生产状态");
@@ -63,6 +64,7 @@ namespace M12MiniMes.DALSQL
 			Hashtable hash = new Hashtable(); 
 			
  			hash.Add("设备名称", info.设备名称);
+ 			hash.Add("IP", info.Ip);
  			hash.Add("位置序号", info.位置序号);
  			hash.Add("启用状态", info.启用状态);
  			hash.Add("生产状态", info.生产状态);
@@ -80,6 +82,7 @@ namespace M12MiniMes.DALSQL
             #region 添加别名解析
             //dict.Add("ID", "编号");
              dict.Add("设备名称", "设备名称");
+             dict.Add("Ip", "IP");
              dict.Add("位置序号", "位置序号");
              dict.Add("启用状态", "启用状态");
              dict.Add("生产状态", "生产状态");
@@ -94,7 +97,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "设备ID,设备名称,位置序号,启用状态,生产状态";
+            return "设备ID,设备名称,IP,位置序号,启用状态,生产状态";
         }
     }
 }

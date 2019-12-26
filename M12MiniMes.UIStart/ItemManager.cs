@@ -29,7 +29,7 @@ namespace M12MiniMes.UIStart
         }
         public ItemManager()
         {
-
+            GetMachineItems();
         }
         public bool Save()
         {
@@ -45,9 +45,19 @@ namespace M12MiniMes.UIStart
 
         public List<生产批次生成表Info> Get当前在产批次列表()
         {
-            string condition = $@" (镜框投料数 > 上线数)";
+            string condition = $@" (计划投入数 > 0) and (计划投入数 > 上线数)";
             List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);
             return list;
+        }
+
+        /// <summary>
+        /// 从数据库设备表中查询
+        /// </summary>
+        public void GetMachineItems() 
+        {
+            List<设备表Info> list = BLLFactory<设备表>.Instance.GetAll();
+            var var = list.Select(p => p as MachineItem).ToList();
+            this.AllCurrentMachineItems = new BindingList<MachineItem>(var);
         }
 
         /// <summary>
@@ -162,12 +172,7 @@ namespace M12MiniMes.UIStart
                     var varm = GetCurrentMachineItem(machineID);
                     string machineName = varm.设备名称;
                     string condition = $@"设备ID = {machineID}";
-                    var varl = BLLFactory<设备工序表>.Instance.Find(condition);
-                    var vari = varl.First();
-                    if (vari == null)
-                    {
-                        throw new Exception("该设备无工序!");
-                    }
+
                     string[] datas = data.Split(',');
                     foreach (var item in datas)
                     {

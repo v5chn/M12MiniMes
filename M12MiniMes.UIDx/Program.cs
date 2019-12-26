@@ -11,7 +11,7 @@ namespace M12MiniMes.UI
     {
         public static void Main() 
         {
-            Application.Run(new FrmMaster设备工序表());
+            Application.Run(new Frm设备表());
         }
     }
 }

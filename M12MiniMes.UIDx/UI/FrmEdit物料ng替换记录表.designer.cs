@@ -38,7 +38,7 @@ namespace M12MiniMes.UI
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
              this.txt设备id = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt工序id = new DevExpress.XtraEditors.SpinEdit();
+             this.txt设备名称 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
              this.txt工位号 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -73,7 +73,7 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt设备id.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序id.Properties)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt设备名称.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt工位号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -133,7 +133,7 @@ namespace M12MiniMes.UI
             this.layoutControl1.Controls.Add(this.txtNg替换时间);
              this.layoutControl1.Controls.Add(this.txt物料生产批次号);
              this.layoutControl1.Controls.Add(this.txt设备id);
-             this.layoutControl1.Controls.Add(this.txt工序id);
+             this.layoutControl1.Controls.Add(this.txt设备名称);
              this.layoutControl1.Controls.Add(this.txt工位号);
              this.layoutControl1.Controls.Add(this.txt物料guid);
              this.layoutControl1.Controls.Add(this.txt替换前治具guid);
@@ -215,25 +215,18 @@ namespace M12MiniMes.UI
             this.layoutControlItem3.Text = "设备ID";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(96, 14);  
 
-             this.txt工序id.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txt工序id.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txt工序id.Location = new System.Drawing.Point(112, 84);
-            this.txt工序id.Name = "txt工序id";
-            this.txt工序id.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txt工序id.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txt工序id.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txt工序id.Size = new System.Drawing.Size(120, 20);
-            this.txt工序id.StyleController = this.layoutControl1;
-            this.txt工序id.TabIndex = 4;
+             // 
+            // txt设备名称
+            // 
+            this.txt设备名称.Location = new System.Drawing.Point(112, 84);
+            this.txt设备名称.Name = "txt设备名称";
+            this.txt设备名称.Size = new System.Drawing.Size(481, 20);
+            this.txt设备名称.StyleController = this.layoutControl1;
+            this.txt设备名称.TabIndex = 4;
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.txt工序id;
+            this.layoutControlItem4.Control = this.txt设备名称;
             this.layoutControlItem4.CustomizationFormText = "工序ID";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -499,7 +492,7 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt设备id.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序id.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt设备名称.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt工位号.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();            
@@ -535,7 +528,7 @@ namespace M12MiniMes.UI
         private DevExpress.XtraEditors.DateEdit txtNg替换时间;
           private DevExpress.XtraEditors.TextEdit txt物料生产批次号;
           private DevExpress.XtraEditors.SpinEdit txt设备id;
-          private DevExpress.XtraEditors.SpinEdit txt工序id;
+          private DevExpress.XtraEditors.TextEdit txt设备名称;
           private DevExpress.XtraEditors.TextEdit txt工位号;
           private DevExpress.XtraEditors.TextEdit txt物料guid;
           private DevExpress.XtraEditors.TextEdit txt替换前治具guid;

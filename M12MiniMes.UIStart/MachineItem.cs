@@ -61,12 +61,5 @@ namespace M12MiniMes.UIStart
             }
             return false;
         }
-
-        public List<设备工序表Info> Get设备工序列表()
-        {
-            string condition = $@" (设备id = {this.设备id})";
-            List<设备工序表Info> list = BLLFactory<设备工序表>.Instance.Find(condition);
-            return list;
-        }
     }
 }

@@ -18,7 +18,7 @@ namespace M12MiniMes.Entity
 	    public 设备表Info()
 		{
             this.设备id= 0;
-              this.位置序号= 0;
+               this.位置序号= 0;
              this.启用状态= false;
    
 		}
@@ -36,6 +36,12 @@ namespace M12MiniMes.Entity
         /// </summary>
 		[DataMember]
         public virtual string 设备名称 { get; set; }
+
+        /// <summary>
+        /// IP
+        /// </summary>
+		[DataMember]
+        public virtual string Ip { get; set; }
 
         /// <summary>
         /// 位置序号

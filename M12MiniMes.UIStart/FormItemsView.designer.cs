@@ -39,6 +39,7 @@
             this.gridColumn_位置序号 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_启用状态 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_生产状态 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn_IP地址 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -96,13 +97,13 @@
             this.gridColumn_设备名称,
             this.gridColumn_位置序号,
             this.gridColumn_启用状态,
-            this.gridColumn_生产状态});
+            this.gridColumn_生产状态,
+            this.gridColumn_IP地址});
             this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 60;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Classic;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView1_InvalidRowException);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
@@ -113,6 +114,7 @@
             this.gridColumn_设备ID.FieldName = "设备id";
             this.gridColumn_设备ID.MinWidth = 25;
             this.gridColumn_设备ID.Name = "gridColumn_设备ID";
+            this.gridColumn_设备ID.OptionsColumn.ReadOnly = true;
             this.gridColumn_设备ID.Visible = true;
             this.gridColumn_设备ID.VisibleIndex = 0;
             this.gridColumn_设备ID.Width = 94;
@@ -123,6 +125,7 @@
             this.gridColumn_设备名称.FieldName = "设备名称";
             this.gridColumn_设备名称.MinWidth = 25;
             this.gridColumn_设备名称.Name = "gridColumn_设备名称";
+            this.gridColumn_设备名称.OptionsColumn.ReadOnly = true;
             this.gridColumn_设备名称.Visible = true;
             this.gridColumn_设备名称.VisibleIndex = 1;
             this.gridColumn_设备名称.Width = 94;
@@ -133,6 +136,7 @@
             this.gridColumn_位置序号.FieldName = "位置序号";
             this.gridColumn_位置序号.MinWidth = 25;
             this.gridColumn_位置序号.Name = "gridColumn_位置序号";
+            this.gridColumn_位置序号.OptionsColumn.ReadOnly = true;
             this.gridColumn_位置序号.Visible = true;
             this.gridColumn_位置序号.VisibleIndex = 2;
             this.gridColumn_位置序号.Width = 94;
@@ -143,6 +147,7 @@
             this.gridColumn_启用状态.FieldName = "启用状态";
             this.gridColumn_启用状态.MinWidth = 25;
             this.gridColumn_启用状态.Name = "gridColumn_启用状态";
+            this.gridColumn_启用状态.OptionsColumn.ReadOnly = true;
             this.gridColumn_启用状态.Visible = true;
             this.gridColumn_启用状态.VisibleIndex = 3;
             this.gridColumn_启用状态.Width = 94;
@@ -153,9 +158,21 @@
             this.gridColumn_生产状态.FieldName = "生产状态";
             this.gridColumn_生产状态.MinWidth = 25;
             this.gridColumn_生产状态.Name = "gridColumn_生产状态";
+            this.gridColumn_生产状态.OptionsColumn.ReadOnly = true;
             this.gridColumn_生产状态.Visible = true;
             this.gridColumn_生产状态.VisibleIndex = 4;
             this.gridColumn_生产状态.Width = 94;
+            // 
+            // gridColumn_IP地址
+            // 
+            this.gridColumn_IP地址.Caption = "IP";
+            this.gridColumn_IP地址.FieldName = "Ip";
+            this.gridColumn_IP地址.MinWidth = 25;
+            this.gridColumn_IP地址.Name = "gridColumn_IP地址";
+            this.gridColumn_IP地址.OptionsColumn.ReadOnly = true;
+            this.gridColumn_IP地址.Visible = true;
+            this.gridColumn_IP地址.VisibleIndex = 5;
+            this.gridColumn_IP地址.Width = 94;
             // 
             // gridView3
             // 
@@ -196,5 +213,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_位置序号;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_启用状态;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_生产状态;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_IP地址;
     }
 }

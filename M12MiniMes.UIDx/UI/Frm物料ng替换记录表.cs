@@ -120,7 +120,7 @@ namespace M12MiniMes.UI
                 GridView gridView = this.winGridViewPager1.gridView1;
                 if (gridView != null)
                 {
-					//Ng替换记录id,Ng替换时间,物料生产批次号,设备id,工序id,工位号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,前治具生产批次号,替换后治具guid,替换后治具rfid,替换后治具孔号,后治具生产批次号
+					//Ng替换记录id,Ng替换时间,物料生产批次号,设备id,设备名称,工位号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,前治具生产批次号,替换后治具guid,替换后治具rfid,替换后治具孔号,后治具生产批次号
 					//gridView.SetGridColumWidth("Note", 200);
                 }
             }
@@ -227,7 +227,7 @@ namespace M12MiniMes.UI
             //displayColumns = string.IsNullOrEmpty(displayColumns) ? string.Join(",", permitDict.Keys) : displayColumns;
             //this.winGridViewPager1.DisplayColumns = displayColumns; 
 			
-			this.winGridViewPager1.DisplayColumns = "Ng替换记录id,Ng替换时间,物料生产批次号,设备id,工序id,工位号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,前治具生产批次号,替换后治具guid,替换后治具rfid,替换后治具孔号,后治具生产批次号";
+			this.winGridViewPager1.DisplayColumns = "Ng替换记录id,Ng替换时间,物料生产批次号,设备id,设备名称,工位号,物料guid,替换前治具guid,替换前治具rfid,替换前治具孔号,前治具生产批次号,替换后治具guid,替换后治具rfid,替换后治具孔号,后治具生产批次号";
             this.winGridViewPager1.ColumnNameAlias = BLLFactory<物料ng替换记录表>.Instance.GetColumnNameAlias();//字段列显示名称转义
 
             #region 添加别名解析
@@ -236,7 +236,7 @@ namespace M12MiniMes.UI
            //this.winGridViewPager1.AddColumnAlias("Ng替换时间", "NG替换时间");
            //this.winGridViewPager1.AddColumnAlias("物料生产批次号", "物料生产批次号");
            //this.winGridViewPager1.AddColumnAlias("设备id", "设备ID");
-           //this.winGridViewPager1.AddColumnAlias("工序id", "工序ID");
+           //this.winGridViewPager1.AddColumnAlias("设备名称", "工序ID");
            //this.winGridViewPager1.AddColumnAlias("工位号", "工位号");
            //this.winGridViewPager1.AddColumnAlias("物料guid", "物料GUID");
            //this.winGridViewPager1.AddColumnAlias("替换前治具guid", "替换前治具GUID");
@@ -333,7 +333,7 @@ namespace M12MiniMes.UI
                      dr["NG替换时间"] = list[i].Ng替换时间;
                      dr["物料生产批次号"] = list[i].物料生产批次号;
                      dr["设备ID"] = list[i].设备id;
-                     dr["工序ID"] = list[i].工序id;
+                     dr["工序ID"] = list[i].设备名称;
                      dr["工位号"] = list[i].工位号;
                      dr["物料GUID"] = list[i].物料guid;
                      dr["替换前治具GUID"] = list[i].替换前治具guid;
@@ -382,7 +382,7 @@ namespace M12MiniMes.UI
                 dlg = new FrmAdvanceSearch();
                 dlg.FieldTypeTable = BLLFactory<物料ng替换记录表>.Instance.GetFieldTypeList();
                 dlg.ColumnNameAlias = BLLFactory<物料ng替换记录表>.Instance.GetColumnNameAlias();                
-                 dlg.DisplayColumns = "NG替换时间,物料生产批次号,设备ID,工序ID,工位号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,前治具生产批次号,替换后治具GUID,替换后治具RFID,替换后治具孔号,后治具生产批次号";
+                 dlg.DisplayColumns = "NG替换时间,物料生产批次号,设备ID,设备名称,工位号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,前治具生产批次号,替换后治具GUID,替换后治具RFID,替换后治具孔号,后治具生产批次号";
 
                 #region 下拉列表数据
 
@@ -523,7 +523,7 @@ namespace M12MiniMes.UI
                 condition.AddDateCondition("NG替换时间", this.txtNg替换时间1, this.txtNg替换时间2); //日期类型
                 condition.AddCondition("物料生产批次号", this.txt物料生产批次号.Text.Trim(), SqlOperator.Like);
                 condition.AddNumericCondition("设备ID", this.txt设备id1, this.txt设备id2); //数值类型
-                condition.AddNumericCondition("工序ID", this.txt工序id1, this.txt工序id2); //数值类型
+                condition.AddCondition("设备名称", this.txt设备名称.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("工位号", this.txt工位号.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("物料GUID", this.txt物料guid.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("替换前治具GUID", this.txt替换前治具guid.Text.Trim(), SqlOperator.Like);
@@ -579,7 +579,7 @@ namespace M12MiniMes.UI
 
               info.物料生产批次号 = GetRowData(dr, "物料生产批次号");
               info.设备id = GetRowData(dr, "设备ID").ToInt32();
-              info.工序id = GetRowData(dr, "工序ID").ToInt32();
+              info.设备名称 = GetRowData(dr, "工序ID");
               info.工位号 = GetRowData(dr, "工位号");
               info.物料guid = GetRowData(dr, "物料GUID");
               info.替换前治具guid = GetRowData(dr, "替换前治具GUID");

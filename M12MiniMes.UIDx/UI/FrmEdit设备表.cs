@@ -20,16 +20,16 @@ using M12MiniMes.Entity;
 namespace M12MiniMes.UI
 {
     /// <summary>
-    /// 物料ng替换记录表
+    /// 设备表
     /// </summary>	
-    public partial class FrmEdit物料ng替换记录表 : BaseEditForm
+    public partial class FrmEdit设备表 : BaseEditForm
     {
     	/// <summary>
         /// 创建一个临时对象，方便在附件管理中获取存在的GUID
         /// </summary>
-    	private 物料ng替换记录表Info tempInfo = new 物料ng替换记录表Info();
+    	private 设备表Info tempInfo = new 设备表Info();
     	
-        public FrmEdit物料ng替换记录表()
+        public FrmEdit设备表()
         {
             InitializeComponent();
         }
@@ -66,34 +66,25 @@ namespace M12MiniMes.UI
             if (!string.IsNullOrEmpty(ID))
             {
                 #region 显示信息
-                物料ng替换记录表Info info = BLLFactory<物料ng替换记录表>.Instance.FindByID(ID);
+                设备表Info info = BLLFactory<设备表>.Instance.FindByID(ID);
                 if (info != null)
                 {
                 	tempInfo = info;//重新给临时对象赋值，使之指向存在的记录对象
                 	
-                	txtNg替换时间.SetDateTime(info.Ng替换时间);	
-                      txt物料生产批次号.Text = info.物料生产批次号;
-                   	txt设备id.Value = info.设备id;
-                       txt设备名称.Text = info.设备名称;
-                       txt工位号.Text = info.工位号;
-                       txt物料guid.Text = info.物料guid;
-                       txt替换前治具guid.Text = info.替换前治具guid;
-                       txt替换前治具rfid.Text = info.替换前治具rfid;
-                   	txt替换前治具孔号.Value = info.替换前治具孔号;
-                       txt前治具生产批次号.Text = info.前治具生产批次号;
-                       txt替换后治具guid.Text = info.替换后治具guid;
-                       txt替换后治具rfid.Text = info.替换后治具rfid;
-                   	txt替换后治具孔号.Value = info.替换后治具孔号;
-                       txt后治具生产批次号.Text = info.后治具生产批次号;
+                    txt设备名称.Text = info.设备名称;
+                       txtIp.Text = info.Ip;
+                   	txt位置序号.Value = info.位置序号;
+                   	txt启用状态.Text = info.启用状态.ToString();
+                       txt生产状态.Text = info.生产状态;
     
                 } 
                 #endregion
-                //this.btnOK.Enabled = HasFunction("物料ng替换记录表/Edit");             
+                //this.btnOK.Enabled = HasFunction("设备表/Edit");             
             }
             else
             {
-              
-                //this.btnOK.Enabled = HasFunction("物料ng替换记录表/Add");  
+     
+                //this.btnOK.Enabled = HasFunction("设备表/Add");  
             }
             
             //tempInfo在对象存在则为指定对象，新建则是全新的对象，但有一些初始化的GUID用于附件上传
@@ -108,46 +99,37 @@ namespace M12MiniMes.UI
         private void SetPermit()
         {
             #region 设置控件和字段的对应关系
-            //this.txtNg替换时间.Tag = "Ng替换时间";
-            //this.txt物料生产批次号.Tag = "物料生产批次号";
-            //this.txt设备id.Tag = "设备id";
             //this.txt设备名称.Tag = "设备名称";
-            //this.txt工位号.Tag = "工位号";
-            //this.txt物料guid.Tag = "物料guid";
-            //this.txt替换前治具guid.Tag = "替换前治具guid";
-            //this.txt替换前治具rfid.Tag = "替换前治具rfid";
-            //this.txt替换前治具孔号.Tag = "替换前治具孔号";
-            //this.txt前治具生产批次号.Tag = "前治具生产批次号";
-            //this.txt替换后治具guid.Tag = "替换后治具guid";
-            //this.txt替换后治具rfid.Tag = "替换后治具rfid";
-            //this.txt替换后治具孔号.Tag = "替换后治具孔号";
-            //this.txt后治具生产批次号.Tag = "后治具生产批次号";
+            //this.txtIp.Tag = "Ip";
+            //this.txt位置序号.Tag = "位置序号";
+            //this.txt启用状态.Tag = "启用状态";
+            //this.txt生产状态.Tag = "生产状态";
             #endregion
 			
             //获取列表权限的列表
-            //var permitDict = BLLFactory<FieldPermit>.Instance.GetColumnsPermit(typeof(物料ng替换记录表Info).FullName, LoginUserInfo.ID.ToInt32());
+            //var permitDict = BLLFactory<FieldPermit>.Instance.GetColumnsPermit(typeof(设备表Info).FullName, LoginUserInfo.ID.ToInt32());
 			//this.SetControlPermit(permitDict, this.layoutControl1);
 		}
 
         /// <summary>
         /// 查看编辑附件信息
         /// </summary>
-        //private void SetAttachInfo(物料ng替换记录表Info info)
+        //private void SetAttachInfo(设备表Info info)
         //{
         //    this.attachmentGUID.AttachmentGUID = info.AttachGUID;
         //    this.attachmentGUID.userId = LoginUserInfo.Name;
 
-        //    string name = "物料ng替换记录表";
+        //    string name = "设备表";
         //    if (!string.IsNullOrEmpty(name))
         //    {
         //        string dir = string.Format("{0}", name);
-        //        this.attachmentGUID.Init(dir, info.Ng替换记录id, LoginUserInfo.Name);
+        //        this.attachmentGUID.Init(dir, info.设备id, LoginUserInfo.Name);
         //    }
         //}
 
         public override void ClearScreen()
         {
-            this.tempInfo = new 物料ng替换记录表Info();
+            this.tempInfo = new 设备表Info();
             base.ClearScreen();
         }
 
@@ -155,22 +137,13 @@ namespace M12MiniMes.UI
         /// 编辑或者保存状态下取值函数
         /// </summary>
         /// <param name="info"></param>
-        private void SetInfo(物料ng替换记录表Info info)
+        private void SetInfo(设备表Info info)
         {
-            info.Ng替换时间 = txtNg替换时间.DateTime;
-               info.物料生产批次号 = txt物料生产批次号.Text;
-                info.设备id = Convert.ToInt32(txt设备id.Value);
-                info.设备名称 = txt设备名称.Text;
-                info.工位号 = txt工位号.Text;
-                info.物料guid = txt物料guid.Text;
-                info.替换前治具guid = txt替换前治具guid.Text;
-                info.替换前治具rfid = txt替换前治具rfid.Text;
-                info.替换前治具孔号 = Convert.ToInt32(txt替换前治具孔号.Value);
-                info.前治具生产批次号 = txt前治具生产批次号.Text;
-                info.替换后治具guid = txt替换后治具guid.Text;
-                info.替换后治具rfid = txt替换后治具rfid.Text;
-                info.替换后治具孔号 = Convert.ToInt32(txt替换后治具孔号.Value);
-                info.后治具生产批次号 = txt后治具生产批次号.Text;
+            info.设备名称 = txt设备名称.Text;
+                info.Ip = txtIp.Text;
+                info.位置序号 = Convert.ToInt32(txt位置序号.Value);
+                info.启用状态 = txt启用状态.Text.ToBoolean();
+                info.生产状态 = txt生产状态.Text;
             }
          
         /// <summary>
@@ -179,14 +152,14 @@ namespace M12MiniMes.UI
         /// <returns></returns>
         public override bool SaveAddNew()
         {
-            物料ng替换记录表Info info = tempInfo;//必须使用存在的局部变量，因为部分信息可能被附件使用
+            设备表Info info = tempInfo;//必须使用存在的局部变量，因为部分信息可能被附件使用
             SetInfo(info);
 
             try
             {
                 #region 新增数据
 
-                bool succeed = BLLFactory<物料ng替换记录表>.Instance.Insert(info);
+                bool succeed = BLLFactory<设备表>.Instance.Insert(info);
                 if (succeed)
                 {
                     //可添加其他关联操作
@@ -210,7 +183,7 @@ namespace M12MiniMes.UI
         public override bool SaveUpdated()
         {
 
-            物料ng替换记录表Info info = BLLFactory<物料ng替换记录表>.Instance.FindByID(ID);
+            设备表Info info = BLLFactory<设备表>.Instance.FindByID(ID);
             if (info != null)
             {
                 SetInfo(info);
@@ -218,7 +191,7 @@ namespace M12MiniMes.UI
                 try
                 {
                     #region 更新数据
-                    bool succeed = BLLFactory<物料ng替换记录表>.Instance.Update(info, info.Ng替换记录id);
+                    bool succeed = BLLFactory<设备表>.Instance.Update(info, info.设备id);
                     if (succeed)
                     {
                         //可添加其他关联操作

@@ -81,8 +81,6 @@ namespace M12MiniMes.UI
                    	txt设备id.Value = info.设备id;
                        txt设备名称.Text = info.设备名称;
                        txt工位号.Text = info.工位号;
-                   	txt工序id.Value = info.工序id;
-                       txt工序名称.Text = info.工序名称;
                        txt工序数据.Text = info.工序数据;
                    	txt结果ok.Text = info.结果ok.ToString();
     
@@ -92,7 +90,7 @@ namespace M12MiniMes.UI
             }
             else
             {
-              
+            
                 //this.btnOK.Enabled = HasFunction("生产数据表/Add");  
             }
             
@@ -118,8 +116,6 @@ namespace M12MiniMes.UI
             //this.txt设备id.Tag = "设备id";
             //this.txt设备名称.Tag = "设备名称";
             //this.txt工位号.Tag = "工位号";
-            //this.txt工序id.Tag = "工序id";
-            //this.txt工序名称.Tag = "工序名称";
             //this.txt工序数据.Tag = "工序数据";
             //this.txt结果ok.Tag = "结果ok";
             #endregion
@@ -167,8 +163,6 @@ namespace M12MiniMes.UI
                 info.设备id = Convert.ToInt32(txt设备id.Value);
                 info.设备名称 = txt设备名称.Text;
                 info.工位号 = txt工位号.Text;
-                info.工序id = Convert.ToInt32(txt工序id.Value);
-                info.工序名称 = txt工序名称.Text;
                 info.工序数据 = txt工序数据.Text;
                 info.结果ok = txt结果ok.Text.ToBoolean();
             }

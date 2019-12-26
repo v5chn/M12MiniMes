@@ -106,18 +106,6 @@
     <Reference Include="WHC.DictionaryDx">
       <HintPath>..\Reference\WHC.DictionaryDx.dll</HintPath>
     </Reference>
-    <Reference Include="WHC.Framework.BaseUIDx">
-      <HintPath>..\Reference\WHC.Framework.BaseUIDx.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.Commons">
-      <HintPath>..\Reference\WHC.Framework.Commons.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.ControlUtil">
-      <HintPath>..\Reference\WHC.Framework.ControlUtil.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.Language">
-      <HintPath>..\Reference\WHC.Framework.Language.dll</HintPath>
-    </Reference>
     <Reference Include="WHC.Pager.Entity">
       <HintPath>..\Reference\WHC.Pager.Entity.dll</HintPath>
     </Reference>
@@ -132,6 +120,26 @@
     <ProjectReference Include="..\M12MiniMes.Core\M12MiniMes.Core.csproj">
       <Project>{dcdbcad0-065d-41d6-ad37-868396364ff7}</Project>
       <Name>M12MiniMes.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.BaseUIDx\WHC.Framework.BaseUIDx.csproj">
+      <Project>{a22e5819-92fe-43d2-8da7-6a2b9c2d25db}</Project>
+      <Name>WHC.Framework.BaseUIDx</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
+      <Project>{53ac195e-dcff-47c4-bc02-7e0241ff520c}</Project>
+      <Name>WHC.Framework.Commons</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.ControlUtil\WHC.Framework.ControlUtil.csproj">
+      <Project>{d1d3850b-206f-49a9-ba9f-eac0c39de3dd}</Project>
+      <Name>WHC.Framework.ControlUtil</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.Language\WHC.Framework.Language.csproj">
+      <Project>{4ff53539-d8ee-4ce8-81ba-e7af56a1f566}</Project>
+      <Name>WHC.Framework.Language</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -155,17 +163,11 @@
     <Compile Include="UI\FrmEdit生产数据表.designer.cs">
       <DependentUpon>FrmEdit生产数据表.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmEdit设备工序表.cs">
+    <Compile Include="UI\FrmEdit设备表.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FrmEdit设备工序表.designer.cs">
-      <DependentUpon>FrmEdit设备工序表.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FrmMaster设备工序表.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FrmMaster设备工序表.designer.cs">
-      <DependentUpon>FrmMaster设备工序表.cs</DependentUpon>
+    <Compile Include="UI\FrmEdit设备表.designer.cs">
+      <DependentUpon>FrmEdit设备表.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Frm物料ng替换记录表.cs">
       <SubType>Form</SubType>
@@ -185,12 +187,12 @@
     <Compile Include="UI\Frm生产数据表.designer.cs">
       <DependentUpon>Frm生产数据表.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\FrmEdit设备工序表.resx">
-      <DependentUpon>FrmEdit设备工序表.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmMaster设备工序表.resx">
-      <DependentUpon>FrmMaster设备工序表.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="UI\Frm设备表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Frm设备表.designer.cs">
+      <DependentUpon>Frm设备表.cs</DependentUpon>
+    </Compile>
     <None Include="app.config" />
     <None Include="Properties\licenses.licx" />
     <Compile Include="Other\ExtensionMethod.cs" />

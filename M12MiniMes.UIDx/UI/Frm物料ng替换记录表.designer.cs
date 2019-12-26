@@ -53,44 +53,42 @@ namespace M12MiniMes.UI
             this.txt设备id2 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
  
-            this.txt工序id1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt设备名称 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt工序id2 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt工位号 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt物料guid = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt替换前治具guid = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt替换前治具rfid = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt替换前治具孔号1 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txt替换前治具孔号2 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt前治具生产批次号 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt替换后治具guid = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt替换后治具rfid = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt替换后治具孔号1 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txt替换后治具孔号2 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
  
             this.txt后治具生产批次号 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
              
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 
@@ -112,44 +110,42 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.txt设备id2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
  
-            ((System.ComponentModel.ISupportInitialize)(this.txt工序id1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt设备名称.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt工序id2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt工位号.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt物料guid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具guid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具rfid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具孔号1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具孔号2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt前治具生产批次号.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具guid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具rfid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具孔号1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具孔号2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
  
             ((System.ComponentModel.ISupportInitialize)(this.txt后治具生产批次号.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
  
 
  
@@ -167,13 +163,13 @@ namespace M12MiniMes.UI
  
  
 
-	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  		 			
+	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  			
             this.SuspendLayout();
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(698, 140);
+            this.btnSearch.Location = new System.Drawing.Point(698, 115);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(69, 22);
             this.btnSearch.TabIndex = 14;
@@ -183,7 +179,7 @@ namespace M12MiniMes.UI
             // btnAddNew
             // 
             this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.Location = new System.Drawing.Point(773, 140);
+            this.btnAddNew.Location = new System.Drawing.Point(773, 115);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(69, 22);
             this.btnAddNew.TabIndex = 15;
@@ -193,7 +189,7 @@ namespace M12MiniMes.UI
             // btnImport
             // 
             this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImport.Location = new System.Drawing.Point(848, 140);
+            this.btnImport.Location = new System.Drawing.Point(848, 115);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(69, 22);
             this.btnImport.TabIndex = 15;
@@ -203,7 +199,7 @@ namespace M12MiniMes.UI
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Location = new System.Drawing.Point(923, 140);
+            this.btnExport.Location = new System.Drawing.Point(923, 115);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(69, 22);
             this.btnExport.TabIndex = 15;
@@ -223,12 +219,12 @@ namespace M12MiniMes.UI
             this.winGridViewPager1.AppendedMenu = null;
             this.winGridViewPager1.DataSource = null;
             this.winGridViewPager1.DisplayColumns = "";
-            this.winGridViewPager1.Location = new System.Drawing.Point(12, 170);
+            this.winGridViewPager1.Location = new System.Drawing.Point(12, 145);
             this.winGridViewPager1.MinimumSize = new System.Drawing.Size(540, 0);
             this.winGridViewPager1.Name = "winGridViewPager1";
             this.winGridViewPager1.PrintTitle = "";
             this.winGridViewPager1.ShowCheckBox = false;
-            this.winGridViewPager1.Size = new System.Drawing.Size(980, 505);
+            this.winGridViewPager1.Size = new System.Drawing.Size(980, 530);
             this.winGridViewPager1.TabIndex = 11;
             // 
             // layoutControl1
@@ -239,7 +235,7 @@ namespace M12MiniMes.UI
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(70, 185, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(980, 128);
+            this.layoutControl1.Size = new System.Drawing.Size(980, 103);
             this.layoutControl1.TabIndex = 12;
             this.layoutControl1.Text = "layoutControl1";
 
@@ -255,8 +251,7 @@ namespace M12MiniMes.UI
             this.layoutControl1.Controls.Add(this.txt设备id2);
 
  
-            this.layoutControl1.Controls.Add(this.txt工序id1);
-            this.layoutControl1.Controls.Add(this.txt工序id2);
+            this.layoutControl1.Controls.Add(this.txt设备名称);
 
  
             this.layoutControl1.Controls.Add(this.txt工位号);
@@ -429,151 +424,150 @@ namespace M12MiniMes.UI
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.txt工序id1;
-            this.layoutControlItem6.CustomizationFormText = "工序ID1";
+            this.layoutControlItem6.Control = this.txt设备名称;
+            this.layoutControlItem6.CustomizationFormText = "工序ID";
             this.layoutControlItem6.Location = new System.Drawing.Point(890, 0);
-            this.layoutControlItem6.MaxSize = new System.Drawing.Size(100, 25);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(100, 25);
+            this.layoutControlItem6.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
             this.layoutControlItem6.Text = "工序ID";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt工序id
+            // txt设备名称
             // 
-            this.txt工序id1.Location = new System.Drawing.Point(954, 12);
-            this.txt工序id1.Name = "txt工序id1";
-            this.txt工序id1.Size = new System.Drawing.Size(80, 20);
-            this.txt工序id1.StyleController = this.layoutControl1;
-            this.txt工序id1.TabIndex = 6;
-			this.txt工序id1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt设备名称.Location = new System.Drawing.Point(954, 12);
+            this.txt设备名称.Name = "txt设备名称";
+            this.txt设备名称.Size = new System.Drawing.Size(122, 20);
+            this.txt设备名称.StyleController = this.layoutControl1;
+            this.txt设备名称.TabIndex = 6;
+
+
+ 
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.txt工序id2;
-            this.layoutControlItem7.CustomizationFormText = "工序ID2";
+            this.layoutControlItem7.Control = this.txt工位号;
+            this.layoutControlItem7.CustomizationFormText = "工位号";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem7.MaxSize = new System.Drawing.Size(100, 25);
+            this.layoutControlItem7.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(100, 25);
+            this.layoutControlItem7.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem7.Text = "工序ID";
+            this.layoutControlItem7.Text = "工位号";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt工序id
+            // txt工位号
             // 
-            this.txt工序id2.Location = new System.Drawing.Point(64, 37);
-            this.txt工序id2.Name = "txt工序id2";
-            this.txt工序id2.Size = new System.Drawing.Size(80, 20);
-            this.txt工序id2.StyleController = this.layoutControl1;
-            this.txt工序id2.TabIndex = 7;
-			this.txt工序id2.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt工位号.Location = new System.Drawing.Point(64, 37);
+            this.txt工位号.Name = "txt工位号";
+            this.txt工位号.Size = new System.Drawing.Size(122, 20);
+            this.txt工位号.StyleController = this.layoutControl1;
+            this.txt工位号.TabIndex = 7;
 
 
  
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.txt工位号;
-            this.layoutControlItem8.CustomizationFormText = "工位号";
+            this.layoutControlItem8.Control = this.txt物料guid;
+            this.layoutControlItem8.CustomizationFormText = "物料GUID";
             this.layoutControlItem8.Location = new System.Drawing.Point(178, 24);
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem8.Text = "工位号";
+            this.layoutControlItem8.Text = "物料GUID";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt工位号
+            // txt物料guid
             // 
-            this.txt工位号.Location = new System.Drawing.Point(242, 37);
-            this.txt工位号.Name = "txt工位号";
-            this.txt工位号.Size = new System.Drawing.Size(122, 20);
-            this.txt工位号.StyleController = this.layoutControl1;
-            this.txt工位号.TabIndex = 8;
+            this.txt物料guid.Location = new System.Drawing.Point(242, 37);
+            this.txt物料guid.Name = "txt物料guid";
+            this.txt物料guid.Size = new System.Drawing.Size(122, 20);
+            this.txt物料guid.StyleController = this.layoutControl1;
+            this.txt物料guid.TabIndex = 8;
 
 
  
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.txt物料guid;
-            this.layoutControlItem9.CustomizationFormText = "物料GUID";
+            this.layoutControlItem9.Control = this.txt替换前治具guid;
+            this.layoutControlItem9.CustomizationFormText = "替换前治具GUID";
             this.layoutControlItem9.Location = new System.Drawing.Point(356, 24);
             this.layoutControlItem9.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem9.Text = "物料GUID";
+            this.layoutControlItem9.Text = "替换前治具GUID";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt物料guid
+            // txt替换前治具guid
             // 
-            this.txt物料guid.Location = new System.Drawing.Point(420, 37);
-            this.txt物料guid.Name = "txt物料guid";
-            this.txt物料guid.Size = new System.Drawing.Size(122, 20);
-            this.txt物料guid.StyleController = this.layoutControl1;
-            this.txt物料guid.TabIndex = 9;
+            this.txt替换前治具guid.Location = new System.Drawing.Point(420, 37);
+            this.txt替换前治具guid.Name = "txt替换前治具guid";
+            this.txt替换前治具guid.Size = new System.Drawing.Size(122, 20);
+            this.txt替换前治具guid.StyleController = this.layoutControl1;
+            this.txt替换前治具guid.TabIndex = 9;
 
 
  
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.txt替换前治具guid;
-            this.layoutControlItem10.CustomizationFormText = "替换前治具GUID";
+            this.layoutControlItem10.Control = this.txt替换前治具rfid;
+            this.layoutControlItem10.CustomizationFormText = "替换前治具RFID";
             this.layoutControlItem10.Location = new System.Drawing.Point(534, 24);
             this.layoutControlItem10.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem10.Text = "替换前治具GUID";
+            this.layoutControlItem10.Text = "替换前治具RFID";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt替换前治具guid
+            // txt替换前治具rfid
             // 
-            this.txt替换前治具guid.Location = new System.Drawing.Point(598, 37);
-            this.txt替换前治具guid.Name = "txt替换前治具guid";
-            this.txt替换前治具guid.Size = new System.Drawing.Size(122, 20);
-            this.txt替换前治具guid.StyleController = this.layoutControl1;
-            this.txt替换前治具guid.TabIndex = 10;
+            this.txt替换前治具rfid.Location = new System.Drawing.Point(598, 37);
+            this.txt替换前治具rfid.Name = "txt替换前治具rfid";
+            this.txt替换前治具rfid.Size = new System.Drawing.Size(122, 20);
+            this.txt替换前治具rfid.StyleController = this.layoutControl1;
+            this.txt替换前治具rfid.TabIndex = 10;
 
 
  
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.txt替换前治具rfid;
-            this.layoutControlItem11.CustomizationFormText = "替换前治具RFID";
+            this.layoutControlItem11.Control = this.txt替换前治具孔号1;
+            this.layoutControlItem11.CustomizationFormText = "替换前治具孔号1";
             this.layoutControlItem11.Location = new System.Drawing.Point(712, 24);
-            this.layoutControlItem11.MaxSize = new System.Drawing.Size(150, 25);
+            this.layoutControlItem11.MaxSize = new System.Drawing.Size(100, 25);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(150, 25);
+            this.layoutControlItem11.Size = new System.Drawing.Size(100, 25);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem11.Text = "替换前治具RFID";
+            this.layoutControlItem11.Text = "替换前治具孔号";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt替换前治具rfid
+            // txt替换前治具孔号
             // 
-            this.txt替换前治具rfid.Location = new System.Drawing.Point(776, 37);
-            this.txt替换前治具rfid.Name = "txt替换前治具rfid";
-            this.txt替换前治具rfid.Size = new System.Drawing.Size(122, 20);
-            this.txt替换前治具rfid.StyleController = this.layoutControl1;
-            this.txt替换前治具rfid.TabIndex = 11;
-
-
- 
+            this.txt替换前治具孔号1.Location = new System.Drawing.Point(776, 37);
+            this.txt替换前治具孔号1.Name = "txt替换前治具孔号1";
+            this.txt替换前治具孔号1.Size = new System.Drawing.Size(80, 20);
+            this.txt替换前治具孔号1.StyleController = this.layoutControl1;
+            this.txt替换前治具孔号1.TabIndex = 11;
+			this.txt替换前治具孔号1.ImeMode = System.Windows.Forms.ImeMode.Off;
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.txt替换前治具孔号1;
-            this.layoutControlItem12.CustomizationFormText = "替换前治具孔号1";
+            this.layoutControlItem12.Control = this.txt替换前治具孔号2;
+            this.layoutControlItem12.CustomizationFormText = "替换前治具孔号2";
             this.layoutControlItem12.Location = new System.Drawing.Point(890, 24);
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(100, 25);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(80, 25);
@@ -585,114 +579,114 @@ namespace M12MiniMes.UI
             // 
             // txt替换前治具孔号
             // 
-            this.txt替换前治具孔号1.Location = new System.Drawing.Point(954, 37);
-            this.txt替换前治具孔号1.Name = "txt替换前治具孔号1";
-            this.txt替换前治具孔号1.Size = new System.Drawing.Size(80, 20);
-            this.txt替换前治具孔号1.StyleController = this.layoutControl1;
-            this.txt替换前治具孔号1.TabIndex = 12;
-			this.txt替换前治具孔号1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.txt替换前治具孔号2;
-            this.layoutControlItem13.CustomizationFormText = "替换前治具孔号2";
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem13.MaxSize = new System.Drawing.Size(100, 25);
-            this.layoutControlItem13.MinSize = new System.Drawing.Size(80, 25);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(100, 25);
-            this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem13.Text = "替换前治具孔号";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(48, 14); 
-            // 
-            // txt替换前治具孔号
-            // 
-            this.txt替换前治具孔号2.Location = new System.Drawing.Point(64, 62);
+            this.txt替换前治具孔号2.Location = new System.Drawing.Point(954, 37);
             this.txt替换前治具孔号2.Name = "txt替换前治具孔号2";
             this.txt替换前治具孔号2.Size = new System.Drawing.Size(80, 20);
             this.txt替换前治具孔号2.StyleController = this.layoutControl1;
-            this.txt替换前治具孔号2.TabIndex = 13;
+            this.txt替换前治具孔号2.TabIndex = 12;
 			this.txt替换前治具孔号2.ImeMode = System.Windows.Forms.ImeMode.Off;
+
+
+ 
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.txt前治具生产批次号;
+            this.layoutControlItem13.CustomizationFormText = "前治具生产批次号";
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem13.MaxSize = new System.Drawing.Size(150, 25);
+            this.layoutControlItem13.MinSize = new System.Drawing.Size(80, 25);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(150, 25);
+            this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
+            this.layoutControlItem13.Text = "前治具生产批次号";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(48, 14); 
+            // 
+            // txt前治具生产批次号
+            // 
+            this.txt前治具生产批次号.Location = new System.Drawing.Point(64, 62);
+            this.txt前治具生产批次号.Name = "txt前治具生产批次号";
+            this.txt前治具生产批次号.Size = new System.Drawing.Size(122, 20);
+            this.txt前治具生产批次号.StyleController = this.layoutControl1;
+            this.txt前治具生产批次号.TabIndex = 13;
 
 
  
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.txt前治具生产批次号;
-            this.layoutControlItem14.CustomizationFormText = "前治具生产批次号";
+            this.layoutControlItem14.Control = this.txt替换后治具guid;
+            this.layoutControlItem14.CustomizationFormText = "替换后治具GUID";
             this.layoutControlItem14.Location = new System.Drawing.Point(178, 48);
             this.layoutControlItem14.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem14.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem14.Text = "前治具生产批次号";
+            this.layoutControlItem14.Text = "替换后治具GUID";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt前治具生产批次号
+            // txt替换后治具guid
             // 
-            this.txt前治具生产批次号.Location = new System.Drawing.Point(242, 62);
-            this.txt前治具生产批次号.Name = "txt前治具生产批次号";
-            this.txt前治具生产批次号.Size = new System.Drawing.Size(122, 20);
-            this.txt前治具生产批次号.StyleController = this.layoutControl1;
-            this.txt前治具生产批次号.TabIndex = 14;
+            this.txt替换后治具guid.Location = new System.Drawing.Point(242, 62);
+            this.txt替换后治具guid.Name = "txt替换后治具guid";
+            this.txt替换后治具guid.Size = new System.Drawing.Size(122, 20);
+            this.txt替换后治具guid.StyleController = this.layoutControl1;
+            this.txt替换后治具guid.TabIndex = 14;
 
 
  
             // 
             // layoutControlItem15
             // 
-            this.layoutControlItem15.Control = this.txt替换后治具guid;
-            this.layoutControlItem15.CustomizationFormText = "替换后治具GUID";
+            this.layoutControlItem15.Control = this.txt替换后治具rfid;
+            this.layoutControlItem15.CustomizationFormText = "替换后治具RFID";
             this.layoutControlItem15.Location = new System.Drawing.Point(356, 48);
             this.layoutControlItem15.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem15.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem15.Text = "替换后治具GUID";
+            this.layoutControlItem15.Text = "替换后治具RFID";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt替换后治具guid
+            // txt替换后治具rfid
             // 
-            this.txt替换后治具guid.Location = new System.Drawing.Point(420, 62);
-            this.txt替换后治具guid.Name = "txt替换后治具guid";
-            this.txt替换后治具guid.Size = new System.Drawing.Size(122, 20);
-            this.txt替换后治具guid.StyleController = this.layoutControl1;
-            this.txt替换后治具guid.TabIndex = 15;
+            this.txt替换后治具rfid.Location = new System.Drawing.Point(420, 62);
+            this.txt替换后治具rfid.Name = "txt替换后治具rfid";
+            this.txt替换后治具rfid.Size = new System.Drawing.Size(122, 20);
+            this.txt替换后治具rfid.StyleController = this.layoutControl1;
+            this.txt替换后治具rfid.TabIndex = 15;
 
 
  
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.txt替换后治具rfid;
-            this.layoutControlItem16.CustomizationFormText = "替换后治具RFID";
+            this.layoutControlItem16.Control = this.txt替换后治具孔号1;
+            this.layoutControlItem16.CustomizationFormText = "替换后治具孔号1";
             this.layoutControlItem16.Location = new System.Drawing.Point(534, 48);
-            this.layoutControlItem16.MaxSize = new System.Drawing.Size(150, 25);
+            this.layoutControlItem16.MaxSize = new System.Drawing.Size(100, 25);
             this.layoutControlItem16.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(150, 25);
+            this.layoutControlItem16.Size = new System.Drawing.Size(100, 25);
             this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem16.Text = "替换后治具RFID";
+            this.layoutControlItem16.Text = "替换后治具孔号";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(48, 14); 
             // 
-            // txt替换后治具rfid
+            // txt替换后治具孔号
             // 
-            this.txt替换后治具rfid.Location = new System.Drawing.Point(598, 62);
-            this.txt替换后治具rfid.Name = "txt替换后治具rfid";
-            this.txt替换后治具rfid.Size = new System.Drawing.Size(122, 20);
-            this.txt替换后治具rfid.StyleController = this.layoutControl1;
-            this.txt替换后治具rfid.TabIndex = 16;
-
-
- 
+            this.txt替换后治具孔号1.Location = new System.Drawing.Point(598, 62);
+            this.txt替换后治具孔号1.Name = "txt替换后治具孔号1";
+            this.txt替换后治具孔号1.Size = new System.Drawing.Size(80, 20);
+            this.txt替换后治具孔号1.StyleController = this.layoutControl1;
+            this.txt替换后治具孔号1.TabIndex = 16;
+			this.txt替换后治具孔号1.ImeMode = System.Windows.Forms.ImeMode.Off;
             // 
             // layoutControlItem17
             // 
-            this.layoutControlItem17.Control = this.txt替换后治具孔号1;
-            this.layoutControlItem17.CustomizationFormText = "替换后治具孔号1";
+            this.layoutControlItem17.Control = this.txt替换后治具孔号2;
+            this.layoutControlItem17.CustomizationFormText = "替换后治具孔号2";
             this.layoutControlItem17.Location = new System.Drawing.Point(712, 48);
             this.layoutControlItem17.MaxSize = new System.Drawing.Size(100, 25);
             this.layoutControlItem17.MinSize = new System.Drawing.Size(80, 25);
@@ -704,58 +698,36 @@ namespace M12MiniMes.UI
             // 
             // txt替换后治具孔号
             // 
-            this.txt替换后治具孔号1.Location = new System.Drawing.Point(776, 62);
-            this.txt替换后治具孔号1.Name = "txt替换后治具孔号1";
-            this.txt替换后治具孔号1.Size = new System.Drawing.Size(80, 20);
-            this.txt替换后治具孔号1.StyleController = this.layoutControl1;
-            this.txt替换后治具孔号1.TabIndex = 17;
-			this.txt替换后治具孔号1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.Control = this.txt替换后治具孔号2;
-            this.layoutControlItem18.CustomizationFormText = "替换后治具孔号2";
-            this.layoutControlItem18.Location = new System.Drawing.Point(890, 48);
-            this.layoutControlItem18.MaxSize = new System.Drawing.Size(100, 25);
-            this.layoutControlItem18.MinSize = new System.Drawing.Size(80, 25);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(100, 25);
-            this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem18.Text = "替换后治具孔号";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(48, 14); 
-            // 
-            // txt替换后治具孔号
-            // 
-            this.txt替换后治具孔号2.Location = new System.Drawing.Point(954, 62);
+            this.txt替换后治具孔号2.Location = new System.Drawing.Point(776, 62);
             this.txt替换后治具孔号2.Name = "txt替换后治具孔号2";
             this.txt替换后治具孔号2.Size = new System.Drawing.Size(80, 20);
             this.txt替换后治具孔号2.StyleController = this.layoutControl1;
-            this.txt替换后治具孔号2.TabIndex = 18;
+            this.txt替换后治具孔号2.TabIndex = 17;
 			this.txt替换后治具孔号2.ImeMode = System.Windows.Forms.ImeMode.Off;
 
 
  
             // 
-            // layoutControlItem19
+            // layoutControlItem18
             // 
-            this.layoutControlItem19.Control = this.txt后治具生产批次号;
-            this.layoutControlItem19.CustomizationFormText = "后治具生产批次号";
-            this.layoutControlItem19.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem19.MaxSize = new System.Drawing.Size(150, 25);
-            this.layoutControlItem19.MinSize = new System.Drawing.Size(80, 25);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(150, 25);
-            this.layoutControlItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem19.Text = "后治具生产批次号";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(48, 14); 
+            this.layoutControlItem18.Control = this.txt后治具生产批次号;
+            this.layoutControlItem18.CustomizationFormText = "后治具生产批次号";
+            this.layoutControlItem18.Location = new System.Drawing.Point(890, 48);
+            this.layoutControlItem18.MaxSize = new System.Drawing.Size(150, 25);
+            this.layoutControlItem18.MinSize = new System.Drawing.Size(80, 25);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(150, 25);
+            this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
+            this.layoutControlItem18.Text = "后治具生产批次号";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(48, 14); 
             // 
             // txt后治具生产批次号
             // 
-            this.txt后治具生产批次号.Location = new System.Drawing.Point(64, 87);
+            this.txt后治具生产批次号.Location = new System.Drawing.Point(954, 62);
             this.txt后治具生产批次号.Name = "txt后治具生产批次号";
             this.txt后治具生产批次号.Size = new System.Drawing.Size(122, 20);
             this.txt后治具生产批次号.StyleController = this.layoutControl1;
-            this.txt后治具生产批次号.TabIndex = 19;
+            this.txt后治具生产批次号.TabIndex = 18;
 
 
  
@@ -775,7 +747,8 @@ namespace M12MiniMes.UI
 				       ,this.layoutControlItem5
 			 
 					       ,this.layoutControlItem6
-				       ,this.layoutControlItem7
+			 
+					       ,this.layoutControlItem7
 			 
 					       ,this.layoutControlItem8
 			 
@@ -784,20 +757,18 @@ namespace M12MiniMes.UI
 					       ,this.layoutControlItem10
 			 
 					       ,this.layoutControlItem11
+				       ,this.layoutControlItem12
 			 
-					       ,this.layoutControlItem12
-				       ,this.layoutControlItem13
+					       ,this.layoutControlItem13
 			 
 					       ,this.layoutControlItem14
 			 
 					       ,this.layoutControlItem15
 			 
 					       ,this.layoutControlItem16
+				       ,this.layoutControlItem17
 			 
-					       ,this.layoutControlItem17
-				       ,this.layoutControlItem18
-			 
-					       ,this.layoutControlItem19
+					       ,this.layoutControlItem18
 			        });
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -835,34 +806,32 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit(); 
             ((System.ComponentModel.ISupportInitialize)(this.txt设备id2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit(); 
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序id1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit(); 
-            ((System.ComponentModel.ISupportInitialize)(this.txt工序id2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit(); 
+             ((System.ComponentModel.ISupportInitialize)(this.txt设备名称.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt工位号.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt物料guid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具guid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具rfid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具孔号1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit(); 
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit(); 
             ((System.ComponentModel.ISupportInitialize)(this.txt替换前治具孔号2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit(); 
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit(); 
              ((System.ComponentModel.ISupportInitialize)(this.txt前治具生产批次号.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具guid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具rfid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具孔号1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit(); 
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit(); 
             ((System.ComponentModel.ISupportInitialize)(this.txt替换后治具孔号2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit(); 
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit(); 
              ((System.ComponentModel.ISupportInitialize)(this.txt后治具生产批次号.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();            
  
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -890,8 +859,7 @@ namespace M12MiniMes.UI
         private DevExpress.XtraEditors.TextEdit txt设备id1;  
         private DevExpress.XtraEditors.TextEdit txt设备id2;  
  
-        private DevExpress.XtraEditors.TextEdit txt工序id1;  
-        private DevExpress.XtraEditors.TextEdit txt工序id2;  
+        private DevExpress.XtraEditors.TextEdit txt设备名称; 
  
         private DevExpress.XtraEditors.TextEdit txt工位号; 
  
@@ -921,19 +889,18 @@ namespace M12MiniMes.UI
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;    
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;  
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;    
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;  
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;    
-         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;    
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;  
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;  
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;    
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;    
-         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;    
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;  
-         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;    
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;  
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;    
  
     }
 }

@@ -47,7 +47,7 @@ namespace M12MiniMes.DALSQL
 			info.Ng替换时间 = reader.GetDateTime("NG替换时间");
 			info.物料生产批次号 = reader.GetString("物料生产批次号");
 			info.设备id = reader.GetInt32("设备ID");
-			info.工序id = reader.GetInt32("工序ID");
+			info.设备名称 = reader.GetString("设备名称");
 			info.工位号 = reader.GetString("工位号");
 			info.物料guid = reader.GetString("物料GUID");
 			info.替换前治具guid = reader.GetString("替换前治具GUID");
@@ -75,7 +75,7 @@ namespace M12MiniMes.DALSQL
  			hash.Add("NG替换时间", info.Ng替换时间);
  			hash.Add("物料生产批次号", info.物料生产批次号);
  			hash.Add("设备ID", info.设备id);
- 			hash.Add("工序ID", info.工序id);
+ 			hash.Add("设备名称", info.设备名称);
  			hash.Add("工位号", info.工位号);
  			hash.Add("物料GUID", info.物料guid);
  			hash.Add("替换前治具GUID", info.替换前治具guid);
@@ -102,7 +102,7 @@ namespace M12MiniMes.DALSQL
              dict.Add("Ng替换时间", "NG替换时间");
              dict.Add("物料生产批次号", "物料生产批次号");
              dict.Add("设备id", "设备ID");
-             dict.Add("工序id", "工序ID");
+             dict.Add("设备名称", "工序ID");
              dict.Add("工位号", "工位号");
              dict.Add("物料guid", "物料GUID");
              dict.Add("替换前治具guid", "替换前治具GUID");
@@ -124,7 +124,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "NG替换记录ID,NG替换时间,物料生产批次号,设备ID,工序ID,工位号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,前治具生产批次号,替换后治具GUID,替换后治具RFID,替换后治具孔号,后治具生产批次号";
+            return "NG替换记录ID,NG替换时间,物料生产批次号,设备ID,设备名称,工位号,物料GUID,替换前治具GUID,替换前治具RFID,替换前治具孔号,前治具生产批次号,替换后治具GUID,替换后治具RFID,替换后治具孔号,后治具生产批次号";
         }
     }
 }

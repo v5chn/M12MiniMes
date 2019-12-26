@@ -20,8 +20,7 @@ namespace M12MiniMes.Entity
             this.生产数据id= 0;
                    this.治具孔号= 0;
              this.设备id= 0;
-               this.工序id= 0;
-               this.结果ok= false;
+                this.结果ok= false;
   
 		}
 
@@ -92,18 +91,6 @@ namespace M12MiniMes.Entity
         /// </summary>
 		[DataMember]
         public virtual string 工位号 { get; set; }
-
-        /// <summary>
-        /// 工序ID
-        /// </summary>
-		[DataMember]
-        public virtual int 工序id { get; set; }
-
-        /// <summary>
-        /// 工序名称
-        /// </summary>
-		[DataMember]
-        public virtual string 工序名称 { get; set; }
 
         /// <summary>
         /// 工序数据

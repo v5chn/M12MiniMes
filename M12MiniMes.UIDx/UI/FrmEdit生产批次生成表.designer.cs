@@ -62,28 +62,40 @@ namespace M12MiniMes.UI
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
              this.txt系列号 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt隔圈模穴号113b = new DevExpress.XtraEditors.TextEdit();
+             this.txt镜框投料数 = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt成型日113b = new DevExpress.XtraEditors.DateEdit();
+             this.txt隔圈模穴号113b = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt隔圈模穴号112 = new DevExpress.XtraEditors.TextEdit();
+             this.txt成型日113b = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt成型日112 = new DevExpress.XtraEditors.DateEdit();
+             this.txt隔圈模穴号112 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txtG3来料供应商 = new DevExpress.XtraEditors.TextEdit();
+             this.txt成型日112 = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txtG3镜片来料日期 = new DevExpress.XtraEditors.DateEdit();
+             this.txt隔圈投料数 = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txtG1来料供应商 = new DevExpress.XtraEditors.TextEdit();
+             this.txtG3来料供应商 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txtG1来料日期 = new DevExpress.XtraEditors.DateEdit();
+             this.txtG3镜片来料日期 = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt配对监控批次 = new DevExpress.XtraEditors.TextEdit();
+             this.txtG1来料供应商 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt计划投入数 = new DevExpress.XtraEditors.SpinEdit();
+             this.txtG1来料日期 = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt生产批次号 = new DevExpress.XtraEditors.TextEdit();
+             this.txt镜片投料数 = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+             this.txt配对监控批次 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+             this.txt计划投入数 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
+             this.txt上线数 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
+             this.txt下线数 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+             this.txt状态 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
+             this.txt生产批次号 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
              
             ((System.ComponentModel.ISupportInitialize)(this.picPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -125,32 +137,44 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt系列号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号113b.Properties)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt镜框投料数.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号113b.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt成型日113b.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt成型日113b.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号112.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号112.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt成型日112.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt成型日112.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txtG3来料供应商.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈投料数.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txtG3来料供应商.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txtG3镜片来料日期.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtG3镜片来料日期.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txtG1来料供应商.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txtG1来料日期.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtG1来料日期.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt配对监控批次.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt计划投入数.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt镜片投料数.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt配对监控批次.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt计划投入数.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt上线数.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt下线数.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt状态.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
              
             this.SuspendLayout();
             // 
@@ -201,16 +225,22 @@ namespace M12MiniMes.UI
              this.layoutControl1.Controls.Add(this.txt日期102);
              this.layoutControl1.Controls.Add(this.txt角度);
              this.layoutControl1.Controls.Add(this.txt系列号);
+             this.layoutControl1.Controls.Add(this.txt镜框投料数);
              this.layoutControl1.Controls.Add(this.txt隔圈模穴号113b);
              this.layoutControl1.Controls.Add(this.txt成型日113b);
              this.layoutControl1.Controls.Add(this.txt隔圈模穴号112);
              this.layoutControl1.Controls.Add(this.txt成型日112);
+             this.layoutControl1.Controls.Add(this.txt隔圈投料数);
              this.layoutControl1.Controls.Add(this.txtG3来料供应商);
              this.layoutControl1.Controls.Add(this.txtG3镜片来料日期);
              this.layoutControl1.Controls.Add(this.txtG1来料供应商);
              this.layoutControl1.Controls.Add(this.txtG1来料日期);
+             this.layoutControl1.Controls.Add(this.txt镜片投料数);
              this.layoutControl1.Controls.Add(this.txt配对监控批次);
              this.layoutControl1.Controls.Add(this.txt计划投入数);
+             this.layoutControl1.Controls.Add(this.txt上线数);
+             this.layoutControl1.Controls.Add(this.txt下线数);
+             this.layoutControl1.Controls.Add(this.txt状态);
              this.layoutControl1.Controls.Add(this.txt生产批次号);
  
             // 
@@ -528,31 +558,57 @@ namespace M12MiniMes.UI
             this.layoutControlItem15.Text = "系列号";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(96, 14);  
 
-             // 
-            // txt隔圈模穴号113b
-            // 
-            this.txt隔圈模穴号113b.Location = new System.Drawing.Point(112, 372);
-            this.txt隔圈模穴号113b.Name = "txt隔圈模穴号113b";
-            this.txt隔圈模穴号113b.Size = new System.Drawing.Size(481, 20);
-            this.txt隔圈模穴号113b.StyleController = this.layoutControl1;
-            this.txt隔圈模穴号113b.TabIndex = 16;
+             this.txt镜框投料数.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txt镜框投料数.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt镜框投料数.Location = new System.Drawing.Point(112, 372);
+            this.txt镜框投料数.Name = "txt镜框投料数";
+            this.txt镜框投料数.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txt镜框投料数.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txt镜框投料数.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txt镜框投料数.Size = new System.Drawing.Size(120, 20);
+            this.txt镜框投料数.StyleController = this.layoutControl1;
+            this.txt镜框投料数.TabIndex = 16;
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.txt隔圈模穴号113b;
-            this.layoutControlItem16.CustomizationFormText = "隔圈模穴号113B";
+            this.layoutControlItem16.Control = this.txt镜框投料数;
+            this.layoutControlItem16.CustomizationFormText = "镜框投料数";
             this.layoutControlItem16.Location = new System.Drawing.Point(0, 360);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem16.Text = "隔圈模穴号113B";
+            this.layoutControlItem16.Text = "镜框投料数";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(96, 14);  
+
+             // 
+            // txt隔圈模穴号113b
+            // 
+            this.txt隔圈模穴号113b.Location = new System.Drawing.Point(112, 396);
+            this.txt隔圈模穴号113b.Name = "txt隔圈模穴号113b";
+            this.txt隔圈模穴号113b.Size = new System.Drawing.Size(481, 20);
+            this.txt隔圈模穴号113b.StyleController = this.layoutControl1;
+            this.txt隔圈模穴号113b.TabIndex = 17;
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.txt隔圈模穴号113b;
+            this.layoutControlItem17.CustomizationFormText = "隔圈模穴号113B";
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 384);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem17.Text = "隔圈模穴号113B";
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txt成型日113b
             // 
             this.txt成型日113b.EditValue = null;
             this.txt成型日113b.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txt成型日113b.Location = new System.Drawing.Point(112, 396);
+            this.txt成型日113b.Location = new System.Drawing.Point(112, 420);
             this.txt成型日113b.Name = "txt成型日113b";
             this.txt成型日113b.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -560,43 +616,43 @@ namespace M12MiniMes.UI
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txt成型日113b.Size = new System.Drawing.Size(481, 20);
             this.txt成型日113b.StyleController = this.layoutControl1;
-            this.txt成型日113b.TabIndex = 17;
+            this.txt成型日113b.TabIndex = 18;
             // 
-            // layoutControlItem17
+            // layoutControlItem18
             // 
-            this.layoutControlItem17.Control = this.txt成型日113b;
-            this.layoutControlItem17.CustomizationFormText = "成型日113B";
-            this.layoutControlItem17.Location = new System.Drawing.Point(0, 384);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem17.Text = "成型日113B";
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem18.Control = this.txt成型日113b;
+            this.layoutControlItem18.CustomizationFormText = "成型日113B";
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 408);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem18.Text = "成型日113B";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txt隔圈模穴号112
             // 
-            this.txt隔圈模穴号112.Location = new System.Drawing.Point(112, 420);
+            this.txt隔圈模穴号112.Location = new System.Drawing.Point(112, 444);
             this.txt隔圈模穴号112.Name = "txt隔圈模穴号112";
             this.txt隔圈模穴号112.Size = new System.Drawing.Size(481, 20);
             this.txt隔圈模穴号112.StyleController = this.layoutControl1;
-            this.txt隔圈模穴号112.TabIndex = 18;
+            this.txt隔圈模穴号112.TabIndex = 19;
             // 
-            // layoutControlItem18
+            // layoutControlItem19
             // 
-            this.layoutControlItem18.Control = this.txt隔圈模穴号112;
-            this.layoutControlItem18.CustomizationFormText = "隔圈模穴号112";
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 408);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem18.Text = "隔圈模穴号112";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem19.Control = this.txt隔圈模穴号112;
+            this.layoutControlItem19.CustomizationFormText = "隔圈模穴号112";
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 432);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem19.Text = "隔圈模穴号112";
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txt成型日112
             // 
             this.txt成型日112.EditValue = null;
             this.txt成型日112.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txt成型日112.Location = new System.Drawing.Point(112, 444);
+            this.txt成型日112.Location = new System.Drawing.Point(112, 468);
             this.txt成型日112.Name = "txt成型日112";
             this.txt成型日112.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -604,43 +660,69 @@ namespace M12MiniMes.UI
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txt成型日112.Size = new System.Drawing.Size(481, 20);
             this.txt成型日112.StyleController = this.layoutControl1;
-            this.txt成型日112.TabIndex = 19;
+            this.txt成型日112.TabIndex = 20;
             // 
-            // layoutControlItem19
+            // layoutControlItem20
             // 
-            this.layoutControlItem19.Control = this.txt成型日112;
-            this.layoutControlItem19.CustomizationFormText = "成型日112";
-            this.layoutControlItem19.Location = new System.Drawing.Point(0, 432);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem19.Text = "成型日112";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem20.Control = this.txt成型日112;
+            this.layoutControlItem20.CustomizationFormText = "成型日112";
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 456);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem20.Text = "成型日112";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(96, 14);  
+
+             this.txt隔圈投料数.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txt隔圈投料数.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt隔圈投料数.Location = new System.Drawing.Point(112, 492);
+            this.txt隔圈投料数.Name = "txt隔圈投料数";
+            this.txt隔圈投料数.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txt隔圈投料数.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txt隔圈投料数.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txt隔圈投料数.Size = new System.Drawing.Size(120, 20);
+            this.txt隔圈投料数.StyleController = this.layoutControl1;
+            this.txt隔圈投料数.TabIndex = 21;
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.txt隔圈投料数;
+            this.layoutControlItem21.CustomizationFormText = "隔圈投料数";
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 480);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem21.Text = "隔圈投料数";
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txtG3来料供应商
             // 
-            this.txtG3来料供应商.Location = new System.Drawing.Point(112, 468);
+            this.txtG3来料供应商.Location = new System.Drawing.Point(112, 516);
             this.txtG3来料供应商.Name = "txtG3来料供应商";
             this.txtG3来料供应商.Size = new System.Drawing.Size(481, 20);
             this.txtG3来料供应商.StyleController = this.layoutControl1;
-            this.txtG3来料供应商.TabIndex = 20;
+            this.txtG3来料供应商.TabIndex = 22;
             // 
-            // layoutControlItem20
+            // layoutControlItem22
             // 
-            this.layoutControlItem20.Control = this.txtG3来料供应商;
-            this.layoutControlItem20.CustomizationFormText = "G3来料供应商";
-            this.layoutControlItem20.Location = new System.Drawing.Point(0, 456);
-            this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem20.Text = "G3来料供应商";
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem22.Control = this.txtG3来料供应商;
+            this.layoutControlItem22.CustomizationFormText = "G3来料供应商";
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 504);
+            this.layoutControlItem22.Name = "layoutControlItem22";
+            this.layoutControlItem22.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem22.Text = "G3来料供应商";
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txtG3镜片来料日期
             // 
             this.txtG3镜片来料日期.EditValue = null;
             this.txtG3镜片来料日期.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtG3镜片来料日期.Location = new System.Drawing.Point(112, 492);
+            this.txtG3镜片来料日期.Location = new System.Drawing.Point(112, 540);
             this.txtG3镜片来料日期.Name = "txtG3镜片来料日期";
             this.txtG3镜片来料日期.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -648,43 +730,43 @@ namespace M12MiniMes.UI
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtG3镜片来料日期.Size = new System.Drawing.Size(481, 20);
             this.txtG3镜片来料日期.StyleController = this.layoutControl1;
-            this.txtG3镜片来料日期.TabIndex = 21;
+            this.txtG3镜片来料日期.TabIndex = 23;
             // 
-            // layoutControlItem21
+            // layoutControlItem23
             // 
-            this.layoutControlItem21.Control = this.txtG3镜片来料日期;
-            this.layoutControlItem21.CustomizationFormText = "G3镜片来料日期";
-            this.layoutControlItem21.Location = new System.Drawing.Point(0, 480);
-            this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem21.Text = "G3镜片来料日期";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem23.Control = this.txtG3镜片来料日期;
+            this.layoutControlItem23.CustomizationFormText = "G3镜片来料日期";
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 528);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem23.Text = "G3镜片来料日期";
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txtG1来料供应商
             // 
-            this.txtG1来料供应商.Location = new System.Drawing.Point(112, 516);
+            this.txtG1来料供应商.Location = new System.Drawing.Point(112, 564);
             this.txtG1来料供应商.Name = "txtG1来料供应商";
             this.txtG1来料供应商.Size = new System.Drawing.Size(481, 20);
             this.txtG1来料供应商.StyleController = this.layoutControl1;
-            this.txtG1来料供应商.TabIndex = 22;
+            this.txtG1来料供应商.TabIndex = 24;
             // 
-            // layoutControlItem22
+            // layoutControlItem24
             // 
-            this.layoutControlItem22.Control = this.txtG1来料供应商;
-            this.layoutControlItem22.CustomizationFormText = "G1来料供应商";
-            this.layoutControlItem22.Location = new System.Drawing.Point(0, 504);
-            this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem22.Text = "G1来料供应商";
-            this.layoutControlItem22.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem24.Control = this.txtG1来料供应商;
+            this.layoutControlItem24.CustomizationFormText = "G1来料供应商";
+            this.layoutControlItem24.Location = new System.Drawing.Point(0, 552);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem24.Text = "G1来料供应商";
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txtG1来料日期
             // 
             this.txtG1来料日期.EditValue = null;
             this.txtG1来料日期.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtG1来料日期.Location = new System.Drawing.Point(112, 540);
+            this.txtG1来料日期.Location = new System.Drawing.Point(112, 588);
             this.txtG1来料日期.Name = "txtG1来料日期";
             this.txtG1来料日期.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -692,36 +774,62 @@ namespace M12MiniMes.UI
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtG1来料日期.Size = new System.Drawing.Size(481, 20);
             this.txtG1来料日期.StyleController = this.layoutControl1;
-            this.txtG1来料日期.TabIndex = 23;
+            this.txtG1来料日期.TabIndex = 25;
             // 
-            // layoutControlItem23
+            // layoutControlItem25
             // 
-            this.layoutControlItem23.Control = this.txtG1来料日期;
-            this.layoutControlItem23.CustomizationFormText = "G1来料日期";
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 528);
-            this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem23.Text = "G1来料日期";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem25.Control = this.txtG1来料日期;
+            this.layoutControlItem25.CustomizationFormText = "G1来料日期";
+            this.layoutControlItem25.Location = new System.Drawing.Point(0, 576);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem25.Text = "G1来料日期";
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(96, 14);  
+
+             this.txt镜片投料数.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txt镜片投料数.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt镜片投料数.Location = new System.Drawing.Point(112, 612);
+            this.txt镜片投料数.Name = "txt镜片投料数";
+            this.txt镜片投料数.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txt镜片投料数.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txt镜片投料数.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txt镜片投料数.Size = new System.Drawing.Size(120, 20);
+            this.txt镜片投料数.StyleController = this.layoutControl1;
+            this.txt镜片投料数.TabIndex = 26;
+            // 
+            // layoutControlItem26
+            // 
+            this.layoutControlItem26.Control = this.txt镜片投料数;
+            this.layoutControlItem26.CustomizationFormText = "镜片投料数";
+            this.layoutControlItem26.Location = new System.Drawing.Point(0, 600);
+            this.layoutControlItem26.Name = "layoutControlItem26";
+            this.layoutControlItem26.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem26.Text = "镜片投料数";
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txt配对监控批次
             // 
-            this.txt配对监控批次.Location = new System.Drawing.Point(112, 564);
+            this.txt配对监控批次.Location = new System.Drawing.Point(112, 636);
             this.txt配对监控批次.Name = "txt配对监控批次";
             this.txt配对监控批次.Size = new System.Drawing.Size(481, 20);
             this.txt配对监控批次.StyleController = this.layoutControl1;
-            this.txt配对监控批次.TabIndex = 24;
+            this.txt配对监控批次.TabIndex = 27;
             // 
-            // layoutControlItem24
+            // layoutControlItem27
             // 
-            this.layoutControlItem24.Control = this.txt配对监控批次;
-            this.layoutControlItem24.CustomizationFormText = "配对监控批次";
-            this.layoutControlItem24.Location = new System.Drawing.Point(0, 552);
-            this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem24.Text = "配对监控批次";
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem27.Control = this.txt配对监控批次;
+            this.layoutControlItem27.CustomizationFormText = "配对监控批次";
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 624);
+            this.layoutControlItem27.Name = "layoutControlItem27";
+            this.layoutControlItem27.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem27.Text = "配对监控批次";
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(96, 14);  
 
              this.txt计划投入数.EditValue = new decimal(new int[] {
             0,
@@ -729,7 +837,7 @@ namespace M12MiniMes.UI
             0,
             0});
             this.txt计划投入数.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txt计划投入数.Location = new System.Drawing.Point(112, 588);
+            this.txt计划投入数.Location = new System.Drawing.Point(112, 660);
             this.txt计划投入数.Name = "txt计划投入数";
             this.txt计划投入数.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -737,36 +845,107 @@ namespace M12MiniMes.UI
             this.txt计划投入数.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txt计划投入数.Size = new System.Drawing.Size(120, 20);
             this.txt计划投入数.StyleController = this.layoutControl1;
-            this.txt计划投入数.TabIndex = 25;
+            this.txt计划投入数.TabIndex = 28;
             // 
-            // layoutControlItem25
+            // layoutControlItem28
             // 
-            this.layoutControlItem25.Control = this.txt计划投入数;
-            this.layoutControlItem25.CustomizationFormText = "计划投入数";
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 576);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem25.Text = "计划投入数";
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem28.Control = this.txt计划投入数;
+            this.layoutControlItem28.CustomizationFormText = "计划投入数";
+            this.layoutControlItem28.Location = new System.Drawing.Point(0, 648);
+            this.layoutControlItem28.Name = "layoutControlItem28";
+            this.layoutControlItem28.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem28.Text = "计划投入数";
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(96, 14);  
+
+             this.txt上线数.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txt上线数.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt上线数.Location = new System.Drawing.Point(112, 684);
+            this.txt上线数.Name = "txt上线数";
+            this.txt上线数.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txt上线数.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txt上线数.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txt上线数.Size = new System.Drawing.Size(120, 20);
+            this.txt上线数.StyleController = this.layoutControl1;
+            this.txt上线数.TabIndex = 29;
+            // 
+            // layoutControlItem29
+            // 
+            this.layoutControlItem29.Control = this.txt上线数;
+            this.layoutControlItem29.CustomizationFormText = "上线数";
+            this.layoutControlItem29.Location = new System.Drawing.Point(0, 672);
+            this.layoutControlItem29.Name = "layoutControlItem29";
+            this.layoutControlItem29.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem29.Text = "上线数";
+            this.layoutControlItem29.TextSize = new System.Drawing.Size(96, 14);  
+
+             this.txt下线数.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txt下线数.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.txt下线数.Location = new System.Drawing.Point(112, 708);
+            this.txt下线数.Name = "txt下线数";
+            this.txt下线数.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txt下线数.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txt下线数.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txt下线数.Size = new System.Drawing.Size(120, 20);
+            this.txt下线数.StyleController = this.layoutControl1;
+            this.txt下线数.TabIndex = 30;
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.Control = this.txt下线数;
+            this.layoutControlItem30.CustomizationFormText = "下线数";
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 696);
+            this.layoutControlItem30.Name = "layoutControlItem30";
+            this.layoutControlItem30.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem30.Text = "下线数";
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(96, 14);  
+
+             // 
+            // txt状态
+            // 
+            this.txt状态.Location = new System.Drawing.Point(112, 732);
+            this.txt状态.Name = "txt状态";
+            this.txt状态.Size = new System.Drawing.Size(481, 20);
+            this.txt状态.StyleController = this.layoutControl1;
+            this.txt状态.TabIndex = 31;
+            // 
+            // layoutControlItem31
+            // 
+            this.layoutControlItem31.Control = this.txt状态;
+            this.layoutControlItem31.CustomizationFormText = "状态";
+            this.layoutControlItem31.Location = new System.Drawing.Point(0, 720);
+            this.layoutControlItem31.Name = "layoutControlItem31";
+            this.layoutControlItem31.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem31.Text = "状态";
+            this.layoutControlItem31.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txt生产批次号
             // 
-            this.txt生产批次号.Location = new System.Drawing.Point(112, 612);
+            this.txt生产批次号.Location = new System.Drawing.Point(112, 756);
             this.txt生产批次号.Name = "txt生产批次号";
             this.txt生产批次号.Size = new System.Drawing.Size(481, 20);
             this.txt生产批次号.StyleController = this.layoutControl1;
-            this.txt生产批次号.TabIndex = 26;
+            this.txt生产批次号.TabIndex = 32;
             // 
-            // layoutControlItem26
+            // layoutControlItem32
             // 
-            this.layoutControlItem26.Control = this.txt生产批次号;
-            this.layoutControlItem26.CustomizationFormText = "生成出的生产批次号";
-            this.layoutControlItem26.Location = new System.Drawing.Point(0, 600);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem26.Text = "生成出的生产批次号";
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem32.Control = this.txt生产批次号;
+            this.layoutControlItem32.CustomizationFormText = "生成出的生产批次号";
+            this.layoutControlItem32.Location = new System.Drawing.Point(0, 744);
+            this.layoutControlItem32.Name = "layoutControlItem32";
+            this.layoutControlItem32.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem32.Text = "生成出的生产批次号";
+            this.layoutControlItem32.TextSize = new System.Drawing.Size(96, 14);  
 
  
             // 
@@ -801,6 +980,12 @@ namespace M12MiniMes.UI
 	 	       ,this.layoutControlItem24
 	 	       ,this.layoutControlItem25
 	 	       ,this.layoutControlItem26
+	 	       ,this.layoutControlItem27
+	 	       ,this.layoutControlItem28
+	 	       ,this.layoutControlItem29
+	 	       ,this.layoutControlItem30
+	 	       ,this.layoutControlItem31
+	 	       ,this.layoutControlItem32
 	        });
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -858,28 +1043,40 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt系列号.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号113b.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt镜框投料数.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt成型日113b.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号113b.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号112.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt成型日113b.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt成型日112.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈模穴号112.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txtG3来料供应商.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt成型日112.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txtG3镜片来料日期.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt隔圈投料数.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txtG1来料供应商.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txtG3来料供应商.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txtG1来料日期.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txtG3镜片来料日期.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt配对监控批次.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txtG1来料供应商.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt计划投入数.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txtG1来料日期.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt镜片投料数.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt配对监控批次.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt计划投入数.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt上线数.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt下线数.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt状态.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();            
  
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -906,16 +1103,22 @@ namespace M12MiniMes.UI
           private DevExpress.XtraEditors.DateEdit txt日期102;
           private DevExpress.XtraEditors.TextEdit txt角度;
           private DevExpress.XtraEditors.TextEdit txt系列号;
+          private DevExpress.XtraEditors.SpinEdit txt镜框投料数;
           private DevExpress.XtraEditors.TextEdit txt隔圈模穴号113b;
           private DevExpress.XtraEditors.DateEdit txt成型日113b;
           private DevExpress.XtraEditors.TextEdit txt隔圈模穴号112;
           private DevExpress.XtraEditors.DateEdit txt成型日112;
+          private DevExpress.XtraEditors.SpinEdit txt隔圈投料数;
           private DevExpress.XtraEditors.TextEdit txtG3来料供应商;
           private DevExpress.XtraEditors.DateEdit txtG3镜片来料日期;
           private DevExpress.XtraEditors.TextEdit txtG1来料供应商;
           private DevExpress.XtraEditors.DateEdit txtG1来料日期;
+          private DevExpress.XtraEditors.SpinEdit txt镜片投料数;
           private DevExpress.XtraEditors.TextEdit txt配对监控批次;
           private DevExpress.XtraEditors.SpinEdit txt计划投入数;
+          private DevExpress.XtraEditors.SpinEdit txt上线数;
+          private DevExpress.XtraEditors.SpinEdit txt下线数;
+          private DevExpress.XtraEditors.TextEdit txt状态;
           private DevExpress.XtraEditors.TextEdit txt生产批次号;
   
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -944,6 +1147,12 @@ namespace M12MiniMes.UI
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem27;
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem32;
  
     }
 }

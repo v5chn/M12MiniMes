@@ -19,8 +19,7 @@ namespace M12MiniMes.Entity
 		{
             this.Ng替换记录id= 0;
                this.设备id= 0;
-             this.工序id= 0;
-                 this.替换前治具孔号= 0;
+                  this.替换前治具孔号= 0;
                 this.替换后治具孔号= 0;
    
 		}
@@ -55,7 +54,7 @@ namespace M12MiniMes.Entity
         /// 工序ID
         /// </summary>
 		[DataMember]
-        public virtual int 工序id { get; set; }
+        public virtual string 设备名称 { get; set; }
 
         /// <summary>
         /// 工位号

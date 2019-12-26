@@ -160,8 +160,11 @@ namespace M12MiniMes.UI
             this.txt下线数2 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
  
-            this.txt生产批次号 = new DevExpress.XtraEditors.TextEdit();
+            this.txt状态 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem46 = new DevExpress.XtraLayout.LayoutControlItem();
+ 
+            this.txt生产批次号 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem47 = new DevExpress.XtraLayout.LayoutControlItem();
              
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 
@@ -306,43 +309,47 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.txt下线数2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
  
-            ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt状态.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).BeginInit();
  
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+            ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).BeginInit();
  
 
-	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 		 			
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 	  	 	 	 	 		 			
             this.SuspendLayout();
             // 
             // btnSearch
@@ -522,6 +529,9 @@ namespace M12MiniMes.UI
  
             this.layoutControl1.Controls.Add(this.txt下线数1);
             this.layoutControl1.Controls.Add(this.txt下线数2);
+
+ 
+            this.layoutControl1.Controls.Add(this.txt状态);
 
  
             this.layoutControl1.Controls.Add(this.txt生产批次号);
@@ -1740,24 +1750,48 @@ namespace M12MiniMes.UI
             // 
             // layoutControlItem46
             // 
-            this.layoutControlItem46.Control = this.txt生产批次号;
-            this.layoutControlItem46.CustomizationFormText = "生成出的生产批次号";
+            this.layoutControlItem46.Control = this.txt状态;
+            this.layoutControlItem46.CustomizationFormText = "状态";
             this.layoutControlItem46.Location = new System.Drawing.Point(534, 168);
             this.layoutControlItem46.MaxSize = new System.Drawing.Size(150, 25);
             this.layoutControlItem46.MinSize = new System.Drawing.Size(80, 25);
             this.layoutControlItem46.Name = "layoutControlItem46";
             this.layoutControlItem46.Size = new System.Drawing.Size(150, 25);
             this.layoutControlItem46.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
-            this.layoutControlItem46.Text = "生成出的生产批次号";
+            this.layoutControlItem46.Text = "状态";
             this.layoutControlItem46.TextSize = new System.Drawing.Size(48, 14); 
+            // 
+            // txt状态
+            // 
+            this.txt状态.Location = new System.Drawing.Point(598, 187);
+            this.txt状态.Name = "txt状态";
+            this.txt状态.Size = new System.Drawing.Size(122, 20);
+            this.txt状态.StyleController = this.layoutControl1;
+            this.txt状态.TabIndex = 46;
+
+
+ 
+            // 
+            // layoutControlItem47
+            // 
+            this.layoutControlItem47.Control = this.txt生产批次号;
+            this.layoutControlItem47.CustomizationFormText = "生成出的生产批次号";
+            this.layoutControlItem47.Location = new System.Drawing.Point(712, 168);
+            this.layoutControlItem47.MaxSize = new System.Drawing.Size(150, 25);
+            this.layoutControlItem47.MinSize = new System.Drawing.Size(80, 25);
+            this.layoutControlItem47.Name = "layoutControlItem47";
+            this.layoutControlItem47.Size = new System.Drawing.Size(150, 25);
+            this.layoutControlItem47.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Default;
+            this.layoutControlItem47.Text = "生成出的生产批次号";
+            this.layoutControlItem47.TextSize = new System.Drawing.Size(48, 14); 
             // 
             // txt生产批次号
             // 
-            this.txt生产批次号.Location = new System.Drawing.Point(598, 187);
+            this.txt生产批次号.Location = new System.Drawing.Point(776, 187);
             this.txt生产批次号.Name = "txt生产批次号";
             this.txt生产批次号.Size = new System.Drawing.Size(122, 20);
             this.txt生产批次号.StyleController = this.layoutControl1;
-            this.txt生产批次号.TabIndex = 46;
+            this.txt生产批次号.TabIndex = 47;
 
 
  
@@ -1844,6 +1878,8 @@ namespace M12MiniMes.UI
 				       ,this.layoutControlItem45
 			 
 					       ,this.layoutControlItem46
+			 
+					       ,this.layoutControlItem47
 			        });
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -1977,8 +2013,10 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit(); 
             ((System.ComponentModel.ISupportInitialize)(this.txt下线数2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit(); 
-             ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).EndInit();
+             ((System.ComponentModel.ISupportInitialize)(this.txt状态.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).EndInit();            
+             ((System.ComponentModel.ISupportInitialize)(this.txt生产批次号.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).EndInit();            
  
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2073,6 +2111,8 @@ namespace M12MiniMes.UI
         private DevExpress.XtraEditors.TextEdit txt下线数1;  
         private DevExpress.XtraEditors.TextEdit txt下线数2;  
  
+        private DevExpress.XtraEditors.TextEdit txt状态; 
+ 
         private DevExpress.XtraEditors.TextEdit txt生产批次号; 
  
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;    
@@ -2121,6 +2161,7 @@ namespace M12MiniMes.UI
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem44;    
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem45;  
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem46;    
+         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem47;    
  
     }
 }

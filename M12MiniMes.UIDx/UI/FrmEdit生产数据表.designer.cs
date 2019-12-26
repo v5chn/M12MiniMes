@@ -52,14 +52,10 @@ namespace M12MiniMes.UI
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
              this.txt工位号 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt工序id = new DevExpress.XtraEditors.SpinEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-             this.txt工序名称 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
              this.txt工序数据 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
              this.txt结果ok = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
              
             ((System.ComponentModel.ISupportInitialize)(this.picPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -87,14 +83,10 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt工位号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序id.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序名称.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt工序数据.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
              ((System.ComponentModel.ISupportInitialize)(this.txt结果ok.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
              
             this.SuspendLayout();
             // 
@@ -140,8 +132,6 @@ namespace M12MiniMes.UI
              this.layoutControl1.Controls.Add(this.txt设备id);
              this.layoutControl1.Controls.Add(this.txt设备名称);
              this.layoutControl1.Controls.Add(this.txt工位号);
-             this.layoutControl1.Controls.Add(this.txt工序id);
-             this.layoutControl1.Controls.Add(this.txt工序名称);
              this.layoutControl1.Controls.Add(this.txt工序数据);
              this.layoutControl1.Controls.Add(this.txt结果ok);
  
@@ -355,88 +345,43 @@ namespace M12MiniMes.UI
             this.layoutControlItem10.Text = "工位号";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(96, 14);  
 
-             this.txt工序id.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txt工序id.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txt工序id.Location = new System.Drawing.Point(112, 252);
-            this.txt工序id.Name = "txt工序id";
-            this.txt工序id.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txt工序id.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txt工序id.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txt工序id.Size = new System.Drawing.Size(120, 20);
-            this.txt工序id.StyleController = this.layoutControl1;
-            this.txt工序id.TabIndex = 11;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.txt工序id;
-            this.layoutControlItem11.CustomizationFormText = "工序ID";
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 240);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem11.Text = "工序ID";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(96, 14);  
-
-             // 
-            // txt工序名称
-            // 
-            this.txt工序名称.Location = new System.Drawing.Point(112, 276);
-            this.txt工序名称.Name = "txt工序名称";
-            this.txt工序名称.Size = new System.Drawing.Size(481, 20);
-            this.txt工序名称.StyleController = this.layoutControl1;
-            this.txt工序名称.TabIndex = 12;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.txt工序名称;
-            this.layoutControlItem12.CustomizationFormText = "工序名称";
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 264);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem12.Text = "工序名称";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(96, 14);  
-
              // 
             // txt工序数据
             // 
-            this.txt工序数据.Location = new System.Drawing.Point(112, 300);
+            this.txt工序数据.Location = new System.Drawing.Point(112, 252);
             this.txt工序数据.Name = "txt工序数据";
             this.txt工序数据.Size = new System.Drawing.Size(481, 20);
             this.txt工序数据.StyleController = this.layoutControl1;
-            this.txt工序数据.TabIndex = 13;
+            this.txt工序数据.TabIndex = 11;
             // 
-            // layoutControlItem13
+            // layoutControlItem11
             // 
-            this.layoutControlItem13.Control = this.txt工序数据;
-            this.layoutControlItem13.CustomizationFormText = "工序数据";
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 288);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem13.Text = "工序数据";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem11.Control = this.txt工序数据;
+            this.layoutControlItem11.CustomizationFormText = "工序数据";
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem11.Text = "工序数据";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(96, 14);  
 
              // 
             // txt结果ok
             // 
-            this.txt结果ok.Location = new System.Drawing.Point(112, 324);
+            this.txt结果ok.Location = new System.Drawing.Point(112, 276);
             this.txt结果ok.Name = "txt结果ok";
             this.txt结果ok.Size = new System.Drawing.Size(481, 20);
             this.txt结果ok.StyleController = this.layoutControl1;
-            this.txt结果ok.TabIndex = 14;
+            this.txt结果ok.TabIndex = 12;
             // 
-            // layoutControlItem14
+            // layoutControlItem12
             // 
-            this.layoutControlItem14.Control = this.txt结果ok;
-            this.layoutControlItem14.CustomizationFormText = "结果OK";
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 312);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(585, 24);
-            this.layoutControlItem14.Text = "结果OK";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(96, 14);  
+            this.layoutControlItem12.Control = this.txt结果ok;
+            this.layoutControlItem12.CustomizationFormText = "结果OK";
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 264);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(585, 24);
+            this.layoutControlItem12.Text = "结果OK";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(96, 14);  
 
  
             // 
@@ -457,8 +402,6 @@ namespace M12MiniMes.UI
 	 	       ,this.layoutControlItem10
 	 	       ,this.layoutControlItem11
 	 	       ,this.layoutControlItem12
-	 	       ,this.layoutControlItem13
-	 	       ,this.layoutControlItem14
 	        });
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -506,14 +449,10 @@ namespace M12MiniMes.UI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt工位号.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序id.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();            
-             ((System.ComponentModel.ISupportInitialize)(this.txt工序名称.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt工序数据.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();            
              ((System.ComponentModel.ISupportInitialize)(this.txt结果ok.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();            
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();            
  
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -535,8 +474,6 @@ namespace M12MiniMes.UI
           private DevExpress.XtraEditors.SpinEdit txt设备id;
           private DevExpress.XtraEditors.TextEdit txt设备名称;
           private DevExpress.XtraEditors.TextEdit txt工位号;
-          private DevExpress.XtraEditors.SpinEdit txt工序id;
-          private DevExpress.XtraEditors.TextEdit txt工序名称;
           private DevExpress.XtraEditors.TextEdit txt工序数据;
           private DevExpress.XtraEditors.TextEdit txt结果ok;
   
@@ -552,8 +489,6 @@ namespace M12MiniMes.UI
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
          private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
  
     }
 }

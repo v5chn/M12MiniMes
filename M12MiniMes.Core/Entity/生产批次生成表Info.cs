@@ -24,7 +24,7 @@ namespace M12MiniMes.Entity
               this.计划投入数= 0;
              this.上线数= 0;
              this.下线数= 0;
-   
+    
 		}
 
         #region Property Members
@@ -214,6 +214,12 @@ namespace M12MiniMes.Entity
         /// </summary>
 		[DataMember]
         public virtual int 下线数 { get; set; }
+
+        /// <summary>
+        /// 状态
+        /// </summary>
+		[DataMember]
+        public virtual string 状态 { get; set; }
 
         /// <summary>
         /// 生成出的生产批次号

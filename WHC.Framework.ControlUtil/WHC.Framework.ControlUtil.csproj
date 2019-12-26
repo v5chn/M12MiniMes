@@ -226,13 +226,13 @@
     <Compile Include="Other\ZipUtility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
-      <Project>{53AC195E-DCFF-47C4-BC02-7E0241FF520C}</Project>
-      <Name>WHC.Framework.Commons</Name>
-    </ProjectReference>
+    <None Include="log4net.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="log4net.config" />
+    <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
+      <Project>{53ac195e-dcff-47c4-bc02-7e0241ff520c}</Project>
+      <Name>WHC.Framework.Commons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

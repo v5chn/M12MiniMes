@@ -1,4 +1,4 @@
- 		 		 		 		 		 		 		 		 		 		 		 		 
+ 		 		 		 		 		 
 using System;
 using System.Text;
 using System.Data;
@@ -26,11 +26,11 @@ using M12MiniMes.Entity;
 namespace M12MiniMes.UI
 {
     /// <summary>
-    /// 生产数据表
+    /// 设备表
     /// </summary>	
-    public partial class Frm生产数据表 : BaseDock
+    public partial class Frm设备表 : BaseDock
     {
-        public Frm生产数据表()
+        public Frm设备表()
         {
             InitializeComponent();
 
@@ -120,7 +120,7 @@ namespace M12MiniMes.UI
                 GridView gridView = this.winGridViewPager1.gridView1;
                 if (gridView != null)
                 {
-					//生产数据id,生产时间,物料生产批次号,治具生产批次号,物料guid,治具guid,治具rfid,治具孔号,设备id,设备名称,工位号,工序数据,结果ok
+					//设备id,设备名称,Ip,位置序号,启用状态,生产状态
 					//gridView.SetGridColumWidth("Note", 200);
                 }
             }
@@ -157,7 +157,7 @@ namespace M12MiniMes.UI
         /// </summary>		
         private void AddData()
         {
-            FrmEdit生产数据表 dlg = new FrmEdit生产数据表();
+            FrmEdit设备表 dlg = new FrmEdit设备表();
             dlg.OnDataSaved += new EventHandler(dlg_OnDataSaved);
             dlg.InitFunction(LoginUserInfo, FunctionDict);//给子窗体赋值用户权限信息
             
@@ -171,17 +171,17 @@ namespace M12MiniMes.UI
         /// </summary>
         private void EditData()
         {
-            string ID = this.winGridViewPager1.gridView1.GetFocusedRowCellDisplayText("生产数据id");
+            string ID = this.winGridViewPager1.gridView1.GetFocusedRowCellDisplayText("设备id");
             List<string> IDList = new List<string>();
             for (int i = 0; i < this.winGridViewPager1.gridView1.RowCount; i++)
             {
-                string strTemp = this.winGridViewPager1.GridView1.GetRowCellDisplayText(i, "生产数据id");
+                string strTemp = this.winGridViewPager1.GridView1.GetRowCellDisplayText(i, "设备id");
                 IDList.Add(strTemp);
             }
 
             if (!string.IsNullOrEmpty(ID))
             {
-                FrmEdit生产数据表 dlg = new FrmEdit生产数据表();
+                FrmEdit设备表 dlg = new FrmEdit设备表();
                 dlg.ID = ID;
                 dlg.IDList = IDList;
                 dlg.OnDataSaved += new EventHandler(dlg_OnDataSaved);
@@ -207,8 +207,8 @@ namespace M12MiniMes.UI
             int[] rowSelected = this.winGridViewPager1.GridView1.GetSelectedRows();
             foreach (int iRow in rowSelected)
             {
-                string ID = this.winGridViewPager1.GridView1.GetRowCellDisplayText(iRow, "生产数据id");
-                BLLFactory<生产数据表>.Instance.Delete(ID);
+                string ID = this.winGridViewPager1.GridView1.GetRowCellDisplayText(iRow, "设备id");
+                BLLFactory<设备表>.Instance.Delete(ID);
             }
              
             BindData();			
@@ -222,37 +222,30 @@ namespace M12MiniMes.UI
         	//entity		
 
             //根据业务对象获取对应的显示字段，如果没有设置，那么根据FieldPermit表的配置获取字段权限列表(默认不使用字段权限)
-            //var permitDict = BLLFactory<FieldPermit>.Instance.GetColumnsPermit(typeof(生产数据表Info).FullName, LoginUserInfo.ID.ToInt32());
-            //var displayColumns = BLLFactory<生产数据表>.Instance.GetDisplayColumns();
+            //var permitDict = BLLFactory<FieldPermit>.Instance.GetColumnsPermit(typeof(设备表Info).FullName, LoginUserInfo.ID.ToInt32());
+            //var displayColumns = BLLFactory<设备表>.Instance.GetDisplayColumns();
             //displayColumns = string.IsNullOrEmpty(displayColumns) ? string.Join(",", permitDict.Keys) : displayColumns;
             //this.winGridViewPager1.DisplayColumns = displayColumns; 
 			
-			this.winGridViewPager1.DisplayColumns = "生产数据id,生产时间,物料生产批次号,治具生产批次号,物料guid,治具guid,治具rfid,治具孔号,设备id,设备名称,工位号,工序数据,结果ok";
-            this.winGridViewPager1.ColumnNameAlias = BLLFactory<生产数据表>.Instance.GetColumnNameAlias();//字段列显示名称转义
+			this.winGridViewPager1.DisplayColumns = "设备id,设备名称,Ip,位置序号,启用状态,生产状态";
+            this.winGridViewPager1.ColumnNameAlias = BLLFactory<设备表>.Instance.GetColumnNameAlias();//字段列显示名称转义
 
             #region 添加别名解析
 
-           //this.winGridViewPager1.AddColumnAlias("生产数据id", "生产数据ID");
-           //this.winGridViewPager1.AddColumnAlias("生产时间", "生产时间");
-           //this.winGridViewPager1.AddColumnAlias("物料生产批次号", "物料生产批次号");
-           //this.winGridViewPager1.AddColumnAlias("治具生产批次号", "治具生产批次号");
-           //this.winGridViewPager1.AddColumnAlias("物料guid", "物料GUID");
-           //this.winGridViewPager1.AddColumnAlias("治具guid", "治具GUID");
-           //this.winGridViewPager1.AddColumnAlias("治具rfid", "治具RFID");
-           //this.winGridViewPager1.AddColumnAlias("治具孔号", "治具孔号");
            //this.winGridViewPager1.AddColumnAlias("设备id", "设备ID");
            //this.winGridViewPager1.AddColumnAlias("设备名称", "设备名称");
-           //this.winGridViewPager1.AddColumnAlias("工位号", "工位号");
-           //this.winGridViewPager1.AddColumnAlias("工序数据", "工序数据");
-           //this.winGridViewPager1.AddColumnAlias("结果ok", "结果OK");
+           //this.winGridViewPager1.AddColumnAlias("Ip", "IP");
+           //this.winGridViewPager1.AddColumnAlias("位置序号", "位置序号");
+           //this.winGridViewPager1.AddColumnAlias("启用状态", "启用状态");
+           //this.winGridViewPager1.AddColumnAlias("生产状态", "生产状态");
 
             #endregion
 
             string where = GetConditionSql();
             PagerInfo pagerInfo = this.winGridViewPager1.PagerInfo;
-	            List<生产数据表Info> list = BLLFactory<生产数据表>.Instance.FindWithPager(where, pagerInfo);
-            this.winGridViewPager1.DataSource = list;//new WHC.Pager.WinControl.SortableBindingList<生产数据表Info>(list);
-                this.winGridViewPager1.PrintTitle = "生产数据表报表";
+	            List<设备表Info> list = BLLFactory<设备表>.Instance.FindWithPager(where, pagerInfo);
+            this.winGridViewPager1.DataSource = list;//new WHC.Pager.WinControl.SortableBindingList<设备表Info>(list);
+                this.winGridViewPager1.PrintTitle = "设备表报表";
  
 			// 设置GridControl对应的下拉类别内容，方便转义
             SetRepositoryItems(this.winGridViewPager1.GridView1);
@@ -296,7 +289,7 @@ namespace M12MiniMes.UI
 			*/
         }      
 
-        private string moduleName = "生产数据表";		
+        private string moduleName = "设备表";		
 		
         /// <summary>
         /// 导入的操作
@@ -320,26 +313,19 @@ namespace M12MiniMes.UI
             if (!string.IsNullOrEmpty(file))
             {
                 string where = GetConditionSql();
-                List<生产数据表Info> list = BLLFactory<生产数据表>.Instance.Find(where);
-                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序数据,结果OK");
+                List<设备表Info> list = BLLFactory<设备表>.Instance.Find(where);
+                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,设备名称,IP,位置序号,启用状态,生产状态");
                 DataRow dr;
                 int j = 1;
                 for (int i = 0; i < list.Count; i++)
                 {
                     dr = dtNew.NewRow();
                     dr["序号"] = j++;
-                     dr["生产时间"] = list[i].生产时间;
-                     dr["物料生产批次号"] = list[i].物料生产批次号;
-                     dr["治具生产批次号"] = list[i].治具生产批次号;
-                     dr["物料GUID"] = list[i].物料guid;
-                     dr["治具GUID"] = list[i].治具guid;
-                     dr["治具RFID"] = list[i].治具rfid;
-                     dr["治具孔号"] = list[i].治具孔号;
-                     dr["设备ID"] = list[i].设备id;
                      dr["设备名称"] = list[i].设备名称;
-                     dr["工位号"] = list[i].工位号;
-                     dr["工序数据"] = list[i].工序数据;
-                     dr["结果OK"] = list[i].结果ok;
+                     dr["IP"] = list[i].Ip;
+                     dr["位置序号"] = list[i].位置序号;
+                     dr["启用状态"] = list[i].启用状态;
+                     dr["生产状态"] = list[i].生产状态;
                      dtNew.Rows.Add(dr);
                 }
 
@@ -376,15 +362,15 @@ namespace M12MiniMes.UI
             if (dlg == null)
             {
                 dlg = new FrmAdvanceSearch();
-                dlg.FieldTypeTable = BLLFactory<生产数据表>.Instance.GetFieldTypeList();
-                dlg.ColumnNameAlias = BLLFactory<生产数据表>.Instance.GetColumnNameAlias();                
-                 dlg.DisplayColumns = "生产时间,物料生产批次号,治具生产批次号,物料GUID,治具GUID,治具RFID,治具孔号,设备ID,设备名称,工位号,工序数据,结果OK";
+                dlg.FieldTypeTable = BLLFactory<设备表>.Instance.GetFieldTypeList();
+                dlg.ColumnNameAlias = BLLFactory<设备表>.Instance.GetColumnNameAlias();                
+                 dlg.DisplayColumns = "设备名称,IP,位置序号,启用状态,生产状态";
 
                 #region 下拉列表数据
 
                 //dlg.AddColumnListItem("UserType", Portal.gc.GetDictData("人员类型"));//字典列表
                 //dlg.AddColumnListItem("Sex", "男,女");//固定列表
-                //dlg.AddColumnListItem("Credit", BLLFactory<生产数据表>.Instance.GetFieldList("Credit"));//动态列表
+                //dlg.AddColumnListItem("Credit", BLLFactory<设备表>.Instance.GetFieldList("Credit"));//动态列表
 
                 #endregion
 
@@ -436,7 +422,7 @@ namespace M12MiniMes.UI
         private void winGridViewPager1_OnStartExport(object sender, EventArgs e)
         {
             string where = GetConditionSql();
-            this.winGridViewPager1.AllToExport = BLLFactory<生产数据表>.Instance.FindToDataTable(where);
+            this.winGridViewPager1.AllToExport = BLLFactory<设备表>.Instance.FindToDataTable(where);
          }
 
         /// <summary>
@@ -516,18 +502,11 @@ namespace M12MiniMes.UI
             if (condition == null)
             {
                 condition = new SearchCondition();
-                condition.AddDateCondition("生产时间", this.txt生产时间1, this.txt生产时间2); //日期类型
-                condition.AddCondition("物料生产批次号", this.txt物料生产批次号.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("治具生产批次号", this.txt治具生产批次号.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("物料GUID", this.txt物料guid.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("治具GUID", this.txt治具guid.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("治具RFID", this.txt治具rfid.Text.Trim(), SqlOperator.Like);
-                condition.AddNumericCondition("治具孔号", this.txt治具孔号1, this.txt治具孔号2); //数值类型
-                condition.AddNumericCondition("设备ID", this.txt设备id1, this.txt设备id2); //数值类型
                 condition.AddCondition("设备名称", this.txt设备名称.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("工位号", this.txt工位号.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("工序数据", this.txt工序数据.Text.Trim(), SqlOperator.Like);
-                condition.AddCondition("结果OK", this.txt结果ok.Text.Trim(), SqlOperator.Like);
+                condition.AddCondition("IP", this.txtIp.Text.Trim(), SqlOperator.Like);
+                condition.AddNumericCondition("位置序号", this.txt位置序号1, this.txt位置序号2); //数值类型
+                condition.AddCondition("启用状态", this.txt启用状态.Text.Trim(), SqlOperator.Like);
+                condition.AddCondition("生产状态", this.txt生产状态.Text.Trim(), SqlOperator.Like);
             }
             string where = condition.BuildConditionSql().Replace("Where", "");
             return where;
@@ -555,35 +534,14 @@ namespace M12MiniMes.UI
             bool converted = false;
             DateTime dtDefault = Convert.ToDateTime("1900-01-01");
             DateTime dt;
-            生产数据表Info info = new 生产数据表Info();
- 
-            string 生产时间 = GetRowData(dr, "生产时间");
-            if (!string.IsNullOrEmpty(生产时间))
-            {
-				converted = DateTime.TryParse(生产时间, out dt);
-                if (converted && dt > dtDefault)
-                {
-                    info.生产时间 = dt;
-                }
-			}
-            else
-            {
-                info.生产时间 = DateTime.Now;
-            }
-
-              info.物料生产批次号 = GetRowData(dr, "物料生产批次号");
-              info.治具生产批次号 = GetRowData(dr, "治具生产批次号");
-              info.物料guid = GetRowData(dr, "物料GUID");
-              info.治具guid = GetRowData(dr, "治具GUID");
-              info.治具rfid = GetRowData(dr, "治具RFID");
-              info.治具孔号 = GetRowData(dr, "治具孔号").ToInt32();
-              info.设备id = GetRowData(dr, "设备ID").ToInt32();
-              info.设备名称 = GetRowData(dr, "设备名称");
-              info.工位号 = GetRowData(dr, "工位号");
-              info.工序数据 = GetRowData(dr, "工序数据");
-              info.结果ok = GetRowData(dr, "结果OK").ToBoolean();
+            设备表Info info = new 设备表Info();
+             info.设备名称 = GetRowData(dr, "设备名称");
+              info.Ip = GetRowData(dr, "IP");
+              info.位置序号 = GetRowData(dr, "位置序号").ToInt32();
+              info.启用状态 = GetRowData(dr, "启用状态").ToBoolean();
+              info.生产状态 = GetRowData(dr, "生产状态");
   
-            success = BLLFactory<生产数据表>.Instance.Insert(info);
+            success = BLLFactory<设备表>.Instance.Insert(info);
              return success;
         }
 		

@@ -1,4 +1,4 @@
- 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 
+ 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 
 using System;
 using System.Text;
 using System.Data;
@@ -120,7 +120,7 @@ namespace M12MiniMes.UI
                 GridView gridView = this.winGridViewPager1.gridView1;
                 if (gridView != null)
                 {
-					//生产批次id,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113b,成型日113b,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,生产批次号
+					//生产批次id,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113b,成型日113b,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,状态,生产批次号
 					//gridView.SetGridColumWidth("Note", 200);
                 }
             }
@@ -227,7 +227,7 @@ namespace M12MiniMes.UI
             //displayColumns = string.IsNullOrEmpty(displayColumns) ? string.Join(",", permitDict.Keys) : displayColumns;
             //this.winGridViewPager1.DisplayColumns = displayColumns; 
 			
-			this.winGridViewPager1.DisplayColumns = "生产批次id,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113b,成型日113b,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,生产批次号";
+			this.winGridViewPager1.DisplayColumns = "生产批次id,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113b,成型日113b,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,状态,生产批次号";
             this.winGridViewPager1.ColumnNameAlias = BLLFactory<生产批次生成表>.Instance.GetColumnNameAlias();//字段列显示名称转义
 
             #region 添加别名解析
@@ -263,6 +263,7 @@ namespace M12MiniMes.UI
            //this.winGridViewPager1.AddColumnAlias("计划投入数", "计划投入数");
            //this.winGridViewPager1.AddColumnAlias("上线数", "上线数");
            //this.winGridViewPager1.AddColumnAlias("下线数", "下线数");
+           //this.winGridViewPager1.AddColumnAlias("状态", "状态");
            //this.winGridViewPager1.AddColumnAlias("生产批次号", "生成出的生产批次号");
 
             #endregion
@@ -340,7 +341,7 @@ namespace M12MiniMes.UI
             {
                 string where = GetConditionSql();
                 List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(where);
-                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,生成出的生产批次号");
+                 DataTable dtNew = DataTableHelper.CreateTable("序号|int,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,状态,生成出的生产批次号");
                 DataRow dr;
                 int j = 1;
                 for (int i = 0; i < list.Count; i++)
@@ -377,6 +378,7 @@ namespace M12MiniMes.UI
                      dr["计划投入数"] = list[i].计划投入数;
                      dr["上线数"] = list[i].上线数;
                      dr["下线数"] = list[i].下线数;
+                     dr["状态"] = list[i].状态;
                      dr["生成出的生产批次号"] = list[i].生产批次号;
                      dtNew.Rows.Add(dr);
                 }
@@ -416,7 +418,7 @@ namespace M12MiniMes.UI
                 dlg = new FrmAdvanceSearch();
                 dlg.FieldTypeTable = BLLFactory<生产批次生成表>.Instance.GetFieldTypeList();
                 dlg.ColumnNameAlias = BLLFactory<生产批次生成表>.Instance.GetColumnNameAlias();                
-                 dlg.DisplayColumns = "时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,生产批次号";
+                 dlg.DisplayColumns = "时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,状态,生产批次号";
 
                 #region 下拉列表数据
 
@@ -584,6 +586,7 @@ namespace M12MiniMes.UI
                 condition.AddNumericCondition("计划投入数", this.txt计划投入数1, this.txt计划投入数2); //数值类型
                 condition.AddNumericCondition("上线数", this.txt上线数1, this.txt上线数2); //数值类型
                 condition.AddNumericCondition("下线数", this.txt下线数1, this.txt下线数2); //数值类型
+                condition.AddCondition("状态", this.txt状态.Text.Trim(), SqlOperator.Like);
                 condition.AddCondition("生产批次号", this.txt生产批次号.Text.Trim(), SqlOperator.Like);
             }
             string where = condition.BuildConditionSql().Replace("Where", "");
@@ -769,6 +772,7 @@ namespace M12MiniMes.UI
               info.计划投入数 = GetRowData(dr, "计划投入数").ToInt32();
               info.上线数 = GetRowData(dr, "上线数").ToInt32();
               info.下线数 = GetRowData(dr, "下线数").ToInt32();
+              info.状态 = GetRowData(dr, "状态");
               info.生产批次号 = GetRowData(dr, "生成出的生产批次号");
   
             success = BLLFactory<生产批次生成表>.Instance.Insert(info);

@@ -30,7 +30,6 @@ namespace M12MiniMes.UIStart
 
     public class ServerView : AbstractView
     {
-        AsyncTcpServer Server;
         FormServer frmServer;
 
         public override Control Control => frmServer;
@@ -39,30 +38,17 @@ namespace M12MiniMes.UIStart
 
         public override Func<IBar, bool> FuncInitialize => p =>
         {
-            bool b1 = Load();
-            bool b2 = this.Server.Init("");
+            bool b1 = TcpServer.Load();
 
-            frmServer = new FormServer(new frmTcpServer(this.Server), this.Server);
+            frmServer = new FormServer(new frmTcpServer(TcpServer.Server));
 
             return b1;
         };
 
         public override Func<IView, bool> FuncSave => p =>
         {
-            return Save();
+            return TcpServer.Save();
         };
-
-        public bool Save()
-        {
-            CommonSerializer.SaveObjAsBinaryFile(this, $@".\Server.xml", out bool bSaveOK, out Exception ex);
-            return bSaveOK;
-        }
-
-        public bool Load()
-        {
-            this.Server = CommonSerializer.LoadObjFormBinaryFile<AsyncTcpServer>($@".\Server.xml", out bool bLoadOK, out Exception ex);
-            return bLoadOK;
-        }
     }
 
     public class ItemsView : LazyAbstractView<FormItemsView>
@@ -76,16 +62,15 @@ namespace M12MiniMes.UIStart
         public override Func<IView, bool> FuncSave => p =>
         {
             bool b = ItemManager.Instance.Save();
-            MessageBox.Show("ItemManager保存结果" + b.ToString());
             return b;
         };
 
         public override string InsertPath => $@"生产内存数据";
     }
 
-    public class View设备工序表 : LazyAbstractView<FrmMaster设备工序表>
+    public class View设备工序表 : LazyAbstractView<Frm设备表>
     {
-        public override string InsertPath => $@"设备工序表";
+        public override string InsertPath => $@"设备表";
     }
     public class View生产批次生成表 : LazyAbstractView<Frm生产批次生成表>
     {
