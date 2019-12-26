@@ -27,19 +27,18 @@ namespace M12MiniMes.UIStart
                 return instance;
             }
         }
-        public ItemManager()
+        private ItemManager()
         {
-            GetMachineItems();
         }
         public bool Save()
         {
-            CommonSerializer.SaveObjAsBinaryFile(this, $@".\ItemManager.xml", out bool bSaveOK, out Exception ex);
+            CommonSerializer.SaveObjAsBinaryFile(this.MachineItems, $@".\MachineItems.xml", out bool bSaveOK, out Exception ex);
             return bSaveOK;
         }
 
         public bool Load()
         {
-            instance = CommonSerializer.LoadObjFormBinaryFile<ItemManager>($@".\ItemManager.xml", out bool bLoadOK, out Exception ex);
+            this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<BindingList<MachineItem>>($@".\MachineItems.xml", out bool bLoadOK, out Exception ex);
             return bLoadOK;
         }
 
@@ -51,19 +50,24 @@ namespace M12MiniMes.UIStart
         }
 
         /// <summary>
-        /// 从数据库设备表中查询
+        /// 从数据库设备表中同步
         /// </summary>
         public void GetMachineItems() 
         {
             List<设备表Info> list = BLLFactory<设备表>.Instance.GetAll();
-            var var = list.Select(p => p as MachineItem).ToList();
-            this.AllCurrentMachineItems = new BindingList<MachineItem>(var);
+            var var = list.Select(p => new MachineItem() 
+            {
+                设备id = p.设备id,
+                设备名称 = p.设备名称,
+                Ip = p.Ip
+            }).ToList();
+            this.MachineItems = new BindingList<MachineItem>(var);
         }
 
         /// <summary>
         /// 内存储存当前在产的所有设备数据
         /// </summary>
-        public BindingList<MachineItem> AllCurrentMachineItems { get; set; } = new BindingList<MachineItem>();
+        public BindingList<MachineItem> MachineItems { get; private set; }
 
         /// <summary>
         /// 内存储存当前在产的所有设备的所有治具的数据汇总
@@ -73,7 +77,7 @@ namespace M12MiniMes.UIStart
             get
             {
                 List<FixtureItem> items = new List<FixtureItem>();
-                foreach (var p in this.AllCurrentMachineItems)
+                foreach (var p in this.MachineItems)
                 {
                     if (p.CurrentFixtureItems != null && p.CurrentFixtureItems.Count > 0)
                     {
@@ -124,7 +128,7 @@ namespace M12MiniMes.UIStart
         /// <returns></returns>
         public MachineItem GetCurrentMachineItem(string machineID)
         {
-            MachineItem tempMachineItem = this.AllCurrentMachineItems?.FirstOrDefault(p => p.设备id.Equals(machineID));
+            MachineItem tempMachineItem = this.MachineItems?.FirstOrDefault(p => p.设备id.Equals(machineID));
             if (tempMachineItem == null)
             {
                 throw new Exception($@"ID为[{machineID}]的设备不存在！");
@@ -141,9 +145,9 @@ namespace M12MiniMes.UIStart
         {
             MachineItem tempMachineItem = GetCurrentMachineItem(machineID);
             FixtureItem tempFixtureItem = GetCurrentFixtureItemByRFID(RFID);
-            if (tempFixtureItem != null) //已存在 则表示回流  清空治具原携带信息
+            if (tempFixtureItem != null) //已存在 
             {
-                if (machineID == "0") //1#线头设备
+                if (machineID == "0") //1#线头设备  表示回流  清空治具原携带信息
                 {
                     //检测到治具回流  清空治具原携带信息
                     tempFixtureItem.Dispose();

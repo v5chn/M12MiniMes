@@ -92,12 +92,12 @@ namespace M12MiniMes.UIStart
             layoutPanel.Dock = DockStyle.Fill;
             layoutPanel.Parent = this.splitContainer2.Panel2;
             layoutPanel.ColumnCount = 1;
-            int machineItems = ItemManager.Instance.AllCurrentMachineItems.Count;
+            int machineItems = ItemManager.Instance.MachineItems.Count;
             layoutPanel.RowCount = machineItems;
             for (int i = 0; i < machineItems; i++)
             {
                 SimpleButton button = new SimpleButton();
-                MachineItem machineItem = ItemManager.Instance.AllCurrentMachineItems[i];
+                MachineItem machineItem = ItemManager.Instance.MachineItems[i];
                 button.Tag = machineItem;
                 button.Text = $@"[ID:{machineItem.设备id}]-[Name:{machineItem.设备名称}]-[IP:{machineItem.Ip}]";
                 button.Dock = DockStyle.Fill;

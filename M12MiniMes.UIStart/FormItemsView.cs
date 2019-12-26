@@ -37,14 +37,9 @@ namespace M12MiniMes.UIStart
             }
         }
 
-        private void FormClassDynamicCreater_Load(object sender, EventArgs e)
+        private void FormItemsView_Load(object sender, EventArgs e)
         {
-            FixtureItem fixtureItem = new FixtureItem();
-            fixtureItem.InsertMaterialItem(0, new MaterialItem());
-            MachineItem machineItem = new MachineItem() { CurrentFixtureItems = new BindingList<FixtureItem>() { fixtureItem } };
-            ItemManager.Instance.AllCurrentMachineItems.Add(machineItem);
-
-            this.gridControl1.DataSource = ItemManager.Instance.AllCurrentMachineItems;
+            this.gridControl1.DataSource = ItemManager.Instance.MachineItems;
         }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -89,6 +84,25 @@ namespace M12MiniMes.UIStart
                 {
                     this.gridView1.ExpandMasterRow(rowHandle);
                 }
+            }
+        }
+
+        private void bt同步_Click(object sender, EventArgs e)
+        {
+            if (MessageService.AskQuestion("只建议在第一次配置好设备表后操作！此步会从数据库设备表中同步信息，且会清空当前内存的所有治具、物料信息！在警告后还要继续操作码？"))
+            {
+                ItemManager.Instance.GetMachineItems();
+                this.gridControl1.DataSource = ItemManager.Instance.MachineItems;
+                MessageService.ShowMessage("已从数据库设备表中同步信息，已清空当前内存的所有治具、物料信息！");
+            }
+        }
+
+        private void gridControl1_EmbeddedNavigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+            int i = this.gridView1.FocusedRowHandle;
+            if (i >= 0 )
+            {
+                
             }
         }
     }

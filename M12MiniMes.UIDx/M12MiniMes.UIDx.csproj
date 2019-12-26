@@ -124,22 +124,22 @@
     <ProjectReference Include="..\WHC.Framework.BaseUIDx\WHC.Framework.BaseUIDx.csproj">
       <Project>{a22e5819-92fe-43d2-8da7-6a2b9c2d25db}</Project>
       <Name>WHC.Framework.BaseUIDx</Name>
-      <Private>True</Private>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
       <Project>{53ac195e-dcff-47c4-bc02-7e0241ff520c}</Project>
       <Name>WHC.Framework.Commons</Name>
-      <Private>True</Private>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Framework.ControlUtil\WHC.Framework.ControlUtil.csproj">
       <Project>{d1d3850b-206f-49a9-ba9f-eac0c39de3dd}</Project>
       <Name>WHC.Framework.ControlUtil</Name>
-      <Private>True</Private>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Framework.Language\WHC.Framework.Language.csproj">
       <Project>{4ff53539-d8ee-4ce8-81ba-e7af56a1f566}</Project>
       <Name>WHC.Framework.Language</Name>
-      <Private>True</Private>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

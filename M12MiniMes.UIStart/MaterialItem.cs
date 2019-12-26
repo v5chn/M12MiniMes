@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M12MiniMes.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace M12MiniMes.UIStart
     [Serializable]
     public class MaterialItem : IDisposable
     {
+        public List<生产数据表Info> 生产数据 { get; set; }
+
         /// <summary>
         /// 记忆当前物料所在的治具信息，可以为null表示不处于任何治具之中
         /// </summary>
@@ -34,6 +37,7 @@ namespace M12MiniMes.UIStart
             this.Fixture = fixture;
             this.MaterialGuid = Guid.NewGuid();
             this.物料生产批次号 = fixture?.治具生产批次号;
+            this.生产数据 = new List<生产数据表Info>();
         }
 
         /// <summary>

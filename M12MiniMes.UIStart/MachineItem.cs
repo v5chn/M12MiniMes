@@ -14,8 +14,30 @@ namespace M12MiniMes.UIStart
     /// 设备Item
     /// </summary>
     [Serializable]
-    public class MachineItem : 设备表Info
+    public class MachineItem
     {
+        #region Property Members  :设备表Info
+
+        /// <summary>
+        /// 设备ID
+        /// </summary>
+        //[field: NonSerialized]
+        public int 设备id { get; set; }
+
+        /// <summary>
+        /// 设备名称
+        /// </summary>
+        //[field: NonSerialized]
+        public string 设备名称 { get; set; }
+
+        /// <summary>
+        /// IP
+        /// </summary>
+        //[field: NonSerialized]
+        public string Ip { get; set; }
+
+        #endregion
+
         /// <summary>
         /// 内存储存当前在产的该设备上的所有治具信息
         /// </summary>
