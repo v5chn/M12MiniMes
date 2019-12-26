@@ -42,9 +42,10 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\Lib\</OutputPath>
+    <OutputPath>..\..\..\..\FastAutomation\App\3rdDlls\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>..\Lib\WHC.Framework.BaseUIDx.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisLogFile>..\Lib\WHC.Framework.BaseUIDx.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
