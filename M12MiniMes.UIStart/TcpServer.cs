@@ -47,12 +47,16 @@ namespace M12MiniMes.UIStart
             string[] mess = mes.Split(',');
             if (mess.Count() <= 1)  //无效信息，不在定义的通讯协议之内
             {
+                var var = Encoding.UTF8.GetBytes("invalid data!");
+                listener.SendMesAsyncToClient(client, var);
                 return;
             }
             string strHeader = mess[0]; //行头
             if (!Enum.GetNames(typeof(Header)).Contains(strHeader)) //不在定义的行头
             {
                 //未定义的通讯格式！;
+                var var = Encoding.UTF8.GetBytes("Undefined Header!");
+                listener.SendMesAsyncToClient(client, var);
                 return;
             }
 
@@ -88,7 +92,8 @@ namespace M12MiniMes.UIStart
                     fixtureItem = ItemManager.Instance.GetFixtureItem(rfid, strInMachineID);
                     if (fixtureItem == null) //找不到该RFID治具的内存信息  不允许新治具跳过线头设备流入生产线（即要求新治具必须从线头开始流入）
                     {
-                        listener.SendMesAsyncToClient(client, Encoding.UTF8.GetBytes($@"get the fixture failed which rfid is {rfid} !"));
+                        var var = Encoding.UTF8.GetBytes($@"get the fixture failed which rfid is {rfid} !");
+                        listener.SendMesAsyncToClient(client, var);
                         return;
                     }
                     InMachineItem.InsertFixtureItem(fixtureItem);
@@ -120,7 +125,8 @@ namespace M12MiniMes.UIStart
                     fixtureItem = ItemManager.Instance.GetFixtureItem(rfid, strInMachineID);
                     if (fixtureItem == null) //找不到该RFID治具的内存信息
                     {
-                        listener.SendMesAsyncToClient(client, Encoding.UTF8.GetBytes($@"get the fixture failed which rfid is {rfid} !"));
+                        var var = Encoding.UTF8.GetBytes($@"get the fixture failed which rfid is {rfid} !");
+                        listener.SendMesAsyncToClient(client, var);
                         return;
                     }
                     InMachineItem.InsertFixtureItem(fixtureItem);
@@ -141,13 +147,14 @@ namespace M12MiniMes.UIStart
                         string 物料guid = materialItem.MaterialGuid.ToString();
                         string 治具guid = materialItem.Fixture.FixtureGuid.ToString();
                         int 设备id = int.Parse(strInMachineID);
-                        #region 检测是第一次写入还是再次写入刷新生产数据 最好规定下位机只允许写入一次
+
+                        //检测是第一次写入还是再次写入刷新生产数据 最好规定下位机只允许写入一次
                         生产数据表Info scData = materialItem.生产数据.FirstOrDefault(p => 
                             p.物料guid.Equals(物料guid)
                             && p.治具guid.Equals(治具guid)
                             && p.设备id.Equals(设备id)
                             );
-                        #endregion
+
                         bool firstWrite = false;  //是否第一次写入
                         if (scData == null)  //是第一次写入
                         {
@@ -177,7 +184,7 @@ namespace M12MiniMes.UIStart
                         materialItem.生产数据.Add(scData);
                         index += 2;
                     }
-                    dataSend = Encoding.UTF8.GetBytes("XROK"); //返回下位机"写入OK"
+                    dataSend = Encoding.UTF8.GetBytes("XR Done"); //返回下位机"写入完成"
                     listener.SendMesAsyncToClient(client, dataSend);
                     break;
                 case Header.NGTH:  //NG替换
@@ -219,6 +226,8 @@ namespace M12MiniMes.UIStart
                     nowFixture.RemoveMaterialItem(ngMaterialItem);
                     nowFixture.InsertMaterialItem(iIndex, thMaterialItem);
 
+                    dataSend = Encoding.UTF8.GetBytes("NGTH Done"); //返回下位机"NG替换完成"
+                    listener.SendMesAsyncToClient(client, dataSend);
                     break;
                 case Header.XT:
 

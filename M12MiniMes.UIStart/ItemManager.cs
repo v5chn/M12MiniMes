@@ -186,7 +186,7 @@ namespace M12MiniMes.UIStart
                 var var = GetFixtureItem(RFID, machineID);
                 if (var != null)
                 {
-                    //查询该设备工序ID和工序名称
+                    //查询该设备工序ID
                     var varm = GetMachineItemByID(machineID);
                     string machineName = varm.设备名称;
                     string condition = $@"设备ID = {machineID}";
