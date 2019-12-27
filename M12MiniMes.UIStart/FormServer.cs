@@ -111,7 +111,7 @@ namespace M12MiniMes.UIStart
                 SimpleButton button = new SimpleButton();
                 MachineItem machineItem = ItemManager.Instance.MachineItems[i];
                 button.Tag = machineItem;
-                button.Text = $@"[ID:{machineItem.设备id}]-[Name:{machineItem.设备名称}]-[IP:{machineItem.Ip}]";
+                button.Text = $"[ID:{machineItem.设备id}]-[Name:{machineItem.设备名称}]\r\n[IP:{machineItem.Ip}]";
                 button.Dock = DockStyle.Fill;
                 button.Enabled = false;
                 button.Font = new Font("微软雅黑", 11F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));

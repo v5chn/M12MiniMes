@@ -172,7 +172,7 @@ namespace M12MiniMes.UIStart
                         scData.设备名称 = strInMachineName;
                         scData.工位号 = "";
                         scData.工序数据 = parameters[index];
-                        scData.结果ok = bool.Parse(parameters[index + 1]);
+                        scData.结果ok = parameters[index + 1] == "1";  //0表示无 1表示OK 2表示NG
                         if (firstWrite)
                         {
                             BLLFactory<生产数据表>.Instance.Insert(scData);  //写入一条数据到数据库中
