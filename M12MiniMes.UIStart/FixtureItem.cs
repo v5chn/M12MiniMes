@@ -16,7 +16,7 @@ namespace M12MiniMes.UIStart
         /// <summary>
         /// 治具上RFID扫描出
         /// </summary>
-        public string RFID;
+        public string RFID { get; set; }
 
         /// <summary>
         /// 治具有12个孔位，记录12个物料信息
@@ -87,6 +87,10 @@ namespace M12MiniMes.UIStart
                 {
                     throw new Exception("孔号索引不能超过12（正常范围0-11）！");
                 }
+                if (mItem == null)
+                {
+                    return false;
+                }
                 //判断插入索引位置是否为空
                 MaterialItem mpItem = this.MaterialItems.ElementAtOrDefault(index);
                 if (mpItem != null)
@@ -109,6 +113,10 @@ namespace M12MiniMes.UIStart
 
         public bool RemoveMaterialItem(MaterialItem mItem)
         {
+            if (mItem == null)
+            {
+                return false;
+            }
             if (this.MaterialItems.Contains(mItem))
             {
                 this.MaterialItems.Remove(mItem);

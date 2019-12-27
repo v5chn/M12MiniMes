@@ -97,23 +97,30 @@ namespace M12MiniMes.UIStart
                         return;
                     }
                     InMachineItem.InsertFixtureItem(fixtureItem);
-                    string strData = $@"CX,{strCMachineID},{rfid},{fixtureItem.治具生产批次号},";
+                    string strData = $@"CX,{strCMachineID},{rfid},{fixtureItem.治具生产批次号}";
+                    if (fixtureItem.MaterialItems.Count == 0) //如果第一次治具不携带任何物料，则赋予12个null进去
+                    {
+                        for (int i = 0; i < 12; i++)
+                        {
+                            fixtureItem.MaterialItems.Add(null);
+                        }
+                    }
                     foreach (var item in fixtureItem.MaterialItems)
                     {
                         if (item == null)
                         {
-                            strData += "null,";
+                            strData += ",-1";
                             continue;
                         }
                         var var = item.生产数据.Where(p => p.设备id.ToString() == strCMachineID);
                         if (var == null)
                         {
-                            strData += "null,";
+                            strData += ",-1";
                             continue;
                         }
                         //找出物料指定设备ID的工序数据
-                        var var2 = var.Select(p => p.工序数据).FirstOrDefault() ?? "null";
-                        strData += $@"{var2},";
+                        var var2 = var.Select(p => p.工序数据).FirstOrDefault() ?? "-1";
+                        strData += $@",{var2}";
                     }
                     dataSend = Encoding.UTF8.GetBytes(strData);
                     listener.SendMesAsyncToClient(client, dataSend);
@@ -184,16 +191,18 @@ namespace M12MiniMes.UIStart
                         materialItem.生产数据.Add(scData);
                         index += 2;
                     }
-                    dataSend = Encoding.UTF8.GetBytes("XR Done"); //返回下位机"写入完成"
+                    dataSend = Encoding.UTF8.GetBytes("XROK"); //返回下位机"写入完成"
                     listener.SendMesAsyncToClient(client, dataSend);
                     break;
                 case Header.NGTH:  //NG替换
                     //1、把一个NG物料从治具上取出并丢弃后，腾出位置
                     //2、从暂存位的治具上取一个好物料出来，放到上述腾出位置
                     string preRFID = parameters[0];
-                    string preHoleIndex = parameters[1];
+                    string strPreHoleIndex = parameters[1];
+                    int iPreHoleIndex = int.Parse(strPreHoleIndex);
                     string nowRFID = parameters[2];
-                    string nowHoleIndex = parameters[3];
+                    string strNowHoleIndex = parameters[3];
+                    int iNowHoleIndex = int.Parse(strNowHoleIndex);
                     strInMachineID = parameters[4];
                     string stationID = parameters[5];
 
@@ -201,35 +210,37 @@ namespace M12MiniMes.UIStart
                     strInMachineName = InMachineItem.设备名称;
                     FixtureItem preFixture = ItemManager.Instance.GetFixtureItem(preRFID, strInMachineID); //替换前治具
                     FixtureItem nowFixture = ItemManager.Instance.GetFixtureItem(nowRFID, strInMachineID); //替换后治具
-                    MaterialItem thMaterialItem = preFixture[preHoleIndex]; //替换的物料
-                    MaterialItem ngMaterialItem = nowFixture[nowHoleIndex];
+                    MaterialItem thMaterialItem = preFixture.MaterialItems.ElementAtOrDefault(iPreHoleIndex); //替换的物料
+                    MaterialItem ngMaterialItem = nowFixture.MaterialItems.ElementAtOrDefault(iNowHoleIndex);
 
                     物料ng替换记录表Info ngInfo = new 物料ng替换记录表Info();
                     ngInfo.Ng替换时间 = DateTime.Now;
-                    ngInfo.物料生产批次号 = ngMaterialItem.物料生产批次号;
+                    ngInfo.物料生产批次号 = ngMaterialItem?.物料生产批次号;
                     ngInfo.设备id = int.Parse(strInMachineID);
                     ngInfo.设备名称 = strInMachineName;
                     ngInfo.工位号 = stationID;
-                    ngInfo.物料guid = ngMaterialItem.MaterialGuid.ToString();
+                    ngInfo.物料guid = ngMaterialItem?.MaterialGuid.ToString();
                     ngInfo.替换前治具guid = preFixture.FixtureGuid.ToString();
                     ngInfo.替换前治具rfid = preRFID;
-                    ngInfo.替换前治具孔号 = int.Parse(preHoleIndex);
+                    ngInfo.替换前治具孔号 = iPreHoleIndex;
                     ngInfo.前治具生产批次号 = preFixture.治具生产批次号;
                     ngInfo.替换后治具guid = nowFixture.FixtureGuid.ToString();
                     ngInfo.替换后治具rfid = nowRFID;
-                    int iIndex = int.Parse(nowHoleIndex);
-                    ngInfo.替换后治具孔号 = iIndex;
+                    ngInfo.替换后治具孔号 = iNowHoleIndex;
                     ngInfo.后治具生产批次号 = nowFixture.治具生产批次号;
                     BLLFactory<物料ng替换记录表>.Instance.Insert(ngInfo);  //写入一条数据到数据库中
 
                     preFixture.RemoveMaterialItem(thMaterialItem);
                     nowFixture.RemoveMaterialItem(ngMaterialItem);
-                    nowFixture.InsertMaterialItem(iIndex, thMaterialItem);
+                    nowFixture.InsertMaterialItem(iNowHoleIndex, thMaterialItem);
 
-                    dataSend = Encoding.UTF8.GetBytes("NGTH Done"); //返回下位机"NG替换完成"
+                    dataSend = Encoding.UTF8.GetBytes("NGTHOK"); //返回下位机"NG替换完成"
                     listener.SendMesAsyncToClient(client, dataSend);
                     break;
-                case Header.XT:
+                case Header.XT:  //心跳
+
+                    break;
+                case Header.TL:  //投料
 
                     break;
             }
@@ -244,6 +255,7 @@ namespace M12MiniMes.UIStart
         CX,
         XR,
         NGTH,
-        XT
+        XT,
+        TL
     }
 }

@@ -32,16 +32,6 @@ namespace M12MiniMes.UIStart
         {
             bt刷新_Click(null, null);
 
-            foreach (var item in TcpServer.Server.AliveClients)
-            {
-                SimpleButton button = FindButtonByIP(item.RemoteEndPoint);
-                if (button != null)
-                {
-                    //表示在线
-                    button.BackColor = Color.DeepSkyBlue;
-                }
-            }
-
             //注册客户端连上与断开事件
             TcpServer.Server.NewClientAccepted += Server_NewClientAccepted;
             TcpServer.Server.ClientDropped += Server_ClientDropped;
@@ -119,7 +109,16 @@ namespace M12MiniMes.UIStart
                 layoutPanel.Controls.Add(button, 0, i);
                 this.Buttons.Add(button);
             }
-            this.Update();
+
+            foreach (var item in TcpServer.Server.AliveClients)
+            {
+                SimpleButton button = FindButtonByIP(item.RemoteEndPoint);
+                if (button != null)
+                {
+                    //表示在线
+                    button.BackColor = Color.DeepSkyBlue;
+                }
+            }
         }
     }
 }
