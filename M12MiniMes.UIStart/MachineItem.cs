@@ -62,10 +62,21 @@ namespace M12MiniMes.UIStart
             }
         }
 
+        /// <summary>
+        /// 指定治具FixtureItem插入到指定设备MachineItem中
+        /// </summary>
+        /// <param name="fItem"></param>
+        /// <returns></returns>
         public bool InsertFixtureItem(FixtureItem fItem)
         {
-            if (!this.CurrentFixtureItems.Contains(fItem))
+            if (!this.CurrentFixtureItems.Contains(fItem)) 
             {
+                //不管三七二十一，先把所有设备删掉该治具fItem再说
+                foreach (MachineItem item in ItemManager.Instance.MachineItems)
+                {
+                    item.RemoveFixtureItem(fItem);
+                }
+
                 this.CurrentFixtureItems.Add(fItem);
                 fItem.SetMachineItem(this);
                 return true;

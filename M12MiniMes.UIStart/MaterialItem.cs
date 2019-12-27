@@ -65,6 +65,8 @@ namespace M12MiniMes.UIStart
             this.Fixture = null;
             this.MaterialGuid = Guid.Empty;
             this.物料生产批次号 = null;
+            this.生产数据.Clear();
+            this.生产数据 = null;
 
             GC.Collect();
             GC.WaitForPendingFinalizers();

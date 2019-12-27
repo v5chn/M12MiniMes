@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WHC.Framework.ControlUtil;
+using Faster.Core;
 
 namespace M12MiniMes.UIStart
 {
@@ -126,12 +127,28 @@ namespace M12MiniMes.UIStart
         /// </summary>
         /// <param name="machineID"></param>
         /// <returns></returns>
-        public MachineItem GetCurrentMachineItem(string machineID)
+        public MachineItem GetMachineItemByID(string machineID)
         {
-            MachineItem tempMachineItem = this.MachineItems?.FirstOrDefault(p => p.设备id.Equals(machineID));
+            MachineItem tempMachineItem = this.MachineItems?.FirstOrDefault(p => p.设备id.ToString().Equals(machineID));
             if (tempMachineItem == null)
             {
                 throw new Exception($@"ID为[{machineID}]的设备不存在！");
+            }
+            return tempMachineItem;
+        }
+
+        /// <summary>
+        /// 通过设备IP地址获取该设备信息Item
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns></returns>
+        public MachineItem GetMachineItemByIP(string ip)
+        {
+            MachineItem tempMachineItem = this.MachineItems?.FirstOrDefault(p => p.Ip.Equals(ip));
+            if (tempMachineItem == null)
+            {
+                LogService.Error($@"IP为[{ip}]的设备不存在！");
+                throw new Exception($@"IP为[{ip}]的设备不存在！");
             }
             return tempMachineItem;
         }
@@ -143,18 +160,15 @@ namespace M12MiniMes.UIStart
         /// <returns></returns>
         public FixtureItem GetFixtureItem(string RFID, string machineID)
         {
-            MachineItem tempMachineItem = GetCurrentMachineItem(machineID);
+            MachineItem tempMachineItem = GetMachineItemByID(machineID);
             FixtureItem tempFixtureItem = GetCurrentFixtureItemByRFID(RFID);
-            if (tempFixtureItem != null) //已存在 
+            if (machineID == "1") //线头设备  表示治具回流或流入新治具
             {
-                if (machineID == "0") //1#线头设备  表示回流  清空治具原携带信息
-                {
-                    //检测到治具回流  清空治具原携带信息
-                    tempFixtureItem.Dispose();
-                    tempFixtureItem = new FixtureItem();
-                }
+                tempFixtureItem?.Dispose();  //清空治具原携带信息
+                tempFixtureItem = new FixtureItem();
+                tempFixtureItem.RFID = RFID;
             }
-            tempFixtureItem.SetMachineItem(tempMachineItem); //更新治具所在设备
+            tempMachineItem.InsertFixtureItem(tempFixtureItem); //更新治具所在设备
             return tempFixtureItem;
         }
 
@@ -173,7 +187,7 @@ namespace M12MiniMes.UIStart
                 if (var != null)
                 {
                     //查询该设备工序ID和工序名称
-                    var varm = GetCurrentMachineItem(machineID);
+                    var varm = GetMachineItemByID(machineID);
                     string machineName = varm.设备名称;
                     string condition = $@"设备ID = {machineID}";
 

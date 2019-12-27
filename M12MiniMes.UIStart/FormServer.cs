@@ -45,6 +45,7 @@ namespace M12MiniMes.UIStart
             //注册客户端连上与断开事件
             TcpServer.Server.NewClientAccepted += Server_NewClientAccepted;
             TcpServer.Server.ClientDropped += Server_ClientDropped;
+            TcpServer.Server.Stopped += Server_Stopped;
         }
 
         private SimpleButton FindButtonByIP(EndPoint endPoint)
@@ -82,6 +83,17 @@ namespace M12MiniMes.UIStart
             }
         }
 
+        private void Server_Stopped(object sender, EventArgs e)
+        {
+            this.Invoke(new Action(() =>
+            {
+                this.Buttons.ForEach(p =>
+                {
+                    p.Appearance.BackColor = Color.Silver;
+                });
+            }));
+        }
+
         private void bt刷新_Click(object sender, EventArgs e)
         {
             this.Buttons.Clear();
@@ -101,7 +113,7 @@ namespace M12MiniMes.UIStart
                 button.Tag = machineItem;
                 button.Text = $@"[ID:{machineItem.设备id}]-[Name:{machineItem.设备名称}]-[IP:{machineItem.Ip}]";
                 button.Dock = DockStyle.Fill;
-                //button.Enabled = false;
+                button.Enabled = false;
                 button.Font = new Font("微软雅黑", 11F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
                 layoutPanel.RowStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
                 layoutPanel.Controls.Add(button, 0, i);

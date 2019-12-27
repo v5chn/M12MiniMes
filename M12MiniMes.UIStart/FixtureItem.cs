@@ -46,14 +46,28 @@ namespace M12MiniMes.UIStart
             }
         }
 
+        /// <summary>
+        /// 通过孔号HoleIndex（0至11）获取物料信息，若该治具不携带该物料则返回null
+        /// </summary>
+        /// <param name="strHoleIndex"></param>
+        /// <returns></returns>
+        public MaterialItem this[string strHoleIndex]
+        {
+            get
+            {
+                int index = int.Parse(strHoleIndex);
+                return MaterialItems?[index];
+            }
+        }
+
         public FixtureItem()
         {
             this.FixtureGuid = Guid.NewGuid();
             this.MaterialItems = new BindingList<MaterialItem>();
-            for (int i = 0; i < 12; i++)
-            {
-                this.MaterialItems.Add(null);
-            }
+            //从生产批次表中拿
+            var var = ItemManager.Instance.Get当前在产批次列表();
+            var var2 = var.FirstOrDefault();
+            this.治具生产批次号 = var2?.生产批次号 ?? "noneBatchSN";
         }
 
         /// <summary>
@@ -73,16 +87,17 @@ namespace M12MiniMes.UIStart
                 {
                     throw new Exception("孔号索引不能超过12（正常范围0-11）！");
                 }
+                //判断插入索引位置是否为空
+                MaterialItem mpItem = this.MaterialItems.ElementAtOrDefault(index);
+                if (mpItem != null)
+                {
+                    throw new Exception("插入索引位置已存在一个物料！请先清楚该索引位置的物料后再行插入新物料！");
+                }
                 if (!this.MaterialItems.Contains(mItem))
                 {
                     this.MaterialItems.Insert(index, mItem);
                     mItem.SetFixtureItem(this);
                     return true;
-                }
-                MaterialItem mpItem = this.MaterialItems[index];
-                if (mpItem != null)
-                {
-                    throw new Exception("插入位置已存在一个物料！");
                 }
                 return false;
             }

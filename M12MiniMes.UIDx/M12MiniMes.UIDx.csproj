@@ -193,6 +193,9 @@
     <Compile Include="UI\Frm设备表.designer.cs">
       <DependentUpon>Frm设备表.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Frm生产数据表.resx">
+      <DependentUpon>Frm生产数据表.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\licenses.licx" />
     <Compile Include="Other\ExtensionMethod.cs" />
