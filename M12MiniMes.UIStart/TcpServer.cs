@@ -26,8 +26,6 @@ namespace M12MiniMes.UIStart
         public static bool Load() 
         {
             Server = CommonSerializer.LoadObjFormBinaryFile<AsyncTcpServer>($@".\Server.xml", out bool bLoadOK, out Exception ex);
-            bool b = Server.Init("");
-            StartMasterLogic();
             return bLoadOK;
         }
 

@@ -8,6 +8,10 @@ using DevExpress.LookAndFeel;
 using Faster.Core;
 using M12MiniMes.UI;
 using CommunicateCenter;
+using System.Drawing;
+using FastInterface;
+using System.Net.Sockets;
+using System.Net;
 
 namespace M12MiniMes.UIStart
 {
@@ -38,12 +42,77 @@ namespace M12MiniMes.UIStart
 
         public override Func<IBar, bool> FuncInitialize => p =>
         {
-            bool b1 = TcpServer.Load();
+            bool b1 = ItemManager.Instance.Load();
+            foreach (var item in ItemManager.Instance.MachineItems)
+            {
+                //在底部状态栏显示各设备客户端连接状态
+                bool ba = IBarManager.Instance.CreateBottomStatusBar(item.设备名称,null,null,pp=> 
+                { 
+                    pp.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                    return true; 
+                }); 
+            }
+
+            bool b2 = TcpServer.Load();
 
             frmServer = new FormServer(new frmTcpServer(TcpServer.Server));
 
+            //注册客户端连上与断开事件
+            TcpServer.Server.NewClientAccepted += Server_NewClientAccepted;
+            TcpServer.Server.ClientDropped += Server_ClientDropped;
+            TcpServer.Server.Stopped += Server_Stopped;
+
+            bool b3 = TcpServer.Server.Init("");
+            TcpServer.StartMasterLogic();
+
             return b1;
         };
+        private MachineItem FindMachineItemByMachineIP(string machineIP) 
+        {
+            return ItemManager.Instance.MachineItems.FirstOrDefault(p => p.Ip.Equals(machineIP));
+        }
+        private IBar FindBottomStatusIbarByMachineName(string machineName)
+        {
+            return IBarManager.Instance.createdBottomStatusBars.FirstOrDefault(p => p.InsertPath.Equals(machineName));
+        }
+        private void Server_NewClientAccepted(ITcpServer listener,Socket client, object state)
+        {
+            IPAddress ip = ((IPEndPoint)client.RemoteEndPoint).Address;
+            MachineItem mItem = FindMachineItemByMachineIP(ip.ToString());
+            if (mItem != null)
+            {
+                IBar bar = FindBottomStatusIbarByMachineName(mItem.设备名称);
+                if (bar != null)
+                {
+                    bar.BarStatus = new BarStatus() { BackColor = Color.DeepSkyBlue };
+                }
+            }
+        }
+        private void Server_Stopped(object sender, EventArgs e)
+        {
+            foreach (var item in ItemManager.Instance.MachineItems)
+            {
+                IBar bar = FindBottomStatusIbarByMachineName(item.设备名称);
+                if (bar != null)
+                {
+                    bar.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                }
+            }
+        }
+
+        private void Server_ClientDropped(ITcpServer listener, Socket client)
+        {
+            IPAddress ip = ((IPEndPoint)client.RemoteEndPoint).Address;
+            MachineItem mItem = FindMachineItemByMachineIP(ip.ToString());
+            if (mItem != null)
+            {
+                IBar bar = FindBottomStatusIbarByMachineName(mItem.设备名称);
+                if (bar != null)
+                {
+                    bar.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                }
+            }
+        }
 
         public override Func<IView, bool> FuncSave => p =>
         {
@@ -53,12 +122,6 @@ namespace M12MiniMes.UIStart
 
     public class ItemsView : LazyAbstractView<FormItemsView>
     {
-        public override Func<IBar, bool> FuncInitialize => p =>
-        {
-            bool b = ItemManager.Instance.Load();
-            return b;
-        };
-
         public override Func<IView, bool> FuncSave => p =>
         {
             bool b = ItemManager.Instance.Save();
@@ -66,6 +129,11 @@ namespace M12MiniMes.UIStart
         };
 
         public override string InsertPath => $@"生产内存数据";
+
+        public override Action<IView> ActShowView => p =>
+        {
+            this.LazyControl.Value.ExpandAllRow();
+        };
     }
 
     public class View设备工序表 : LazyAbstractView<Frm设备表>

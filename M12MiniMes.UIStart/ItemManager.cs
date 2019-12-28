@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WHC.Framework.ControlUtil;
-using Faster.Core;
 
 namespace M12MiniMes.UIStart
 {
@@ -31,12 +30,21 @@ namespace M12MiniMes.UIStart
         private ItemManager()
         {
         }
+
+        /// <summary>
+        /// 保存内存数据
+        /// </summary>
+        /// <returns></returns>
         public bool Save()
         {
             CommonSerializer.SaveObjAsBinaryFile(this.MachineItems, $@".\MachineItems.xml", out bool bSaveOK, out Exception ex);
             return bSaveOK;
         }
 
+        /// <summary>
+        /// 加载内存数据
+        /// </summary>
+        /// <returns></returns>
         public bool Load()
         {
             this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<BindingList<MachineItem>>($@".\MachineItems.xml", out bool bLoadOK, out Exception ex);

@@ -87,6 +87,14 @@ namespace M12MiniMes.UIStart
             }
         }
 
+        /// <summary>
+        /// 展开所有子级列表
+        /// </summary>
+        public void ExpandAllRow() 
+        {
+            this.gridView1.ExpandAllGroups();
+        }
+
         private void bt同步_Click(object sender, EventArgs e)
         {
             if (MessageService.AskQuestion("只建议在第一次配置好设备表后操作！此步会从数据库设备表中同步信息，且会清空当前内存的所有治具、物料信息！在警告后还要继续操作码？"))
