@@ -71,12 +71,15 @@ namespace M12MiniMes.UIStart
         }
 
         /// <summary>
-        /// 设置当前治具所在设备
+        /// 设置当前治具所在设备  第一步清除旧设备，第二步设置新设备
         /// </summary>
         /// <param name="fixture"></param>
         public void SetMachineItem(MachineItem machine)
         {
+            //先删除旧信息
+            this.MachineItem?.RemoveFixtureItem(this);
             this.MachineItem = machine;
+            this.MachineItem?.InsertFixtureItem(this);
         }
 
         public bool InsertMaterialItem(int index, MaterialItem mItem)
@@ -99,6 +102,7 @@ namespace M12MiniMes.UIStart
                 }
                 if (!this.MaterialItems.Contains(mItem))
                 {
+                    this.MaterialItems.RemoveAt(index);
                     this.MaterialItems.Insert(index, mItem);
                     mItem.SetFixtureItem(this);
                     return true;
@@ -150,6 +154,7 @@ namespace M12MiniMes.UIStart
 
         public void Dispose()
         {
+            this.SetMachineItem(null);
             this.MaterialItems.Clear();
             this.MaterialItems = null;
             this.RFID = null;

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WHC.Framework.ControlUtil;
 
 namespace M12MiniMes.UIStart
@@ -69,16 +70,27 @@ namespace M12MiniMes.UIStart
         /// <returns></returns>
         public bool InsertFixtureItem(FixtureItem fItem)
         {
-            if (!this.CurrentFixtureItems.Contains(fItem)) 
+            if (fItem != null && fItem.RFID != null)
             {
-                //不管三七二十一，先把所有设备删掉该治具fItem再说
-                foreach (MachineItem item in ItemManager.Instance.MachineItems)
+                //找出相同RFID的治具
+                var var = ItemManager.Instance.AllCurrentFixtureItems.Where(p => p.RFID.Equals(fItem.RFID));
+                if (var.Count() > 1)
                 {
-                    item.RemoveFixtureItem(fItem);
+                    MessageBox.Show($@"已具有相同RFID[{fItem.RFID}]的治具！");
+                    return false ;
                 }
+            }
+            if (!this.CurrentFixtureItems.Contains(fItem)) //如果不包含
+            {
+                //fItem.SetMachineItem(null);
+                //fItem.SetMachineItem(this);
+                ////不管三七二十一，先把所有设备删掉该治具fItem再说
+                //foreach (MachineItem item in ItemManager.Instance.MachineItems)
+                //{
+                //    item.RemoveFixtureItem(fItem);
+                //}
 
                 this.CurrentFixtureItems.Add(fItem);
-                fItem.SetMachineItem(this);
                 return true;
             }
             return false;
@@ -89,7 +101,6 @@ namespace M12MiniMes.UIStart
             if (this.CurrentFixtureItems.Contains(fItem))
             {
                 this.CurrentFixtureItems.Remove(fItem);
-                fItem.SetMachineItem(null);
                 return true;
             }
             return false;
