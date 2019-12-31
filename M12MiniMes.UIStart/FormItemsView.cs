@@ -27,6 +27,9 @@ namespace M12MiniMes.UIStart
             this.gridView1.CustomDrawRowIndicator += showRowIndex;
             this.gridView2.CustomDrawRowIndicator += showRowIndex;
             this.gridView3.CustomDrawRowIndicator += showRowIndex;
+
+            //A multithreading issue is detected. The DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection option allows you to disable the exception, but it does not resolve the underlying issue.
+            //DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = false;
         }
 
         private void showRowIndex(object sender, RowIndicatorCustomDrawEventArgs e) 
@@ -68,31 +71,15 @@ namespace M12MiniMes.UIStart
             e.ErrorText = $@"不允许存在重复名称！只能为字母开头！请检查 (按ESC键可取消编辑并退出)";
         }
 
-        private void test(object sender, EventArgs e)  //展开子级从表视图
-        {
-            //展开
-            //this.gridView1.ExpandGroupLevel(1);
-
-            int rowHandle = this.gridView1.FocusedRowHandle;
-            if (rowHandle >= 0)
-            {
-                if (this.gridView1.GetMasterRowExpanded(rowHandle))
-                {
-                    this.gridView1.CollapseMasterRow(rowHandle);
-                }
-                else
-                {
-                    this.gridView1.ExpandMasterRow(rowHandle);
-                }
-            }
-        }
-
         /// <summary>
         /// 展开所有子级列表
         /// </summary>
         public void ExpandAllRow() 
         {
-            this.gridView1.ExpandAllGroups();
+            for (int i = 0; i < this.gridView1.RowCount; i++)
+            {
+                this.gridView1.ExpandMasterRow(i);
+            }
         }
 
         private void bt同步_Click(object sender, EventArgs e)
@@ -112,6 +99,11 @@ namespace M12MiniMes.UIStart
             {
                 
             }
+        }
+
+        private void bt刷新_Click(object sender, EventArgs e)
+        {
+            this.gridControl1.DataSource = ItemManager.Instance.MachineItems;
         }
     }
 }

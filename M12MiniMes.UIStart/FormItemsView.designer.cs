@@ -41,6 +41,7 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bt同步 = new DevExpress.XtraEditors.SimpleButton();
+            this.bt刷新 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -54,7 +55,8 @@
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.IndicatorWidth = 60;
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView2.OptionsBehavior.ReadOnly = true;
+            this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView2_InvalidRowException);
             this.gridView2.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView2_ValidateRow);
@@ -90,7 +92,6 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1340, 805);
             this.gridControl1.TabIndex = 0;
-            this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
             this.gridView3,
@@ -107,7 +108,8 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 60;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Classic;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView1_InvalidRowException);
@@ -148,7 +150,8 @@
             this.gridView3.GridControl = this.gridControl1;
             this.gridView3.IndicatorWidth = 60;
             this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView3.OptionsBehavior.ReadOnly = true;
+            this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
@@ -156,6 +159,8 @@
             // 
             this.gridView4.GridControl = this.gridControl1;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.ReadOnly = true;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // bt同步
             // 
@@ -164,7 +169,7 @@
             this.bt同步.Appearance.Options.UseFont = true;
             this.bt同步.Appearance.Options.UseForeColor = true;
             this.bt同步.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bt同步.Location = new System.Drawing.Point(0, 880);
+            this.bt同步.Location = new System.Drawing.Point(0, 904);
             this.bt同步.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bt同步.Name = "bt同步";
             this.bt同步.Size = new System.Drawing.Size(1340, 99);
@@ -172,12 +177,28 @@
             this.bt同步.Text = "【慎点】：从数据库同步设备信息并清空当前内存数据";
             this.bt同步.Click += new System.EventHandler(this.bt同步_Click);
             // 
+            // bt刷新
+            // 
+            this.bt刷新.Appearance.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt刷新.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.bt刷新.Appearance.Options.UseFont = true;
+            this.bt刷新.Appearance.Options.UseForeColor = true;
+            this.bt刷新.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bt刷新.Location = new System.Drawing.Point(0, 805);
+            this.bt刷新.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.bt刷新.Name = "bt刷新";
+            this.bt刷新.Size = new System.Drawing.Size(1340, 99);
+            this.bt刷新.TabIndex = 13;
+            this.bt刷新.Text = "刷新";
+            this.bt刷新.Click += new System.EventHandler(this.bt刷新_Click);
+            // 
             // FormItemsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1340, 979);
+            this.ClientSize = new System.Drawing.Size(1361, 979);
+            this.Controls.Add(this.bt刷新);
             this.Controls.Add(this.bt同步);
             this.Controls.Add(this.gridControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -204,5 +225,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_IP地址;
         private DevExpress.XtraEditors.SimpleButton bt同步;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.SimpleButton bt刷新;
     }
 }

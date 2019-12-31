@@ -32,11 +32,9 @@ namespace M12MiniMes.UIStart
     }
 
 
-    public class ServerView : AbstractView
+    public class ServerView : LazyAbstractView2<frmTcpServer>
     {
-        FormServer frmServer;
-
-        public override Control Control => frmServer;
+        public override Func<frmTcpServer> valueFactory => ()=> new frmTcpServer(TcpServer.Server);
 
         public override string InsertPath => $@"Mes服务器";
 
@@ -54,8 +52,6 @@ namespace M12MiniMes.UIStart
             }
 
             bool b2 = TcpServer.Load();
-
-            frmServer = new FormServer(new frmTcpServer(TcpServer.Server));
 
             //注册客户端连上与断开事件
             TcpServer.Server.NewClientAccepted += Server_NewClientAccepted;

@@ -21,7 +21,7 @@ namespace M12MiniMes.UIStart
         /// <summary>
         /// 治具有12个孔位，记录12个物料信息
         /// </summary>
-        public BindingList<MaterialItem> MaterialItems { get; set; }
+        public List<MaterialItem> MaterialItems { get; set; }
 
         /// <summary>
         /// 当前治具所在的设备信息，可以为null
@@ -63,7 +63,7 @@ namespace M12MiniMes.UIStart
         public FixtureItem()
         {
             this.FixtureGuid = Guid.NewGuid();
-            this.MaterialItems = new BindingList<MaterialItem>();
+            this.MaterialItems = new List<MaterialItem>();
             //从生产批次表中拿
             var var = ItemManager.Instance.Get当前在产批次列表();
             var var2 = var.FirstOrDefault();

@@ -42,7 +42,7 @@ namespace M12MiniMes.UIStart
         /// <summary>
         /// 内存储存当前在产的该设备上的所有治具信息
         /// </summary>
-        public BindingList<FixtureItem> CurrentFixtureItems { get; set; } = new BindingList<FixtureItem>();
+        public List<FixtureItem> CurrentFixtureItems { get; set; } = new List<FixtureItem>();
 
         /// <summary>
         /// 内存储存当前在产的设备的所有治具的所有物料数据汇总

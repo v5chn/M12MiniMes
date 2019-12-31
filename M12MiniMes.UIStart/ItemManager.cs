@@ -47,7 +47,7 @@ namespace M12MiniMes.UIStart
         /// <returns></returns>
         public bool Load()
         {
-            this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<BindingList<MachineItem>>($@".\MachineItems.xml", out bool bLoadOK, out Exception ex);
+            this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<List<MachineItem>>($@".\MachineItems.xml", out bool bLoadOK, out Exception ex);
             return bLoadOK;
         }
 
@@ -70,13 +70,13 @@ namespace M12MiniMes.UIStart
                 设备名称 = p.设备名称,
                 Ip = p.Ip
             }).ToList();
-            this.MachineItems = new BindingList<MachineItem>(var);
+            this.MachineItems = new List<MachineItem>(var);
         }
 
         /// <summary>
         /// 内存储存当前在产的所有设备数据
         /// </summary>
-        public BindingList<MachineItem> MachineItems { get; private set; }
+        public List<MachineItem> MachineItems { get; private set; }
 
         /// <summary>
         /// 内存储存当前在产的所有设备的所有治具的数据汇总
