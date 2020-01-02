@@ -70,7 +70,7 @@ namespace M12MiniMes.UIStart
         }
         private IBar FindBottomStatusIbarByMachineName(string machineName)
         {
-            return IBarManager.Instance.createdBars.FirstOrDefault(p => p.InsertPath.Equals(machineName));
+            return IBarManager.Instance.codeCreatedBars.FirstOrDefault(p => p.InsertPath.Equals(machineName));
         }
         private void Server_NewClientAccepted(ITcpServer listener,Socket client, object state)
         {
