@@ -44,11 +44,12 @@ namespace M12MiniMes.UIStart
             foreach (var item in ItemManager.Instance.MachineItems)
             {
                 //在底部状态栏显示各设备客户端连接状态
-                bool ba = IBarManager.Instance.CreateBottomStatusBar(item.设备名称,null,null,pp=> 
-                { 
-                    pp.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                bool ba = IBarManager.Instance.CreateBar(item.设备名称,null,null,pp=> 
+                {
+                    //pp.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                    pp.BarStatus = new BarStatus() { IsEnable = false };
                     return true; 
-                }); 
+                },BarType.Check); 
             }
 
             bool b2 = TcpServer.Load();
@@ -69,7 +70,7 @@ namespace M12MiniMes.UIStart
         }
         private IBar FindBottomStatusIbarByMachineName(string machineName)
         {
-            return IBarManager.Instance.createdBottomStatusBars.FirstOrDefault(p => p.InsertPath.Equals(machineName));
+            return IBarManager.Instance.createdBars.FirstOrDefault(p => p.InsertPath.Equals(machineName));
         }
         private void Server_NewClientAccepted(ITcpServer listener,Socket client, object state)
         {
