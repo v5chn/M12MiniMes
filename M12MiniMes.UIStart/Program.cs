@@ -44,12 +44,10 @@ namespace M12MiniMes.UIStart
             foreach (var item in ItemManager.Instance.MachineItems)
             {
                 //在底部状态栏显示各设备客户端连接状态
-                bool ba = IBarManager.Instance.CreateBar(item.设备名称,null,null,pp=> 
-                {
-                    //pp.BarStatus = new BarStatus() { BackColor = Color.Tomato };
-                    pp.BarStatus = new BarStatus() { IsEnable = false };
-                    return true; 
-                },BarType.Check); 
+                IBar iBar = IBarManager.Instance.CreateBar(item.设备名称,null,null, 
+                    pp => { pp.BarStatus = new BarStatus() { IsEnable = false /*BackColor = Color.Tomato*/ }; return true; },
+                    BarType.Check);
+                //pp => { pp.BarStatus = new BarStatus() { BackColor = Color.Tomato }; return true; }
             }
 
             bool b2 = TcpServer.Load();
@@ -81,7 +79,9 @@ namespace M12MiniMes.UIStart
                 IBar bar = FindBottomStatusIbarByMachineName(mItem.设备名称);
                 if (bar != null)
                 {
-                    bar.BarStatus = new BarStatus() { BackColor = Color.DeepSkyBlue };
+                    ICheckBar iCheckbar = bar as ICheckBar;
+                    iCheckbar.bChecked = true;
+                    //bar.BarStatus = new BarStatus() { BackColor = Color.DeepSkyBlue };
                 }
             }
         }
@@ -92,7 +92,9 @@ namespace M12MiniMes.UIStart
                 IBar bar = FindBottomStatusIbarByMachineName(item.设备名称);
                 if (bar != null)
                 {
-                    bar.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                    ICheckBar iCheckbar = bar as ICheckBar;
+                    iCheckbar.bChecked = false;
+                    //bar.BarStatus = new BarStatus() { BackColor = Color.Tomato };
                 }
             }
         }
@@ -106,7 +108,9 @@ namespace M12MiniMes.UIStart
                 IBar bar = FindBottomStatusIbarByMachineName(mItem.设备名称);
                 if (bar != null)
                 {
-                    bar.BarStatus = new BarStatus() { BackColor = Color.Tomato };
+                    ICheckBar iCheckbar = bar as ICheckBar;
+                    iCheckbar.bChecked = false;
+                    //bar.BarStatus = new BarStatus() { BackColor = Color.Tomato };
                 }
             }
         }
