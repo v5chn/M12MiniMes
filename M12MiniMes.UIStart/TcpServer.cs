@@ -33,6 +33,24 @@ namespace M12MiniMes.UIStart
         public static void StartMasterLogic() 
         {
             Server.DataReceived += Server_DataReceived;
+
+            //开一个线程 给所有客户端发送心跳 10S一次
+            Task.Factory.StartNew(async() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        byte[] bt = Encoding.UTF8.GetBytes($@"{Header.XT.ToString()}");
+                        Server.SendMesAsyncToAllClients(bt);
+                        await Task.Delay(10000);
+                    }
+                    catch (Exception ex)
+                    {
+                        LogService.Warn(ex.Message, ex);
+                    }
+                }
+            });
         }
 
         private static void Server_DataReceived(FastInterface.ITcpServer listener, Socket client, byte[] data, int length)
@@ -197,6 +215,18 @@ namespace M12MiniMes.UIStart
                             if (firstWrite)
                             {
                                 BLLFactory<生产数据表>.Instance.Insert(scData);  //写入一条数据到数据库中
+                                #region 如果是线头机，该批次的上线数+12
+                                if (strInMachineID == "0")
+                                {
+                                    string condition = $@"生成出的生产批次号 = {materialItem.Fixture.治具生产批次号}";
+                                    var var = BLLFactory<生产批次生成表>.Instance.FindLast(condition);
+                                    if (var != null)
+                                    {
+                                        var.上线数 += 12;
+                                        BLLFactory<生产批次生成表>.Instance.Update(var, var.生产批次id);
+                                    }
+                                }
+                                #endregion
                             }
                             else
                             {

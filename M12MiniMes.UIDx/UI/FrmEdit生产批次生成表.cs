@@ -240,11 +240,31 @@ namespace M12MiniMes.UI
             {
                 #region 新增数据
 
+                #region 改变某些字段
+                info.上线数 = info.下线数 = 0;
+                info.时间 = DateTime.Now;
+                //判断当前时间是白班还是夜班
+                string _strWorkingDayAM = "08:00";
+                string _strWorkingDayPM = "20:00";
+                TimeSpan dspWorkingDayAM = DateTime.Parse(_strWorkingDayAM).TimeOfDay;
+                TimeSpan dspWorkingDayPM = DateTime.Parse(_strWorkingDayPM).TimeOfDay;
+                TimeSpan dspNow = DateTime.Now.TimeOfDay;
+                if (dspNow >= dspWorkingDayAM && dspNow <= dspWorkingDayPM)
+                {
+                    info.班次 = "白班";
+                }
+                else
+                {
+                    info.班次 = "夜班";
+                }
+                info.生产批次号 = $@"{DateTime.Now.ToString("yyMMddhhmmss")}{info.系列号}";
+                #endregion
+
                 bool succeed = BLLFactory<生产批次生成表>.Instance.Insert(info);
                 if (succeed)
                 {
                     //可添加其他关联操作
-
+                    
                     return true;
                 }
                 #endregion
