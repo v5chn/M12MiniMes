@@ -37,7 +37,7 @@ namespace M12MiniMes.UIStart
         /// <returns></returns>
         public bool Save()
         {
-            CommonSerializer.SaveObjAsBinaryFile(this.MachineItems, $@".\MachineItems.xml", out bool bSaveOK, out Exception ex);
+            CommonSerializer.SaveObjAsBinaryFile(this.MachineItems, $@"D:\FastAutomation\MachineItems.xml", out bool bSaveOK, out Exception ex);
             return bSaveOK;
         }
 
@@ -47,7 +47,7 @@ namespace M12MiniMes.UIStart
         /// <returns></returns>
         public bool Load()
         {
-            this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<List<MachineItem>>($@".\MachineItems.xml", out bool bLoadOK, out Exception ex);
+            this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<List<MachineItem>>($@"D:\FastAutomation\MachineItems.xml", out bool bLoadOK, out Exception ex);
             return bLoadOK;
         }
 

@@ -19,13 +19,13 @@ namespace M12MiniMes.UIStart
 
         public static bool Save() 
         {
-            CommonSerializer.SaveObjAsBinaryFile(Server, $@".\Server.xml", out bool bSaveOK, out Exception ex);
+            CommonSerializer.SaveObjAsBinaryFile(Server, $@"D:\FastAutomation\Server.xml", out bool bSaveOK, out Exception ex);
             return bSaveOK;
         }
 
         public static bool Load() 
         {
-            Server = CommonSerializer.LoadObjFormBinaryFile<AsyncTcpServer>($@".\Server.xml", out bool bLoadOK, out Exception ex);
+            Server = CommonSerializer.LoadObjFormBinaryFile<AsyncTcpServer>($@"D:\FastAutomation\Server.xml", out bool bLoadOK, out Exception ex);
             return bLoadOK;
         }
 
