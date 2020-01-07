@@ -35,22 +35,22 @@ namespace M12MiniMes.UIStart
             Server.DataReceived += Server_DataReceived;
 
             //开一个线程 给所有客户端发送心跳 10S一次
-            Task.Factory.StartNew(async() =>
-            {
-                while (true)
-                {
-                    try
-                    {
-                        byte[] bt = Encoding.UTF8.GetBytes($@"{Header.XT.ToString()}");
-                        Server.SendMesAsyncToAllClients(bt);
-                        await Task.Delay(10000);
-                    }
-                    catch (Exception ex)
-                    {
-                        LogService.Warn(ex.Message, ex);
-                    }
-                }
-            });
+            //Task.Factory.StartNew(async() =>
+            //{
+            //    while (true)
+            //    {
+            //        try
+            //        {
+            //            byte[] bt = Encoding.UTF8.GetBytes($@"{Header.XT.ToString()}");
+            //            Server.SendMesAsyncToAllClients(bt);
+            //            await Task.Delay(10000);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            LogService.Warn(ex.Message, ex);
+            //        }
+            //    }
+            //});
         }
 
         private static void Server_DataReceived(FastInterface.ITcpServer listener, Socket client, byte[] data, int length)
