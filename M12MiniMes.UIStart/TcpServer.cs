@@ -84,7 +84,7 @@ namespace M12MiniMes.UIStart
                 MachineItem machineItem = ItemManager.Instance.GetMachineItemByIP(strIP);
                 if (machineItem == null)
                 {
-                    throw new Exception($@"设备信息无该记录IP {strIP} ，请先进行同步！");
+                    throw new Exception($@"查询设备信息无该记录IP {strIP} ，请先进行同步！");
                 }
 
                 Header header = (Header)Enum.Parse(typeof(Header), strHeader);
@@ -216,13 +216,17 @@ namespace M12MiniMes.UIStart
                             {
                                 BLLFactory<生产数据表>.Instance.Insert(scData);  //写入一条数据到数据库中
                                 #region 如果是线头机，该批次的上线数+12
-                                if (strInMachineID == "0")
+                                if (strInMachineID == "0" && i == 11)
                                 {
-                                    string condition = $@"生成出的生产批次号 = {materialItem.Fixture.治具生产批次号}";
+                                    string condition = $@"生产批次号 = '{materialItem.Fixture.治具生产批次号}'";
                                     var var = BLLFactory<生产批次生成表>.Instance.FindLast(condition);
                                     if (var != null)
                                     {
                                         var.上线数 += 12;
+                                        if (var.上线数 >= var.计划投入数)
+                                        {
+                                            var.状态 = "生产完成";
+                                        }
                                         BLLFactory<生产批次生成表>.Instance.Update(var, var.生产批次id);
                                     }
                                 }
