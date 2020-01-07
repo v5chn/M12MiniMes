@@ -103,7 +103,9 @@ namespace M12MiniMes.UIStart
 
         private void bt刷新_Click(object sender, EventArgs e)
         {
+            this.gridControl1.DataSource = null;
             this.gridControl1.DataSource = ItemManager.Instance.MachineItems;
+            this.ExpandAllRow();
         }
     }
 }

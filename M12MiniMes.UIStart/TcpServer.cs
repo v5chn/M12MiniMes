@@ -275,11 +275,32 @@ namespace M12MiniMes.UIStart
                         ngInfo.替换后治具rfid = nowRFID;
                         ngInfo.替换后治具孔号 = iNowHoleIndex;
                         ngInfo.后治具生产批次号 = nowFixture.治具生产批次号;
-                        BLLFactory<物料ng替换记录表>.Instance.Insert(ngInfo);  //写入一条数据到数据库中
 
-                        preFixture.RemoveMaterialItem(thMaterialItem);
-                        nowFixture.RemoveMaterialItem(ngMaterialItem);
-                        nowFixture.InsertMaterialItem(iNowHoleIndex, thMaterialItem);
+                        //检测是第一次替换还是再次替换刷新数据 最好规定下位机只允许发送替换一次
+                        bool bFirstTH = false;
+                        string condition2 = $@"物料生产批次号 = '{ngInfo.物料生产批次号}' and 设备id = {ngInfo.设备id} 
+                                            and 物料guid = '{ngInfo.物料guid}' and 替换前治具guid = '{ngInfo.替换前治具guid}'
+                                            and 替换前治具rfid = '{ngInfo.替换前治具rfid}' and 替换前治具孔号 = {ngInfo.替换前治具孔号}
+                                            and 前治具生产批次号 = '{ngInfo.前治具生产批次号}' and 替换后治具guid = '{ngInfo.替换后治具guid}'
+                                            and 替换后治具rfid = '{ngInfo.替换后治具rfid}' and 替换后治具孔号 = {ngInfo.替换后治具孔号}
+                                            and 后治具生产批次号 = '{ngInfo.后治具生产批次号}'";
+                        var var3 = BLLFactory<物料ng替换记录表>.Instance.FindLast(condition2);
+                        if (var3 == null)
+                        {
+                            bFirstTH = true;
+                        }
+                        if (bFirstTH)
+                        {
+                            preFixture.RemoveMaterialItem(thMaterialItem);
+                            nowFixture.RemoveMaterialItem(ngMaterialItem);
+                            nowFixture.InsertMaterialItem(iNowHoleIndex, thMaterialItem);
+
+                            BLLFactory<物料ng替换记录表>.Instance.Insert(ngInfo);  //写入一条数据到数据库中
+                        }
+                        else
+                        {
+                            BLLFactory<物料ng替换记录表>.Instance.Update(ngInfo, var3.Ng替换记录id);
+                        }
 
                         dataSend = Encoding.UTF8.GetBytes("NGTHOK"); //返回下位机"NG替换完成"
                         listener.SendMesAsyncToClient(client, dataSend);

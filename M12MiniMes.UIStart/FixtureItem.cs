@@ -98,7 +98,7 @@ namespace M12MiniMes.UIStart
                 MaterialItem mpItem = this.MaterialItems.ElementAtOrDefault(index);
                 if (mpItem != null)
                 {
-                    throw new Exception("插入索引位置已存在一个物料！请先清楚该索引位置的物料后再行插入新物料！");
+                    throw new Exception("插入索引位置已存在一个物料！请先清除该索引位置的物料后再行插入新物料！");
                 }
                 if (!this.MaterialItems.Contains(mItem))
                 {
@@ -123,8 +123,10 @@ namespace M12MiniMes.UIStart
             }
             if (this.MaterialItems.Contains(mItem))
             {
-                this.MaterialItems.Remove(mItem);
+                int index = this.MaterialItems.IndexOf(mItem);
                 mItem.SetFixtureItem(null);
+                this.MaterialItems.RemoveAt(index); //删除旧值
+                this.MaterialItems.Insert(index, null); //插入新值，保持List为12个
                 return true;
             }
             return false;
