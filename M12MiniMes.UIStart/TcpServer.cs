@@ -123,7 +123,7 @@ namespace M12MiniMes.UIStart
                             }
                         }
                         #region 特殊设备需要读写两个参数
-                        string[] specialMachine = new string[5] { "1", "2", "6", "10", "11" };
+                        string[] specialMachine = new string[6] { "1", "2", "3", "6", "10", "11" };
                         string itemEmptyMes = "";
                         if (specialMachine.Contains(strInMachineID))
                         {
