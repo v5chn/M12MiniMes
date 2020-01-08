@@ -214,7 +214,7 @@ namespace M12MiniMes.UIStart
                             scData.结果ok = parameters[index + 1] == "1";  //0表示无 1表示OK 2表示NG
                             if (firstWrite)
                             {
-                                BLLFactory<生产数据表>.Instance.Insert(scData);  //写入一条数据到数据库中
+                                scData.生产数据id = BLLFactory<生产数据表>.Instance.Insert2(scData);  //写入一条数据到数据库中
                                 #region 如果是线头机，该批次的上线数+12
                                 if (strInMachineID == "0" && i == 11)
                                 {

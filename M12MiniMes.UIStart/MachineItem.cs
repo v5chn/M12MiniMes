@@ -45,25 +45,6 @@ namespace M12MiniMes.UIStart
         public List<FixtureItem> CurrentFixtureItems { get; set; } = new List<FixtureItem>();
 
         /// <summary>
-        /// 内存储存当前在产的设备的所有治具的所有物料数据汇总
-        /// </summary>
-        public List<MaterialItem> CurrentMaterialItems
-        {
-            get
-            {
-                List<MaterialItem> items = new List<MaterialItem>();
-                foreach (var p in this.CurrentFixtureItems)
-                {
-                    if (p.MaterialItems != null && p.MaterialItems.Count > 0)
-                    {
-                        items = items.Union(p.MaterialItems).ToList();
-                    }
-                }
-                return items;
-            }
-        }
-
-        /// <summary>
         /// 指定治具FixtureItem插入到指定设备MachineItem中
         /// </summary>
         /// <param name="fItem"></param>
@@ -82,14 +63,6 @@ namespace M12MiniMes.UIStart
             }
             if (!this.CurrentFixtureItems.Contains(fItem)) //如果不包含
             {
-                //fItem.SetMachineItem(null);
-                //fItem.SetMachineItem(this);
-                ////不管三七二十一，先把所有设备删掉该治具fItem再说
-                //foreach (MachineItem item in ItemManager.Instance.MachineItems)
-                //{
-                //    item.RemoveFixtureItem(fItem);
-                //}
-
                 this.CurrentFixtureItems.Add(fItem);
                 return true;
             }

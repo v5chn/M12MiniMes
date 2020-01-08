@@ -33,12 +33,17 @@
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormItemsView));
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn_设备ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_设备名称 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_IP地址 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn_生产数据id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn_生产时间 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +68,10 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView2.FixedLineWidth = 3;
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.IndicatorWidth = 60;
@@ -70,6 +79,7 @@
             this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsCustomization.AllowColumnMoving = false;
             this.gridView2.OptionsCustomization.AllowFilter = false;
+            this.gridView2.OptionsCustomization.AllowSort = false;
             this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView2.OptionsFilter.AllowFilterEditor = false;
             this.gridView2.OptionsFilter.AllowFilterIncrementalSearch = false;
@@ -78,6 +88,36 @@
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView2_InvalidRowException);
             this.gridView2.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView2_ValidateRow);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "治具RFID";
+            this.gridColumn1.FieldName = "RFID";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 94;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "治具GUID";
+            this.gridColumn2.FieldName = "FixtureGuid";
+            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 94;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "治具生产批次号";
+            this.gridColumn3.FieldName = "治具生产批次号";
+            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 94;
             // 
             // gridControl1
             // 
@@ -108,7 +148,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1424, 805);
+            this.gridControl1.Size = new System.Drawing.Size(1550, 805);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -129,6 +169,7 @@
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsCustomization.AllowColumnMoving = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView1.OptionsFilter.AllowFilterEditor = false;
             this.gridView1.OptionsFilter.AllowFilterIncrementalSearch = false;
@@ -171,12 +212,16 @@
             // 
             // gridView3
             // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn5});
             this.gridView3.GridControl = this.gridControl1;
             this.gridView3.IndicatorWidth = 60;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsBehavior.ReadOnly = true;
             this.gridView3.OptionsCustomization.AllowColumnMoving = false;
             this.gridView3.OptionsCustomization.AllowFilter = false;
+            this.gridView3.OptionsCustomization.AllowSort = false;
             this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Embedded;
             this.gridView3.OptionsFilter.AllowFilterEditor = false;
             this.gridView3.OptionsFilter.AllowFilterIncrementalSearch = false;
@@ -184,6 +229,26 @@
             this.gridView3.OptionsMenu.EnableColumnMenu = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "物料GUID";
+            this.gridColumn4.FieldName = "MaterialGuid";
+            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 94;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "物料生产批次号";
+            this.gridColumn5.FieldName = "物料生产批次号";
+            this.gridColumn5.MinWidth = 25;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 94;
             // 
             // gridView4
             // 
@@ -205,6 +270,7 @@
             this.gridView4.OptionsBehavior.ReadOnly = true;
             this.gridView4.OptionsCustomization.AllowColumnMoving = false;
             this.gridView4.OptionsCustomization.AllowFilter = false;
+            this.gridView4.OptionsCustomization.AllowSort = false;
             this.gridView4.OptionsFilter.AllowFilterEditor = false;
             this.gridView4.OptionsFilter.AllowFilterIncrementalSearch = false;
             this.gridView4.OptionsFind.ShowFindButton = false;
@@ -342,7 +408,7 @@
             this.bt同步.Location = new System.Drawing.Point(0, 904);
             this.bt同步.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bt同步.Name = "bt同步";
-            this.bt同步.Size = new System.Drawing.Size(1424, 99);
+            this.bt同步.Size = new System.Drawing.Size(1550, 99);
             this.bt同步.TabIndex = 12;
             this.bt同步.Text = "【慎点】：从数据库同步设备信息并清空当前内存数据";
             this.bt同步.Click += new System.EventHandler(this.bt同步_Click);
@@ -357,7 +423,7 @@
             this.bt刷新.Location = new System.Drawing.Point(0, 805);
             this.bt刷新.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.bt刷新.Name = "bt刷新";
-            this.bt刷新.Size = new System.Drawing.Size(1424, 99);
+            this.bt刷新.Size = new System.Drawing.Size(1550, 99);
             this.bt刷新.TabIndex = 13;
             this.bt刷新.Text = "刷新";
             this.bt刷新.Click += new System.EventHandler(this.bt刷新_Click);
@@ -367,7 +433,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1445, 979);
+            this.ClientSize = new System.Drawing.Size(1571, 979);
             this.Controls.Add(this.bt刷新);
             this.Controls.Add(this.bt同步);
             this.Controls.Add(this.gridControl1);
@@ -408,5 +474,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_工位号;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_工序数据;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn_结果ok;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }
