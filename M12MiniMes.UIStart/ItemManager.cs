@@ -169,15 +169,19 @@ namespace M12MiniMes.UIStart
         {
             MachineItem tempMachineItem = GetMachineItemByID(machineID);
             FixtureItem tempFixtureItem = GetCurrentFixtureItemByRFID(RFID);
-            if (machineID == "0")
+            if (machineID == "0")  //在线头设备表示治具回流或流入新治具，需要清空治具原携带信息
             {
-                tempFixtureItem?.Dispose();  //清空治具原携带信息
+                tempFixtureItem?.Dispose(); 
                 tempFixtureItem = null;
             }
-            if (tempFixtureItem == null) //找不到该RFID的治具时就赋予一个新的，或是在线头设备表示治具回流或流入新治具
+            if (tempFixtureItem == null) //找不到该RFID的治具时就赋予一个新的，或是在线头设备
             {
                 tempFixtureItem = new FixtureItem();
                 tempFixtureItem.RFID = RFID;
+                if (machineID != "0")  //如果这个新治具不是从线头产生的查询，则赋予默认空批次
+                {
+                    tempFixtureItem.治具生产批次号 = "noneBatchSN";
+                }
                 //添加12个null物料信息
                 for (int i = 0; i < 12; i++)
                 {
