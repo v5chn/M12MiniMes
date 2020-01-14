@@ -106,12 +106,6 @@
     <Reference Include="WHC.DictionaryDx">
       <HintPath>..\Reference\WHC.DictionaryDx.dll</HintPath>
     </Reference>
-    <Reference Include="WHC.Pager.Entity">
-      <HintPath>..\Reference\WHC.Pager.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Pager.WinControlDx">
-      <HintPath>..\Reference\WHC.Pager.WinControlDx.dll</HintPath>
-    </Reference>
     <Reference Include="WHC.Security">
       <HintPath>..\Reference\WHC.Security.dll</HintPath>
     </Reference>
@@ -139,6 +133,16 @@
     <ProjectReference Include="..\WHC.Framework.Language\WHC.Framework.Language.csproj">
       <Project>{4ff53539-d8ee-4ce8-81ba-e7af56a1f566}</Project>
       <Name>WHC.Framework.Language</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Pager.Entity\WHC.Pager.Entity.csproj">
+      <Project>{8d58654e-3fdb-4f5f-921a-7832db994dce}</Project>
+      <Name>WHC.Pager.Entity</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Pager.WinControlDx\WHC.Pager.WinControlDx.csproj">
+      <Project>{bad3d23b-ef02-4367-a929-a28a5644eb7e}</Project>
+      <Name>WHC.Pager.WinControlDx</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
@@ -193,6 +197,9 @@
     <Compile Include="UI\Frm设备表.designer.cs">
       <DependentUpon>Frm设备表.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\FrmEdit生产批次生成表.resx">
+      <DependentUpon>FrmEdit生产批次生成表.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Frm生产批次生成表.resx">
       <DependentUpon>Frm生产批次生成表.cs</DependentUpon>
     </EmbeddedResource>

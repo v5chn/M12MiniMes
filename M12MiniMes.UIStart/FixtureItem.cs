@@ -65,9 +65,8 @@ namespace M12MiniMes.UIStart
             this.FixtureGuid = Guid.NewGuid();
             this.MaterialItems = new List<MaterialItem>();
             //从生产批次表中拿
-            var var = ItemManager.Instance.Get当前在产批次列表();
-            var var2 = var.FirstOrDefault();
-            this.治具生产批次号 = var2?.生产批次号 ?? "noneBatchSN";
+            var var = ItemManager.Instance.GetFirst在产批次();
+            this.治具生产批次号 = var.生产批次号 ?? "noneBatchSN";
         }
 
         /// <summary>

@@ -158,7 +158,7 @@ namespace M12MiniMes.UIStart
                         dataSend = Encoding.UTF8.GetBytes(strData);
                         listener.SendMesAsyncToClient(client, dataSend);
                         break;
-                    case Header.XR: //写入生产数据
+                    case Header.XR: //写入生产数据  //当设备做完工序时，治具准备流出时
                         rfid = parameters[0];
                         strInMachineID = parameters[1];
                         InMachineItem = ItemManager.Instance.GetMachineItemByID(strInMachineID);
@@ -214,23 +214,42 @@ namespace M12MiniMes.UIStart
                             scData.结果ok = parameters[index + 1] == "1";  //0表示无 1表示OK 2表示NG
                             if (firstWrite)
                             {
-                                scData.生产数据id = BLLFactory<生产数据表>.Instance.Insert2(scData);  //写入一条数据到数据库中
-                                #region 如果是线头机，该批次的上线数+12
-                                if (strInMachineID == "0" && i == 11)
+                                //写入一条生产数据到数据库中
+                                scData.生产数据id = BLLFactory<生产数据表>.Instance.Insert2(scData); 
+
+                                //如果是线头/线尾 则更新 上线数/下线数
+                                if (i == 11 && (strInMachineID == "0" || strInMachineID == "14"))
                                 {
-                                    string condition = $@"生产批次号 = '{materialItem.Fixture.治具生产批次号}'";
+                                    string str当前治具生产批次号 = materialItem.Fixture.治具生产批次号;
+                                    string condition = $@"生产批次号 = '{str当前治具生产批次号}'";
                                     var var = BLLFactory<生产批次生成表>.Instance.FindLast(condition);
                                     if (var != null)
                                     {
-                                        var.上线数 += 12;
-                                        if (var.上线数 >= var.计划投入数)
+                                        if (strInMachineID == "0") 
                                         {
-                                            var.状态 = "生产完成";
+                                            var.上线数 += 12;
+                                            var.状态 = "生产中";
+                                        }
+                                        else if(strInMachineID == "14")
+                                        {
+                                            var.下线数 += 12;
+
+                                            //如果这个治具批次号与上一个治具的批次号不相同，则认为上一个治具批次的生产状态为生产完成
+                                            if (str当前治具生产批次号 != ItemManager.Instance.str线尾上一个治具批次号)
+                                            {
+                                                condition = $@"生产批次号 = '{ItemManager.Instance.str线尾上一个治具批次号}'";
+                                                var var2 = BLLFactory<生产批次生成表>.Instance.FindLast(condition);
+                                                if (var2 != null)
+                                                {
+                                                    var2.状态 = "生产完成";
+                                                }
+                                            }
+
+                                            ItemManager.Instance.str线尾上一个治具批次号 = str当前治具生产批次号;
                                         }
                                         BLLFactory<生产批次生成表>.Instance.Update(var, var.生产批次id);
                                     }
                                 }
-                                #endregion
                             }
                             else
                             {
@@ -309,7 +328,63 @@ namespace M12MiniMes.UIStart
 
                         break;
                     case Header.TL:  //投料
+                        strInMachineID = parameters[0];
+                        string pc = parameters[1];
+                        if (!string.IsNullOrEmpty(pc))
+                        {
+                            string condition4 = $@"生产批次号 = '{pc}'";
+                            var var4 = BLLFactory<生产批次生成表>.Instance.FindLast(condition4);
+                            if (var4 != null)
+                            {
+                                switch (strInMachineID)
+                                {
+                                    case "5":  //镜片
+                                        var4.镜片投料数 = int.Parse(parameters[2]);
+                                        break;
+                                }
+                                BLLFactory<生产批次生成表>.Instance.Update(var4, var4.生产批次id);
+                                dataSend = Encoding.UTF8.GetBytes("TLOK"); //返回下位机"TL完成"
+                                listener.SendMesAsyncToClient(client, dataSend);
+                            }
+                        }
+                        break;
+                    case Header.CXPC:  //查询批次信息
+                        strInMachineID = parameters[0];
+                        string pcOLD = parameters[1];
+                        生产批次生成表Info iNEW = null;
+                        if (string.IsNullOrEmpty(pcOLD))
+                        {
+                            iNEW = ItemManager.Instance.GetFirst在产批次();
+                        }
+                        else
+                        {
+                            var vaL = ItemManager.Instance.Get当前在产批次列表();
+                            if (vaL.Count >0)
+                            {
+                                生产批次生成表Info iOLD = vaL.FirstOrDefault(p => p.生产批次号.Equals(pcOLD));
+                                if (iOLD != null)
+                                {
+                                    int indexOLD = vaL.IndexOf(iOLD);
+                                    if (indexOLD < vaL.Count -1)
+                                    {
+                                        iNEW = vaL[indexOLD + 1];
+                                    }
+                                }
+                            }
+                        }
+                        string strM = "";
+                        if (iNEW != null)
+                        {
+                            //返回下位机下一个批次信息
+                            strM = $@"CXPC,{strInMachineID},{iNEW.生产批次号},{iNEW.机种},{iNEW.镜框日期},{iNEW.镜筒模穴号},{iNEW.镜框批次},{iNEW.穴号105},{iNEW.穴号104},{iNEW.穴号102},{iNEW.日期105},{iNEW.日期104},{iNEW.日期102},{iNEW.角度},{iNEW.系列号},{iNEW.隔圈模穴号113b},{iNEW.成型日113b},{iNEW.隔圈模穴号112},{iNEW.成型日112},{iNEW.G3来料供应商},{iNEW.G3镜片来料日期},{iNEW.G1来料供应商},{iNEW.G1来料日期},{iNEW.配对监控批次},{iNEW.计划投入数}";
 
+                        }
+                        else
+                        {
+                            strM = $@"CXPC,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1--1--1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1";
+                        }
+                        dataSend = Encoding.UTF8.GetBytes(strM);
+                        listener.SendMesAsyncToClient(client, dataSend);
                         break;
                 }
 
@@ -325,10 +400,11 @@ namespace M12MiniMes.UIStart
     //定义协议头
     public enum Header  
     {
-        CX,
-        XR,
-        NGTH,
-        XT,
-        TL
+        CX, //查询数据
+        XR, //写入生产数据
+        NGTH, //NG替换
+        XT, //心跳
+        TL, //投料
+        CXPC //查询批次信息
     }
 }

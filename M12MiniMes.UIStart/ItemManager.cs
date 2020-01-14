@@ -27,60 +27,21 @@ namespace M12MiniMes.UIStart
                 return instance;
             }
         }
-        private ItemManager()
-        {
-        }
 
         /// <summary>
-        /// 保存内存数据
+        /// 保存线尾机器上一个治具的批次号，以用来对线尾当前治具批次号判断是否相同，若不相同则判断上一个治具的批次已经生产完成。
         /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            CommonSerializer.SaveObjAsBinaryFile(this.MachineItems, $@"D:\FastAutomation\MachineItems.xml", out bool bSaveOK, out Exception ex);
-            return bSaveOK;
-        }
-
-        /// <summary>
-        /// 加载内存数据
-        /// </summary>
-        /// <returns></returns>
-        public bool Load()
-        {
-            this.MachineItems = CommonSerializer.LoadObjFormBinaryFile<List<MachineItem>>($@"D:\FastAutomation\MachineItems.xml", out bool bLoadOK, out Exception ex);
-            return bLoadOK;
-        }
-
-        public List<生产批次生成表Info> Get当前在产批次列表()
-        {
-            string condition = $@" (计划投入数 > 0) and (计划投入数 > 上线数)";
-            List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);
-            return list;
-        }
-
-        /// <summary>
-        /// 从数据库设备表中同步
-        /// </summary>
-        public void GetMachineItems() 
-        {
-            List<设备表Info> list = BLLFactory<设备表>.Instance.GetAll();
-            var var = list.Select(p => new MachineItem() 
-            {
-                设备id = p.设备id,
-                设备名称 = p.设备名称,
-                Ip = p.Ip
-            }).ToList();
-            this.MachineItems = new List<MachineItem>(var);
-        }
+        public string str线尾上一个治具批次号;
 
         /// <summary>
         /// 内存储存当前在产的所有设备数据
         /// </summary>
-        public List<MachineItem> MachineItems { get; private set; }
+        public List<MachineItem> MachineItems { get; private set; } = new List<MachineItem>();
 
         /// <summary>
         /// 内存储存当前在产的所有设备的所有治具的数据汇总
         /// </summary>
+        [field: NonSerialized]
         public List<FixtureItem> AllCurrentFixtureItems
         {
             get
@@ -100,6 +61,7 @@ namespace M12MiniMes.UIStart
         /// <summary>
         /// 内存储存当前在产的所有设备的所有治具的所有物料数据汇总
         /// </summary>
+        [field: NonSerialized]
         public List<MaterialItem> AllCurrentMaterialItems
         {
             get
@@ -115,6 +77,55 @@ namespace M12MiniMes.UIStart
                 return items;
             }
         }
+
+        /// <summary>
+        /// 保存内存数据
+        /// </summary>
+        /// <returns></returns>
+        public bool Save()
+        {
+            CommonSerializer.SaveObjAsBinaryFile(instance, $@"D:\FastAutomation\ItemManager.xml", out bool bSaveOK, out Exception ex);
+            return bSaveOK;
+        }
+
+        /// <summary>
+        /// 加载内存数据
+        /// </summary>
+        /// <returns></returns>
+        public bool Load()
+        {
+            instance = CommonSerializer.LoadObjFormBinaryFile<ItemManager>($@"D:\FastAutomation\ItemManager.xml", out bool bLoadOK, out Exception ex);
+            return bLoadOK; 
+        }
+
+        public List<生产批次生成表Info> Get当前在产批次列表()
+        {
+            string condition = $@"状态 != '生产完成' and (计划投入数 > 0) and (计划投入数 >= 上线数)";
+            List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);
+            return list;
+        }
+
+        public 生产批次生成表Info GetFirst在产批次()
+        {
+            return Get当前在产批次列表()?.FirstOrDefault();
+        }
+
+
+        /// <summary>
+        /// 从数据库设备表中同步
+        /// </summary>
+        public void GetMachineItems() 
+        {
+            List<设备表Info> list = BLLFactory<设备表>.Instance.GetAll();
+            var var = list.Select(p => new MachineItem() 
+            {
+                设备id = p.设备id,
+                设备名称 = p.设备名称,
+                Ip = p.Ip
+            }).ToList();
+            this.MachineItems = new List<MachineItem>(var);
+        }
+
 
         /// <summary>
         /// 通过RFID获取当前在产的治具

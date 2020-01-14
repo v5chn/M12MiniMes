@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using WHC.Pager.Entity;
 using WHC.Dictionary;
@@ -183,8 +184,8 @@ namespace M12MiniMes.UI
 
         public override void ClearScreen()
         {
-            this.tempInfo = new 生产批次生成表Info();
-            base.ClearScreen();
+            //this.tempInfo = new 生产批次生成表Info();
+            //base.ClearScreen();
         }
 
         /// <summary>
@@ -241,6 +242,22 @@ namespace M12MiniMes.UI
                 #region 新增数据
 
                 #region 改变某些字段
+                //检查角度格式是否输入有误   要求格式0-90-180
+                Regex reg = new Regex(@"^-?\d+--?\d+--?\d+");
+                if (!reg.IsMatch(info.角度))
+                {
+                    throw new Exception($@"{info.角度} 角度输入格式不正确！要求格式如0-90-180");
+                }
+                if (string.IsNullOrEmpty(info.穴号105) || string.IsNullOrEmpty(info.穴号104) || string.IsNullOrEmpty(info.穴号102)
+                    || string.IsNullOrEmpty(info.系列号) || string.IsNullOrEmpty(info.配对监控批次))
+                {
+                    throw new Exception($@"检查*项有的未输入内容！*项为必填项！");
+                }
+                if (info.计划投入数 == 0)
+                {
+                    throw new Exception($@"计划投入数不允许为0！必须是12的正整数倍！如600/1200！");
+                }
+
                 info.上线数 = info.下线数 = 0;
                 info.时间 = DateTime.Now;
                 //判断当前时间是白班还是夜班
@@ -257,6 +274,7 @@ namespace M12MiniMes.UI
                 {
                     info.班次 = "夜班";
                 }
+                info.状态 = "待生产";
                 info.生产批次号 = $@"{DateTime.Now.ToString("yyMMddhhmmss")}{info.系列号}";
                 #endregion
 
@@ -292,6 +310,23 @@ namespace M12MiniMes.UI
                 try
                 {
                     #region 更新数据
+
+                    //检查角度格式是否输入有误   要求格式0-90-180
+                    Regex reg = new Regex(@"^-?\d+--?\d+--?\d+");
+                    if (!reg.IsMatch(info.角度))
+                    {
+                        throw new Exception($@"{info.角度} 角度输入格式不正确！要求格式如0-90-180");
+                    }
+                    if (string.IsNullOrEmpty(info.穴号105) || string.IsNullOrEmpty(info.穴号104) || string.IsNullOrEmpty(info.穴号102)
+                        || string.IsNullOrEmpty(info.系列号) || string.IsNullOrEmpty(info.配对监控批次))
+                    {
+                        throw new Exception($@"检查*项有的未输入内容！*项为必填项！");
+                    }
+                    if (info.计划投入数 == 0)
+                    {
+                        throw new Exception($@"计划投入数不允许为0！必须是12的正整数倍！如600/1200！");
+                    }
+
                     bool succeed = BLLFactory<生产批次生成表>.Instance.Update(info, info.生产批次id);
                     if (succeed)
                     {

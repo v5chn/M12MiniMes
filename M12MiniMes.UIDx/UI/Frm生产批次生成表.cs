@@ -207,6 +207,15 @@ namespace M12MiniMes.UI
             int[] rowSelected = this.winGridViewPager1.GridView1.GetSelectedRows();
             foreach (int iRow in rowSelected)
             {
+                //如果镜片已有投料数则不允许删除
+                string str镜片投料数 = this.winGridViewPager1.GridView1.GetRowCellDisplayText(iRow, "镜片投料数");
+                int i = int.Parse(str镜片投料数);
+                if (i > 0 )
+                {
+                    MessageDxUtil.ShowError($@"镜片已有投料数-{i}个，不允许删除！");
+                    return;
+                }
+
                 string ID = this.winGridViewPager1.GridView1.GetRowCellDisplayText(iRow, "生产批次id");
                 BLLFactory<生产批次生成表>.Instance.Delete(ID);
             }
