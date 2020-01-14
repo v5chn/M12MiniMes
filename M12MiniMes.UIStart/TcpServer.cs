@@ -336,10 +336,23 @@ namespace M12MiniMes.UIStart
                             var var4 = BLLFactory<生产批次生成表>.Instance.FindLast(condition4);
                             if (var4 != null)
                             {
+                                int number = int.Parse(parameters[2]);
                                 switch (strInMachineID)
                                 {
-                                    case "5":  //镜片
-                                        var4.镜片投料数 = int.Parse(parameters[2]);
+                                    case "1": 
+                                        var4.镜片105投料数 = number;
+                                        break;
+                                    case "2": 
+                                        var4.镜片104投料数 = number;
+                                        break;
+                                    case "6":
+                                        var4.镜片g3投料数 = number;
+                                        break;
+                                    case "10":
+                                        var4.镜片102投料数 = number;
+                                        break;
+                                    case "11":
+                                        var4.镜片95b投料数 = number;
                                         break;
                                 }
                                 BLLFactory<生产批次生成表>.Instance.Update(var4, var4.生产批次id);
@@ -352,7 +365,7 @@ namespace M12MiniMes.UIStart
                         strInMachineID = parameters[0];
                         string pcOLD = parameters[1];
                         生产批次生成表Info iNEW = null;
-                        if (string.IsNullOrEmpty(pcOLD))
+                        if (string.IsNullOrEmpty(pcOLD) || pcOLD.Equals("noneBatchSN"))
                         {
                             iNEW = ItemManager.Instance.GetFirst在产批次();
                         }
@@ -376,12 +389,11 @@ namespace M12MiniMes.UIStart
                         if (iNEW != null)
                         {
                             //返回下位机下一个批次信息
-                            strM = $@"CXPC,{strInMachineID},{iNEW.生产批次号},{iNEW.机种},{iNEW.镜框日期},{iNEW.镜筒模穴号},{iNEW.镜框批次},{iNEW.穴号105},{iNEW.穴号104},{iNEW.穴号102},{iNEW.日期105},{iNEW.日期104},{iNEW.日期102},{iNEW.角度},{iNEW.系列号},{iNEW.隔圈模穴号113b},{iNEW.成型日113b},{iNEW.隔圈模穴号112},{iNEW.成型日112},{iNEW.G3来料供应商},{iNEW.G3镜片来料日期},{iNEW.G1来料供应商},{iNEW.G1来料日期},{iNEW.配对监控批次},{iNEW.计划投入数}";
-
+                            strM = $@"CXPC,{strInMachineID},{iNEW.生产批次号},{iNEW.机种},{iNEW.镜框日期.ToString("yyyyMMdd")},{iNEW.镜筒模穴号},{iNEW.镜框批次},{iNEW.穴号105},{iNEW.穴号104},{iNEW.穴号102},{iNEW.日期105.ToString("yyyyMMdd")},{iNEW.日期104.ToString("yyyyMMdd")},{iNEW.日期102.ToString("yyyyMMdd")},{iNEW.角度},{iNEW.系列号},{iNEW.隔圈模穴号113b},{iNEW.成型日113b.ToString("yyyyMMdd")},{iNEW.隔圈模穴号112},{iNEW.成型日112.ToString("yyyyMMdd")},{iNEW.G3来料供应商},{iNEW.G3镜片来料日期.ToString("yyyyMMdd")},{iNEW.G1来料供应商},{iNEW.G1来料日期.ToString("yyyyMMdd")},{iNEW.配对监控批次},{iNEW.计划投入数}";
                         }
                         else
                         {
-                            strM = $@"CXPC,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1--1--1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1";
+                            strM = $@"CXPC,{strInMachineID},noneBatchSN,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1--1--1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1";
                         }
                         dataSend = Encoding.UTF8.GetBytes(strM);
                         listener.SendMesAsyncToClient(client, dataSend);

@@ -66,7 +66,7 @@ namespace M12MiniMes.UIStart
             this.MaterialItems = new List<MaterialItem>();
             //从生产批次表中拿
             var var = ItemManager.Instance.GetFirst在产批次();
-            this.治具生产批次号 = var.生产批次号 ?? "noneBatchSN";
+            this.治具生产批次号 = var?.生产批次号 ?? "noneBatchSN";
         }
 
         /// <summary>

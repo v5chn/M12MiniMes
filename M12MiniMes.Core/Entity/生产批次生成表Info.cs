@@ -20,7 +20,11 @@ namespace M12MiniMes.Entity
             this.生产批次id= 0;
                             this.镜框投料数= 0;
                  this.隔圈投料数= 0;
-                 this.镜片投料数= 0;
+                 this.镜片105投料数= 0;
+             this.镜片104投料数= 0;
+             this.镜片g3投料数= 0;
+             this.镜片102投料数= 0;
+             this.镜片95b投料数= 0;
               this.计划投入数= 0;
              this.上线数= 0;
              this.下线数= 0;
@@ -186,10 +190,34 @@ namespace M12MiniMes.Entity
         public virtual DateTime G1来料日期 { get; set; }
 
         /// <summary>
-        /// 镜片投料数
+        /// 镜片105投料数
         /// </summary>
 		[DataMember]
-        public virtual int 镜片投料数 { get; set; }
+        public virtual int 镜片105投料数 { get; set; }
+
+        /// <summary>
+        /// 镜片104投料数
+        /// </summary>
+		[DataMember]
+        public virtual int 镜片104投料数 { get; set; }
+
+        /// <summary>
+        /// 镜片G3投料数
+        /// </summary>
+		[DataMember]
+        public virtual int 镜片g3投料数 { get; set; }
+
+        /// <summary>
+        /// 镜片102投料数
+        /// </summary>
+		[DataMember]
+        public virtual int 镜片102投料数 { get; set; }
+
+        /// <summary>
+        /// 镜片95B投料数
+        /// </summary>
+		[DataMember]
+        public virtual int 镜片95b投料数 { get; set; }
 
         /// <summary>
         /// 配对监控批次

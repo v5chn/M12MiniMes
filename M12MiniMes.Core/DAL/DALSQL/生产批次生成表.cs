@@ -69,7 +69,11 @@ namespace M12MiniMes.DALSQL
 			info.G3镜片来料日期 = reader.GetDateTime("G3镜片来料日期");
 			info.G1来料供应商 = reader.GetString("G1来料供应商");
 			info.G1来料日期 = reader.GetDateTime("G1来料日期");
-			info.镜片投料数 = reader.GetInt32("镜片投料数");
+			info.镜片105投料数 = reader.GetInt32("镜片105投料数");
+			info.镜片104投料数 = reader.GetInt32("镜片104投料数");
+			info.镜片g3投料数 = reader.GetInt32("镜片G3投料数");
+			info.镜片102投料数 = reader.GetInt32("镜片102投料数");
+			info.镜片95b投料数 = reader.GetInt32("镜片95B投料数");
 			info.配对监控批次 = reader.GetString("配对监控批次");
 			info.计划投入数 = reader.GetInt32("计划投入数");
 			info.上线数 = reader.GetInt32("上线数");
@@ -115,7 +119,11 @@ namespace M12MiniMes.DALSQL
  			hash.Add("G3镜片来料日期", info.G3镜片来料日期);
  			hash.Add("G1来料供应商", info.G1来料供应商);
  			hash.Add("G1来料日期", info.G1来料日期);
- 			hash.Add("镜片投料数", info.镜片投料数);
+ 			hash.Add("镜片105投料数", info.镜片105投料数);
+ 			hash.Add("镜片104投料数", info.镜片104投料数);
+ 			hash.Add("镜片G3投料数", info.镜片g3投料数);
+ 			hash.Add("镜片102投料数", info.镜片102投料数);
+ 			hash.Add("镜片95B投料数", info.镜片95b投料数);
  			hash.Add("配对监控批次", info.配对监控批次);
  			hash.Add("计划投入数", info.计划投入数);
  			hash.Add("上线数", info.上线数);
@@ -160,7 +168,11 @@ namespace M12MiniMes.DALSQL
              dict.Add("G3镜片来料日期", "G3镜片来料日期");
              dict.Add("G1来料供应商", "G1来料供应商");
              dict.Add("G1来料日期", "G1来料日期");
-             dict.Add("镜片投料数", "镜片投料数");
+             dict.Add("镜片105投料数", "镜片105投料数");
+             dict.Add("镜片104投料数", "镜片104投料数");
+             dict.Add("镜片g3投料数", "镜片G3投料数");
+             dict.Add("镜片102投料数", "镜片102投料数");
+             dict.Add("镜片95b投料数", "镜片95B投料数");
              dict.Add("配对监控批次", "配对监控批次");
              dict.Add("计划投入数", "计划投入数");
              dict.Add("上线数", "上线数");
@@ -178,7 +190,7 @@ namespace M12MiniMes.DALSQL
         /// <returns></returns>
         public override string GetDisplayColumns()
         {
-            return "生产批次ID,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片投料数,配对监控批次,计划投入数,上线数,下线数,状态,生产批次号";
+            return "生产批次ID,时间,班次,组装线体号,机种,镜框日期,镜筒模穴号,镜框批次,穴号105,穴号104,穴号102,日期105,日期104,日期102,角度,系列号,镜框投料数,隔圈模穴号113B,成型日113B,隔圈模穴号112,成型日112,隔圈投料数,G3来料供应商,G3镜片来料日期,G1来料供应商,G1来料日期,镜片105投料数,镜片104投料数,镜片G3投料数,镜片102投料数,镜片95B投料数,配对监控批次,计划投入数,上线数,下线数,状态,生产批次号";
         }
     }
 }

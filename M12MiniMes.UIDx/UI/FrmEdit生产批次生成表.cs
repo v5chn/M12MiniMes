@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 using WHC.Pager.Entity;
 using WHC.Dictionary;
@@ -17,6 +16,7 @@ using DevExpress.XtraEditors;
 
 using M12MiniMes.BLL;
 using M12MiniMes.Entity;
+using System.Text.RegularExpressions;
 
 namespace M12MiniMes.UI
 {
@@ -97,7 +97,11 @@ namespace M12MiniMes.UI
                    	txtG3镜片来料日期.SetDateTime(info.G3镜片来料日期);	
                       txtG1来料供应商.Text = info.G1来料供应商;
                    	txtG1来料日期.SetDateTime(info.G1来料日期);	
-                  	txt镜片投料数.Value = info.镜片投料数;
+                  	txt镜片105投料数.Value = info.镜片105投料数;
+                   	txt镜片104投料数.Value = info.镜片104投料数;
+                   	txt镜片g3投料数.Value = info.镜片g3投料数;
+                   	txt镜片102投料数.Value = info.镜片102投料数;
+                   	txt镜片95b投料数.Value = info.镜片95b投料数;
                        txt配对监控批次.Text = info.配对监控批次;
                    	txt计划投入数.Value = info.计划投入数;
                    	txt上线数.Value = info.上线数;
@@ -111,7 +115,7 @@ namespace M12MiniMes.UI
             }
             else
             {
-                                
+                                    
                 //this.btnOK.Enabled = HasFunction("生产批次生成表/Add");  
             }
             
@@ -152,7 +156,11 @@ namespace M12MiniMes.UI
             //this.txtG3镜片来料日期.Tag = "G3镜片来料日期";
             //this.txtG1来料供应商.Tag = "G1来料供应商";
             //this.txtG1来料日期.Tag = "G1来料日期";
-            //this.txt镜片投料数.Tag = "镜片投料数";
+            //this.txt镜片105投料数.Tag = "镜片105投料数";
+            //this.txt镜片104投料数.Tag = "镜片104投料数";
+            //this.txt镜片g3投料数.Tag = "镜片g3投料数";
+            //this.txt镜片102投料数.Tag = "镜片102投料数";
+            //this.txt镜片95b投料数.Tag = "镜片95b投料数";
             //this.txt配对监控批次.Tag = "配对监控批次";
             //this.txt计划投入数.Tag = "计划投入数";
             //this.txt上线数.Tag = "上线数";
@@ -184,8 +192,8 @@ namespace M12MiniMes.UI
 
         public override void ClearScreen()
         {
-            //this.tempInfo = new 生产批次生成表Info();
-            //base.ClearScreen();
+            this.tempInfo = new 生产批次生成表Info();
+            base.ClearScreen();
         }
 
         /// <summary>
@@ -219,7 +227,11 @@ namespace M12MiniMes.UI
                 info.G3镜片来料日期 = txtG3镜片来料日期.DateTime;
                info.G1来料供应商 = txtG1来料供应商.Text;
                 info.G1来料日期 = txtG1来料日期.DateTime;
-               info.镜片投料数 = Convert.ToInt32(txt镜片投料数.Value);
+               info.镜片105投料数 = Convert.ToInt32(txt镜片105投料数.Value);
+                info.镜片104投料数 = Convert.ToInt32(txt镜片104投料数.Value);
+                info.镜片g3投料数 = Convert.ToInt32(txt镜片g3投料数.Value);
+                info.镜片102投料数 = Convert.ToInt32(txt镜片102投料数.Value);
+                info.镜片95b投料数 = Convert.ToInt32(txt镜片95b投料数.Value);
                 info.配对监控批次 = txt配对监控批次.Text;
                 info.计划投入数 = Convert.ToInt32(txt计划投入数.Value);
                 info.上线数 = Convert.ToInt32(txt上线数.Value);
@@ -255,8 +267,27 @@ namespace M12MiniMes.UI
                 }
                 if (info.计划投入数 == 0)
                 {
-                    throw new Exception($@"计划投入数不允许为0！必须是12的正整数倍！如600/1200！");
+                    throw new Exception($@"计划投入数不允许为0！必须是12的正整数倍！如600/1200！"); 
                 }
+
+                //可为空的一些属性值赋予null
+                info.组装线体号 = string.IsNullOrEmpty(info.组装线体号) ? "zzxt" : info.组装线体号;
+                info.机种 = string.IsNullOrEmpty(info.机种) ? "jz" : info.机种;
+                info.镜框日期 = (info.镜框日期 == DateTime.MinValue) ? DateTime.Now : info.镜框日期;
+                info.镜筒模穴号 = string.IsNullOrEmpty(info.镜筒模穴号) ? "0" : info.镜筒模穴号;
+                info.镜框批次 = string.IsNullOrEmpty(info.镜框批次) ? "jkpc" : info.镜框批次;
+                info.日期105 = (info.日期105 == DateTime.MinValue) ? DateTime.Now : info.日期105;
+                info.日期104 = (info.日期104 == DateTime.MinValue) ? DateTime.Now : info.日期104;
+                info.日期102 = (info.日期102 == DateTime.MinValue) ? DateTime.Now : info.日期102;
+                info.隔圈模穴号113b = string.IsNullOrEmpty(info.隔圈模穴号113b) ? "0" : info.隔圈模穴号113b;
+                info.成型日113b = (info.成型日113b == DateTime.MinValue) ? DateTime.Now : info.成型日113b;
+                info.隔圈模穴号112 = string.IsNullOrEmpty(info.隔圈模穴号112) ? "0" : info.隔圈模穴号112;
+                info.成型日112 = (info.成型日112 == DateTime.MinValue) ? DateTime.Now : info.成型日112;
+                info.G3来料供应商 = string.IsNullOrEmpty(info.G3来料供应商) ? "g3sp" : info.G3来料供应商;
+                info.G3镜片来料日期 = (info.G3镜片来料日期 == DateTime.MinValue) ? DateTime.Now : info.G3镜片来料日期;
+                info.G1来料供应商 = string.IsNullOrEmpty(info.G1来料供应商) ? "g1sp" : info.G1来料供应商;
+                info.G1来料日期 = (info.G1来料日期 == DateTime.MinValue) ? DateTime.Now : info.G1来料日期;
+
 
                 info.上线数 = info.下线数 = 0;
                 info.时间 = DateTime.Now;
@@ -282,7 +313,7 @@ namespace M12MiniMes.UI
                 if (succeed)
                 {
                     //可添加其他关联操作
-                    
+
                     return true;
                 }
                 #endregion
