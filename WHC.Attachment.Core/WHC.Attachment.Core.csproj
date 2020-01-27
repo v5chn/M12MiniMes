@@ -162,14 +162,17 @@
     <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
       <Project>{53ac195e-dcff-47c4-bc02-7e0241ff520c}</Project>
       <Name>WHC.Framework.Commons</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Framework.ControlUtil\WHC.Framework.ControlUtil.csproj">
       <Project>{d1d3850b-206f-49a9-ba9f-eac0c39de3dd}</Project>
       <Name>WHC.Framework.ControlUtil</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Pager.Entity\WHC.Pager.Entity.csproj">
       <Project>{8d58654e-3fdb-4f5f-921a-7832db994dce}</Project>
       <Name>WHC.Pager.Entity</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

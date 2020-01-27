@@ -187,24 +187,6 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WHC.Framework.BaseUIDx">
-      <HintPath>..\..\Reference\WHC.Framework.BaseUIDx.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.Commons">
-      <HintPath>..\..\Reference\WHC.Framework.Commons.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.ControlUtil">
-      <HintPath>..\..\Reference\WHC.Framework.ControlUtil.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.Language">
-      <HintPath>..\..\Reference\WHC.Framework.Language.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Pager.Entity">
-      <HintPath>..\..\Reference\WHC.Pager.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Pager.WinControlDx">
-      <HintPath>..\..\Reference\WHC.Pager.WinControlDx.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\whc.attachment.core\core\bll\FileUpload.cs">
@@ -344,7 +326,38 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WHC.Framework.BaseUIDx\WHC.Framework.BaseUIDx.csproj">
+      <Project>{a22e5819-92fe-43d2-8da7-6a2b9c2d25db}</Project>
+      <Name>WHC.Framework.BaseUIDx</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
+      <Project>{53ac195e-dcff-47c4-bc02-7e0241ff520c}</Project>
+      <Name>WHC.Framework.Commons</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.ControlUtil\WHC.Framework.ControlUtil.csproj">
+      <Project>{d1d3850b-206f-49a9-ba9f-eac0c39de3dd}</Project>
+      <Name>WHC.Framework.ControlUtil</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.Language\WHC.Framework.Language.csproj">
+      <Project>{4ff53539-d8ee-4ce8-81ba-e7af56a1f566}</Project>
+      <Name>WHC.Framework.Language</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Pager.Entity\WHC.Pager.Entity.csproj">
+      <Project>{8d58654e-3fdb-4f5f-921a-7832db994dce}</Project>
+      <Name>WHC.Pager.Entity</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Pager.WinControlDx\WHC.Pager.WinControlDx.csproj">
+      <Project>{bad3d23b-ef02-4367-a929-a28a5644eb7e}</Project>
+      <Name>WHC.Pager.WinControlDx</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

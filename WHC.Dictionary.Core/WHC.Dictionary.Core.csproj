@@ -158,16 +158,6 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WHC.Framework.Commons">
-      <HintPath>..\..\Reference\WHC.Framework.Commons.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Framework.ControlUtil">
-      <HintPath>..\..\Reference\WHC.Framework.ControlUtil.dll</HintPath>
-    </Reference>
-    <Reference Include="WHC.Pager.Entity, Version=1.0.4348.19252, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Reference\WHC.Pager.Entity.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AppChannel.cs" />
@@ -273,9 +263,25 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WHC.Framework.Commons\WHC.Framework.Commons.csproj">
+      <Project>{53ac195e-dcff-47c4-bc02-7e0241ff520c}</Project>
+      <Name>WHC.Framework.Commons</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Framework.ControlUtil\WHC.Framework.ControlUtil.csproj">
+      <Project>{d1d3850b-206f-49a9-ba9f-eac0c39de3dd}</Project>
+      <Name>WHC.Framework.ControlUtil</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WHC.Pager.Entity\WHC.Pager.Entity.csproj">
+      <Project>{8d58654e-3fdb-4f5f-921a-7832db994dce}</Project>
+      <Name>WHC.Pager.Entity</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\WHC.Pager.WinControlDx\WHC.Pager.WinControlDx.csproj">
       <Project>{bad3d23b-ef02-4367-a929-a28a5644eb7e}</Project>
       <Name>WHC.Pager.WinControlDx</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
