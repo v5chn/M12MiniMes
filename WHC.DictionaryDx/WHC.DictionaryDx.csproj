@@ -151,7 +151,7 @@
       <HintPath>..\..\Reference\EnterpriseLibrary\EntLibContrib.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\..\Reference\log4net.dll</HintPath>
+      <HintPath>..\Reference\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

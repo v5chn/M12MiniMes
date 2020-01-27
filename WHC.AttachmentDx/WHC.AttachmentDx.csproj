@@ -139,19 +139,19 @@
     </Reference>
     <Reference Include="DmProvider, Version=1.1.0.0, Culture=neutral, PublicKeyToken=7a2d44aa446c6d01, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Reference\EnterpriseLibrary\DmProvider.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\DmProvider.dll</HintPath>
     </Reference>
     <Reference Include="EntLibContrib.Data.Dm">
       <HintPath>..\Reference\EnterpriseLibrary\EntLibContrib.Data.Dm.dll</HintPath>
     </Reference>
     <Reference Include="EntLibContrib.Data.MySql">
-      <HintPath>..\..\Reference\EnterpriseLibrary\EntLibContrib.Data.MySql.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\EntLibContrib.Data.MySql.dll</HintPath>
     </Reference>
     <Reference Include="EntLibContrib.Data.PostgreSql">
-      <HintPath>..\..\Reference\EnterpriseLibrary\EntLibContrib.Data.PostgreSql.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\EntLibContrib.Data.PostgreSql.dll</HintPath>
     </Reference>
     <Reference Include="EntLibContrib.Data.SQLite">
-      <HintPath>..\..\Reference\EnterpriseLibrary\EntLibContrib.Data.SQLite.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\EntLibContrib.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="FluentFTP">
       <HintPath>..\Reference\FluentFTP.dll</HintPath>
@@ -160,26 +160,29 @@
       <HintPath>..\Reference\KP-ImageViewerV2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
-      <HintPath>..\..\Reference\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
-      <HintPath>..\..\Reference\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Reference\EnterpriseLibrary\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
-      <HintPath>..\..\Reference\EnterpriseLibrary\Mono.Security.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\Mono.Security.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\Reference\EnterpriseLibrary\MySql.Data.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql">
-      <HintPath>..\..\Reference\EnterpriseLibrary\Npgsql.dll</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\Reference\EnterpriseLibrary\System.Data.SQLite.DLL</HintPath>
+      <HintPath>..\Reference\EnterpriseLibrary\System.Data.SQLite.DLL</HintPath>
     </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
