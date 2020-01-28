@@ -184,6 +184,11 @@ namespace WHC.Framework.BaseUI
                     MessageDxUtil.ShowTips("导入操作未指定模板文件");
                     return;
                 }
+                if (!File.Exists(templateFile))
+                {
+                    MessageDxUtil.ShowTips(templateFile + " 不存在该模板文件！");
+                    return;
+                }
                 Process.Start(templateFile);
             }
             catch (Exception)
