@@ -138,7 +138,6 @@
     <ProjectReference Include="..\WHC.Pager.Entity\WHC.Pager.Entity.csproj">
       <Project>{8d58654e-3fdb-4f5f-921a-7832db994dce}</Project>
       <Name>WHC.Pager.Entity</Name>
-      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\WHC.Pager.WinControlDx\WHC.Pager.WinControlDx.csproj">
       <Project>{bad3d23b-ef02-4367-a929-a28a5644eb7e}</Project>
