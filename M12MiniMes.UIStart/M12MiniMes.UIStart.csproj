@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>D:\FastAutomation\App\UserForms\</OutputPath>
+    <OutputPath>..\..\..\Faster\App\UserForms\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommunicateCenter">
-      <HintPath>D:\FastAutomation\App\HardWares\CommunicateCenter.dll</HintPath>
+      <HintPath>..\..\..\Faster\App\HardWares\CommunicateCenter.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.1">
@@ -65,11 +65,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Faster.Core">
-      <HintPath>D:\FastAutomation\Faster.Core.dll</HintPath>
+      <HintPath>..\..\..\Faster\Faster.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FastInterface">
-      <HintPath>D:\FastAutomation\App\Common\FastInterface.dll</HintPath>
+      <HintPath>..\..\..\Faster\App\Common\FastInterface.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
