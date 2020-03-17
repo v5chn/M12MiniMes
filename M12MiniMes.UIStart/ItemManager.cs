@@ -171,16 +171,26 @@ namespace M12MiniMes.UIStart
             return tempMachineItem;
         }
 
+        public class historyInfo 
+        {
+            public DateTime createdTime;
+            public string RFID;
+            public string machineID;
+        }
+
+        [NonSerialized]
+        public historyInfo last0MachineXRHistoryInfo;  //0#设备上一次写入的治具信息
+
         /// <summary>
         /// 根据治具RFID和流入设备ID查询当前在产的治具信息
         /// </summary>
         /// <param name="RFID"></param>
         /// <returns></returns>
-        public FixtureItem GetFixtureItem(string RFID, string machineID)
+        public FixtureItem GetFixtureItem(string RFID, string machineID , bool allowClearIfForm0machine = true)
         {
             MachineItem tempMachineItem = GetMachineItemByID(machineID);
             FixtureItem tempFixtureItem = GetCurrentFixtureItemByRFID(RFID);
-            if (machineID == "0")  //在线头设备表示治具回流或流入新治具，需要清空治具原携带信息
+            if (machineID == "0" && allowClearIfForm0machine)  //在线头设备表示治具回流或流入新治具，需要清空治具原携带信息
             {
                 tempFixtureItem?.Dispose(); 
                 tempFixtureItem = null;

@@ -161,8 +161,26 @@ namespace M12MiniMes.UIStart
                     case Header.XR: //写入生产数据  //当设备做完工序时，治具准备流出时
                         rfid = parameters[0];
                         strInMachineID = parameters[1];
+                        #region 防止线头设备的重复写入
+                        bool allowClearIfForm0machine = true;
+                        if (strInMachineID == "0")
+                        {
+                            if (ItemManager.Instance.last0MachineXRHistoryInfo != null)
+                            {
+                                if (ItemManager.Instance.last0MachineXRHistoryInfo.RFID == rfid && ItemManager.Instance.last0MachineXRHistoryInfo.machineID == strInMachineID)
+                                {
+                                    TimeSpan timeSpan = DateTime.Now - ItemManager.Instance.last0MachineXRHistoryInfo.createdTime;
+                                    if (timeSpan.TotalSeconds <= 5)  //5秒内重复写入的话忽视掉(不清空治具信息)
+                                    {
+                                        allowClearIfForm0machine = false;
+                                    }
+                                }
+                            }
+                            ItemManager.Instance.last0MachineXRHistoryInfo = new ItemManager.historyInfo() { createdTime = DateTime.Now, RFID = rfid, machineID = strInMachineID };
+                        }
+                        #endregion
                         InMachineItem = ItemManager.Instance.GetMachineItemByID(strInMachineID);
-                        fixtureItem = ItemManager.Instance.GetFixtureItem(rfid, strInMachineID);
+                        fixtureItem = ItemManager.Instance.GetFixtureItem(rfid, strInMachineID , allowClearIfForm0machine);
                         if (fixtureItem == null) //找不到该RFID治具的内存信息
                         {
                             var var = Encoding.UTF8.GetBytes($@"get the fixture failed which rfid is {rfid} !");
