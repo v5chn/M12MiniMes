@@ -101,6 +101,13 @@ namespace M12MiniMes.UIStart
         public List<生产批次生成表Info> Get当前在产批次列表()
         {
             string condition = $@"状态 != '生产完成' and (计划投入数 > 0) and (计划投入数 > 上线数)";
+            #region 下发批次打折
+            MachineItem machine = ItemManager.Instance.MachineItems.FirstOrDefault();
+            if (machine != null)
+            {
+                condition = $@"状态 != '生产完成' and (计划投入数 > 0) and (计划投入数 * {machine.ReduceOffsetsPercent} - {machine.ReduceOffsets} > 上线数)";
+            }
+            #endregion
             List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);
             return list;
         }

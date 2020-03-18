@@ -407,7 +407,7 @@ namespace M12MiniMes.UIStart
                         if (iNEW != null)
                         {
                             #region 下发批次打折
-                            MachineItem machine = ItemManager.Instance.MachineItems.FirstOrDefault(p => p.设备id.ToString() == strInMachineID);
+                            MachineItem machine = ItemManager.Instance.MachineItems.FirstOrDefault();
                             if (machine != null)
                             {
                                 iNEW.计划投入数 = (int)(iNEW.计划投入数 * machine.ReduceOffsetsPercent) - machine.ReduceOffsets;
