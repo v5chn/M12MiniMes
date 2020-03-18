@@ -17,7 +17,7 @@ namespace M12MiniMes.UIStart
     [Serializable]
     public class MachineItem
     {
-        #region Property Members  :设备表Info
+        #region Property Members 
 
         /// <summary>
         /// 设备ID
@@ -36,6 +36,16 @@ namespace M12MiniMes.UIStart
         /// </summary>
         //[field: NonSerialized]
         public string Ip { get; set; }
+
+        /// <summary>
+        /// 批次下发时计划投入数再减少多少个
+        /// </summary>
+        public int ReduceOffsets { get; set; } = 0;
+
+        /// <summary>
+        /// 批次下发时计划投入数再乘以损耗率（优先于ReduceOffsets）
+        /// </summary>
+        public float ReduceOffsetsPercent { get; set; } = 1;
 
         #endregion
 

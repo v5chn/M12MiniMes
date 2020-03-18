@@ -406,6 +406,14 @@ namespace M12MiniMes.UIStart
                         string strM = "";
                         if (iNEW != null)
                         {
+                            #region 下发批次打折
+                            MachineItem machine = ItemManager.Instance.MachineItems.FirstOrDefault(p => p.设备id.ToString() == strInMachineID);
+                            if (machine != null)
+                            {
+                                iNEW.计划投入数 = (int)(iNEW.计划投入数 * machine.ReduceOffsetsPercent) - machine.ReduceOffsets;
+                            }
+                            #endregion
+
                             //返回下位机下一个批次信息
                             strM = $@"CXPC,{strInMachineID},{iNEW.生产批次号},{iNEW.机种},{iNEW.镜框日期.ToString("yyyyMMdd")},{iNEW.镜筒模穴号},{iNEW.镜框批次},{iNEW.穴号105},{iNEW.穴号104},{iNEW.穴号102},{iNEW.日期105.ToString("yyyyMMdd")},{iNEW.日期104.ToString("yyyyMMdd")},{iNEW.日期102.ToString("yyyyMMdd")},{iNEW.角度},{iNEW.系列号},{iNEW.隔圈模穴号113b},{iNEW.成型日113b.ToString("yyyyMMdd")},{iNEW.隔圈模穴号112},{iNEW.成型日112.ToString("yyyyMMdd")},{iNEW.G3来料供应商},{iNEW.G3镜片来料日期.ToString("yyyyMMdd")},{iNEW.G1来料供应商},{iNEW.G1来料日期.ToString("yyyyMMdd")},{iNEW.配对监控批次},{iNEW.计划投入数}";
                         }
