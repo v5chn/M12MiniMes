@@ -29,6 +29,7 @@ namespace M12MiniMes.DALSQL
 		}
 		public 生产批次生成表() : base("生产批次生成表","生产批次ID")
 		{
+            IsDescending = false; 
 		}
 
 		#endregion

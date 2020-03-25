@@ -240,7 +240,7 @@ namespace M12MiniMes.UIStart
                                 {
                                     string str当前治具生产批次号 = materialItem.Fixture.治具生产批次号;
                                     string condition = $@"生产批次号 = '{str当前治具生产批次号}'";
-                                    var var = BLLFactory<生产批次生成表>.Instance.FindLast(condition);
+                                    var var = BLLFactory<生产批次生成表>.Instance.FindLast(condition); 
                                     if (var != null)
                                     {
                                         if (strInMachineID == "0") 
@@ -251,6 +251,7 @@ namespace M12MiniMes.UIStart
                                         else if(strInMachineID == "14")
                                         {
                                             var.下线数 += 12;
+                                            BLLFactory<生产批次生成表>.Instance.Update(var, var.生产批次id);
 
                                             //如果这个治具批次号与上一个治具的批次号不相同，则认为上一个治具批次的生产状态为生产完成
                                             if (str当前治具生产批次号 != ItemManager.Instance.str线尾上一个治具批次号)
@@ -260,12 +261,12 @@ namespace M12MiniMes.UIStart
                                                 if (var2 != null)
                                                 {
                                                     var2.状态 = "生产完成";
+                                                    BLLFactory<生产批次生成表>.Instance.Update(var2, var2.生产批次id);
                                                 }
                                             }
 
                                             ItemManager.Instance.str线尾上一个治具批次号 = str当前治具生产批次号;
                                         }
-                                        BLLFactory<生产批次生成表>.Instance.Update(var, var.生产批次id);
                                     }
                                 }
                             }
