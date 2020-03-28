@@ -98,7 +98,13 @@ namespace M12MiniMes.UIStart
             return bLoadOK; 
         }
 
-        public List<生产批次生成表Info> Get当前在产批次列表()
+        public List<生产批次生成表Info> Get批次列表() //获取数据库中所有批次列表，不管生产状态
+        {
+            List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.GetAll();  //旧到新排序
+            return list;
+        }
+
+        public List<生产批次生成表Info> Get当前在产批次列表()  //只会获取在产或待生产的批次列表
         {
             string condition = $@"状态 != '生产完成' and (计划投入数 > 0) and (计划投入数 > 上线数)";
             #region 下发批次打折
@@ -108,7 +114,7 @@ namespace M12MiniMes.UIStart
                 condition = $@"状态 != '生产完成' and (计划投入数 > 0) and (计划投入数 * {machine.ReduceOffsetsPercent} - {machine.ReduceOffsets} > 上线数)";
             }
             #endregion
-            List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);
+            List<生产批次生成表Info> list = BLLFactory<生产批次生成表>.Instance.Find(condition);  //旧到新排序
             return list;
         }
 

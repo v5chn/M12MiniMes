@@ -390,16 +390,33 @@ namespace M12MiniMes.UIStart
                         }
                         else
                         {
-                            var vaL = ItemManager.Instance.Get当前在产批次列表();
-                            if (vaL.Count >0)
+                            //var vaL = ItemManager.Instance.Get当前在产批次列表();  //注意这里只会获取在产的批次列表，已生产完成的批次将会被过滤掉
+                            //if (vaL.Count >0)
+                            //{
+                            //    生产批次生成表Info iOLD = vaL.FirstOrDefault(p => p.生产批次号.Equals(pcOLD));
+                            //    if (iOLD != null)
+                            //    {
+                            //        int indexOLD = vaL.IndexOf(iOLD);
+                            //        if (indexOLD < vaL.Count -1)
+                            //        {
+                            //            iNEW = vaL[indexOLD + 1]; //下一个批次
+                            //        }
+                            //    }
+                            //}
+
+                            //2020-03-28改为获取数据库中所有批次列表
+                            var vaL = ItemManager.Instance.Get批次列表(); 
+                            if (vaL.Count > 0)
                             {
                                 生产批次生成表Info iOLD = vaL.FirstOrDefault(p => p.生产批次号.Equals(pcOLD));
                                 if (iOLD != null)
                                 {
                                     int indexOLD = vaL.IndexOf(iOLD);
-                                    if (indexOLD < vaL.Count -1)
+                                    //跳过旧批次，过滤出旧批次后面的列表
+                                    vaL = vaL.Skip(indexOLD + 1).ToList();
+                                    if (vaL != null && vaL.Count > 0)
                                     {
-                                        iNEW = vaL[indexOLD + 1];
+                                        iNEW = vaL.FirstOrDefault(); //下一个批次
                                     }
                                 }
                             }
