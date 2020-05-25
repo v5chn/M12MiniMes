@@ -81,12 +81,8 @@ namespace M12MiniMes.UIStart
 
         public bool RemoveFixtureItem(FixtureItem fItem)
         {
-            if (this.CurrentFixtureItems.Contains(fItem))
-            {
-                this.CurrentFixtureItems.Remove(fItem);
-                return true;
-            }
-            return false;
+            bool b = this.CurrentFixtureItems.Remove(fItem);
+            return b;
         }
     }
 }
