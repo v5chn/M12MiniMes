@@ -13,7 +13,7 @@ namespace M12MiniMes.UIStart
     [Serializable]
     public class MaterialItem : IDisposable
     {
-        public List<生产数据表Info> 生产数据 { get; set; }
+        public List<生产数据表Info> 生产数据List { get; set; }
 
         /// <summary>
         /// 记忆当前物料所在的治具信息，可以为null表示不处于任何治具之中
@@ -37,7 +37,7 @@ namespace M12MiniMes.UIStart
             this.Fixture = fixture;
             this.MaterialGuid = Guid.NewGuid();
             this.物料生产批次号 = fixture?.治具生产批次号;
-            this.生产数据 = new List<生产数据表Info>();
+            this.生产数据List = new List<生产数据表Info>();
         }
 
         /// <summary>
@@ -65,8 +65,8 @@ namespace M12MiniMes.UIStart
             this.Fixture = null;
             this.MaterialGuid = Guid.Empty;
             this.物料生产批次号 = null;
-            this.生产数据.Clear();
-            this.生产数据 = null;
+            this.生产数据List.Clear();
+            this.生产数据List = null;
 
             GC.Collect();
             GC.WaitForPendingFinalizers();

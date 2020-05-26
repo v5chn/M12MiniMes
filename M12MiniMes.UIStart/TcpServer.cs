@@ -145,7 +145,7 @@ namespace M12MiniMes.UIStart
                                     strData += itemEmptyMes;
                                     continue;
                                 }
-                                var var = item.生产数据.Where(p => p.设备id.ToString() == strCMachineID);
+                                var var = item.生产数据List.Where(p => p.设备id.ToString() == strCMachineID);
                                 if (var == null)
                                 {
                                     strData += itemEmptyMes;
@@ -209,7 +209,7 @@ namespace M12MiniMes.UIStart
                                 int 设备id = int.Parse(strInMachineID);
 
                                 //检测是第一次写入还是再次写入刷新生产数据 最好规定下位机只允许写入一次
-                                生产数据表Info scData = materialItem.生产数据.FirstOrDefault(p =>
+                                生产数据表Info scData = materialItem.生产数据List.FirstOrDefault(p =>
                                     p.物料guid.Equals(物料guid)
                                     && p.治具guid.Equals(治具guid)
                                     && p.设备id.Equals(设备id)
@@ -219,7 +219,7 @@ namespace M12MiniMes.UIStart
                                 if (scData == null)  //是第一次写入
                                 {
                                     scData = new 生产数据表Info();
-                                    materialItem.生产数据.Add(scData);
+                                    materialItem.生产数据List.Add(scData);
                                     firstWrite = true;
                                 }
                                 scData.生产时间 = DateTime.Now;
