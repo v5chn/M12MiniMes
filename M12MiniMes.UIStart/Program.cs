@@ -130,11 +130,6 @@ namespace M12MiniMes.UIStart
         };
 
         public override string InsertPath => $@"生产内存数据";
-
-        public override Action<IView> ActShowView => p =>
-        {
-            this.LazyControl.Value.ExpandAllRow();
-        };
     }
 
     public class View设备工序表 : LazyAbstractView<Frm设备表>
