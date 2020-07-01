@@ -115,7 +115,7 @@ namespace M12MiniMes.UIStart
             }
         }
 
-        public override Func<IView, bool> FuncSave => p =>
+        public override Func<IBar, bool> FuncSave => p =>
         {
             return TcpServer.Save();
         };
@@ -123,7 +123,7 @@ namespace M12MiniMes.UIStart
 
     public class ItemsView : LazyAbstractView<FormItemsView>
     {
-        public override Func<IView, bool> FuncSave => p =>
+        public override Func<IBar, bool> FuncSave => p =>
         {
             bool b = ItemManager.Instance.Save();
             return b;
