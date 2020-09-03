@@ -119,6 +119,12 @@ namespace M12MiniMes.UIStart
         {
             return TcpServer.Save();
         };
+
+        //关闭软件时执行一次保存内存数据操作，减少频繁保存（之前实在TcpServer.cs 451行 通讯一次保存一次）  20200903  
+        public override Func<IView, bool> FuncCloseView => p =>
+        {
+            return ItemManager.Instance.Save();
+        };
     }
 
     public class ItemsView : LazyAbstractView<FormItemsView>

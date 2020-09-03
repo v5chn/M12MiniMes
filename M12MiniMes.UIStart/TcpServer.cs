@@ -448,7 +448,7 @@ namespace M12MiniMes.UIStart
                             break;
                     }
 
-                    ItemManager.Instance.Save(); //每通讯一次就保存一次内存数据
+                    //ItemManager.Instance.Save(); //每通讯一次就保存一次内存数据  20200903改为Program.cs 124行 关闭软件时保存内存数据 减少保存频率
                 }
                 catch (Exception ex)
                 {
